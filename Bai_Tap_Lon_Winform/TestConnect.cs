@@ -8,5 +8,6 @@ namespace Bai_Tap_Lon_Winform
 {
     class TestConnect
     {
+        //Xin chao thay va cac ban
     }
 }
