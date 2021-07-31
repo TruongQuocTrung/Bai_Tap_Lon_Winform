@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Bai_Tap_Lon_Winform
 {
@@ -65,6 +66,18 @@ namespace Bai_Tap_Lon_Winform
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        TestConnect t = new TestConnect();
+        private void frmThemSach_Load(object sender, EventArgs e)
+        {
+            SqlConnection connection=  t.getConnect();
+            string sql = "SELECT * FROM Sach";
+            connection.Open();
+            DataTable table = new DataTable();
+
+            SqlDataAdapter adapter = new SqlDataAdapter(sql,connection);
+            adapter.Fill(table);
+            dgvQLSach.DataSource = table;
         }
     }
 }

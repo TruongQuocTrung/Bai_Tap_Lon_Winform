@@ -56,7 +56,7 @@ namespace Bai_Tap_Lon_Winform
             this.btnSave = new System.Windows.Forms.PictureBox();
             this.btnDelete = new System.Windows.Forms.PictureBox();
             this.lblTitleThem = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvQLSach = new System.Windows.Forms.DataGridView();
             this.lblTitleSave = new System.Windows.Forms.Label();
             this.lblTitleXoa = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.PictureBox();
@@ -65,7 +65,7 @@ namespace Bai_Tap_Lon_Winform
             ((System.ComponentModel.ISupportInitialize)(this.btnThem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvQLSach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.SuspendLayout();
@@ -338,14 +338,14 @@ namespace Bai_Tap_Lon_Winform
             this.lblTitleThem.Text = "Thêm";
             this.lblTitleThem.Visible = false;
             // 
-            // dataGridView1
+            // dgvQLSach
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(43, 319);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(801, 267);
-            this.dataGridView1.TabIndex = 8;
+            this.dgvQLSach.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvQLSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvQLSach.Location = new System.Drawing.Point(43, 319);
+            this.dgvQLSach.Name = "dgvQLSach";
+            this.dgvQLSach.Size = new System.Drawing.Size(801, 267);
+            this.dgvQLSach.TabIndex = 8;
             // 
             // lblTitleSave
             // 
@@ -411,7 +411,7 @@ namespace Bai_Tap_Lon_Winform
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(1033, 598);
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvQLSach);
             this.Controls.Add(this.lblTitleClear);
             this.Controls.Add(this.lblTitleXoa);
             this.Controls.Add(this.lblTitleSave);
@@ -447,10 +447,11 @@ namespace Bai_Tap_Lon_Winform
             this.MinimumSize = new System.Drawing.Size(1033, 598);
             this.Name = "frmThemSach";
             this.Text = "frmThemSach";
+            this.Load += new System.EventHandler(this.frmThemSach_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnThem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvQLSach)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClear)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             this.ResumeLayout(false);
@@ -486,7 +487,7 @@ namespace Bai_Tap_Lon_Winform
         private System.Windows.Forms.PictureBox btnSave;
         private System.Windows.Forms.PictureBox btnDelete;
         private System.Windows.Forms.Label lblTitleThem;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvQLSach;
         private System.Windows.Forms.Label lblTitleSave;
         private System.Windows.Forms.Label lblTitleXoa;
         private System.Windows.Forms.PictureBox btnClear;
