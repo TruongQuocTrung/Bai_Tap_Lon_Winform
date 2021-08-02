@@ -136,5 +136,11 @@ namespace Bai_Tap_Lon_Winform
         {
             openChildForm(new frmQuanLy());
         }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            frmBienLai bl = new frmBienLai();
+            bl.Show();
+        }
     }
 }

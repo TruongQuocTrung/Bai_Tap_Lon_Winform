@@ -30,12 +30,12 @@ namespace Bai_Tap_Lon_Winform
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation11 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation4 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation5 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGioiThieu));
-            BunifuAnimatorNS.Animation animation12 = new BunifuAnimatorNS.Animation();
-            BunifuAnimatorNS.Animation animation13 = new BunifuAnimatorNS.Animation();
-            BunifuAnimatorNS.Animation animation14 = new BunifuAnimatorNS.Animation();
-            BunifuAnimatorNS.Animation animation15 = new BunifuAnimatorNS.Animation();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
@@ -61,14 +61,14 @@ namespace Bai_Tap_Lon_Winform
             this.label2 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.TitleTransition = new BunifuAnimatorNS.BunifuTransition(this.components);
+            this.panelDiaChi = new System.Windows.Forms.Panel();
+            this.panelLienHe = new System.Windows.Forms.Panel();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.timer4 = new System.Windows.Forms.Timer(this.components);
             this.timer5 = new System.Windows.Forms.Timer(this.components);
             this.NameTransition = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.SloganTransition = new BunifuAnimatorNS.BunifuTransition(this.components);
-            this.panelDiaChi = new System.Windows.Forms.Panel();
-            this.panelLienHe = new System.Windows.Forms.Panel();
             this.DiaChiTransition = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.LienHeTransition = new BunifuAnimatorNS.BunifuTransition(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -89,10 +89,10 @@ namespace Bai_Tap_Lon_Winform
             this.NameTransition.SetDecoration(this.pictureBox2, BunifuAnimatorNS.DecorationType.None);
             this.SloganTransition.SetDecoration(this.pictureBox2, BunifuAnimatorNS.DecorationType.None);
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(140, -78);
+            this.pictureBox2.Location = new System.Drawing.Point(275, -18);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(578, 390);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.Size = new System.Drawing.Size(267, 213);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
@@ -106,7 +106,7 @@ namespace Bai_Tap_Lon_Winform
             this.LienHeTransition.SetDecoration(this.lblTitle, BunifuAnimatorNS.DecorationType.None);
             this.lblTitle.Font = new System.Drawing.Font("Niagara Engraved", 36F, System.Drawing.FontStyle.Bold);
             this.lblTitle.ForeColor = System.Drawing.Color.Black;
-            this.lblTitle.Location = new System.Drawing.Point(497, 13);
+            this.lblTitle.Location = new System.Drawing.Point(495, 35);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(128, 51);
             this.lblTitle.TabIndex = 3;
@@ -125,9 +125,9 @@ namespace Bai_Tap_Lon_Winform
             this.lblName.ForeColor = System.Drawing.Color.Red;
             this.lblName.Location = new System.Drawing.Point(483, 86);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(319, 76);
+            this.lblName.Size = new System.Drawing.Size(363, 76);
             this.lblName.TabIndex = 4;
-            this.lblName.Text = "Nhã Nam";
+            this.lblName.Text = "Tuổi Hồng";
             this.lblName.Visible = false;
             // 
             // lblSlogan
@@ -140,7 +140,7 @@ namespace Bai_Tap_Lon_Winform
             this.LienHeTransition.SetDecoration(this.lblSlogan, BunifuAnimatorNS.DecorationType.None);
             this.lblSlogan.Font = new System.Drawing.Font("Palatino Linotype", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lblSlogan.ForeColor = System.Drawing.Color.Black;
-            this.lblSlogan.Location = new System.Drawing.Point(324, 171);
+            this.lblSlogan.Location = new System.Drawing.Point(329, 162);
             this.lblSlogan.Name = "lblSlogan";
             this.lblSlogan.Size = new System.Drawing.Size(494, 63);
             this.lblSlogan.TabIndex = 1;
@@ -159,9 +159,9 @@ namespace Bai_Tap_Lon_Winform
             this.lblWeb.ForeColor = System.Drawing.Color.Black;
             this.lblWeb.Location = new System.Drawing.Point(729, 244);
             this.lblWeb.Name = "lblWeb";
-            this.lblWeb.Size = new System.Drawing.Size(165, 20);
+            this.lblWeb.Size = new System.Drawing.Size(177, 20);
             this.lblWeb.TabIndex = 5;
-            this.lblWeb.Text = "http://nhanam.com.vn/";
+            this.lblWeb.Text = "https://tuoihong.com.vn/";
             this.lblWeb.Visible = false;
             // 
             // pictureBox6
@@ -257,9 +257,9 @@ namespace Bai_Tap_Lon_Winform
             this.label14.ForeColor = System.Drawing.Color.Black;
             this.label14.Location = new System.Drawing.Point(163, 178);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(193, 18);
+            this.label14.Size = new System.Drawing.Size(197, 18);
             this.label14.TabIndex = 35;
-            this.label14.Text = "https://shopee.vn/nhanam59";
+            this.label14.Text = "https://shopee.vn/tuoihong59";
             // 
             // label13
             // 
@@ -291,9 +291,9 @@ namespace Bai_Tap_Lon_Winform
             this.label12.ForeColor = System.Drawing.Color.Black;
             this.label12.Location = new System.Drawing.Point(152, 129);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(311, 18);
+            this.label12.Size = new System.Drawing.Size(315, 18);
             this.label12.TabIndex = 33;
-            this.label12.Text = "https://www.facebook.com/nhanampublishing/";
+            this.label12.Text = "https://www.facebook.com/tuoihongpublishing/";
             // 
             // label11
             // 
@@ -359,9 +359,9 @@ namespace Bai_Tap_Lon_Winform
             this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(141, 35);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(167, 18);
+            this.label8.Size = new System.Drawing.Size(171, 18);
             this.label8.TabIndex = 29;
-            this.label8.Text = " bookstore@nhanam.vn";
+            this.label8.Text = " bookstore@tuoihong.vn";
             // 
             // label7
             // 
@@ -393,9 +393,9 @@ namespace Bai_Tap_Lon_Winform
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(33, 160);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(394, 18);
+            this.label6.Size = new System.Drawing.Size(398, 18);
             this.label6.TabIndex = 27;
-            this.label6.Text = "- Hệ thống nhà sách: http://nhanam.com.vn/tin-tuc/8/lien-he";
+            this.label6.Text = "- Hệ thống nhà sách: http://tuoihong.com.vn/tin-tuc/8/lien-he";
             // 
             // label5
             // 
@@ -475,84 +475,22 @@ namespace Bai_Tap_Lon_Winform
             // 
             this.TitleTransition.AnimationType = BunifuAnimatorNS.AnimationType.Particles;
             this.TitleTransition.Cursor = null;
-            animation11.AnimateOnlyDifferences = true;
-            animation11.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation11.BlindCoeff")));
-            animation11.LeafCoeff = 0F;
-            animation11.MaxTime = 1F;
-            animation11.MinTime = 0F;
-            animation11.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation11.MosaicCoeff")));
-            animation11.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation11.MosaicShift")));
-            animation11.MosaicSize = 1;
-            animation11.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
-            animation11.RotateCoeff = 0F;
-            animation11.RotateLimit = 0F;
-            animation11.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation11.ScaleCoeff")));
-            animation11.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation11.SlideCoeff")));
-            animation11.TimeCoeff = 2F;
-            animation11.TransparencyCoeff = 0F;
-            this.TitleTransition.DefaultAnimation = animation11;
-            // 
-            // timer2
-            // 
-            this.timer2.Interval = 300;
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-            // 
-            // timer3
-            // 
-            this.timer3.Interval = 400;
-            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
-            // 
-            // timer4
-            // 
-            this.timer4.Interval = 500;
-            this.timer4.Tick += new System.EventHandler(this.timer4_Tick);
-            // 
-            // timer5
-            // 
-            this.timer5.Interval = 600;
-            this.timer5.Tick += new System.EventHandler(this.timer5_Tick);
-            // 
-            // NameTransition
-            // 
-            this.NameTransition.AnimationType = BunifuAnimatorNS.AnimationType.ScaleAndHorizSlide;
-            this.NameTransition.Cursor = null;
-            animation12.AnimateOnlyDifferences = true;
-            animation12.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation12.BlindCoeff")));
-            animation12.LeafCoeff = 0F;
-            animation12.MaxTime = 1F;
-            animation12.MinTime = 0F;
-            animation12.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation12.MosaicCoeff")));
-            animation12.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation12.MosaicShift")));
-            animation12.MosaicSize = 0;
-            animation12.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            animation12.RotateCoeff = 0F;
-            animation12.RotateLimit = 0F;
-            animation12.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation12.ScaleCoeff")));
-            animation12.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation12.SlideCoeff")));
-            animation12.TimeCoeff = 0F;
-            animation12.TransparencyCoeff = 0F;
-            this.NameTransition.DefaultAnimation = animation12;
-            // 
-            // SloganTransition
-            // 
-            this.SloganTransition.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide;
-            this.SloganTransition.Cursor = null;
-            animation13.AnimateOnlyDifferences = true;
-            animation13.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation13.BlindCoeff")));
-            animation13.LeafCoeff = 0F;
-            animation13.MaxTime = 1F;
-            animation13.MinTime = 0F;
-            animation13.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation13.MosaicCoeff")));
-            animation13.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation13.MosaicShift")));
-            animation13.MosaicSize = 0;
-            animation13.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
-            animation13.RotateCoeff = 0F;
-            animation13.RotateLimit = 0F;
-            animation13.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation13.ScaleCoeff")));
-            animation13.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation13.SlideCoeff")));
-            animation13.TimeCoeff = 0F;
-            animation13.TransparencyCoeff = 0F;
-            this.SloganTransition.DefaultAnimation = animation13;
+            animation3.AnimateOnlyDifferences = true;
+            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
+            animation3.LeafCoeff = 0F;
+            animation3.MaxTime = 1F;
+            animation3.MinTime = 0F;
+            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
+            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
+            animation3.MosaicSize = 1;
+            animation3.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
+            animation3.RotateCoeff = 0F;
+            animation3.RotateLimit = 0F;
+            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
+            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
+            animation3.TimeCoeff = 2F;
+            animation3.TransparencyCoeff = 0F;
+            this.TitleTransition.DefaultAnimation = animation3;
             // 
             // panelDiaChi
             // 
@@ -598,53 +536,115 @@ namespace Bai_Tap_Lon_Winform
             this.panelLienHe.TabIndex = 42;
             this.panelLienHe.Visible = false;
             // 
+            // timer2
+            // 
+            this.timer2.Interval = 300;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // timer3
+            // 
+            this.timer3.Interval = 400;
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
+            // timer4
+            // 
+            this.timer4.Interval = 500;
+            this.timer4.Tick += new System.EventHandler(this.timer4_Tick);
+            // 
+            // timer5
+            // 
+            this.timer5.Interval = 600;
+            this.timer5.Tick += new System.EventHandler(this.timer5_Tick);
+            // 
+            // NameTransition
+            // 
+            this.NameTransition.AnimationType = BunifuAnimatorNS.AnimationType.ScaleAndHorizSlide;
+            this.NameTransition.Cursor = null;
+            animation4.AnimateOnlyDifferences = true;
+            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
+            animation4.LeafCoeff = 0F;
+            animation4.MaxTime = 1F;
+            animation4.MinTime = 0F;
+            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
+            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
+            animation4.MosaicSize = 0;
+            animation4.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            animation4.RotateCoeff = 0F;
+            animation4.RotateLimit = 0F;
+            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
+            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
+            animation4.TimeCoeff = 0F;
+            animation4.TransparencyCoeff = 0F;
+            this.NameTransition.DefaultAnimation = animation4;
+            // 
+            // SloganTransition
+            // 
+            this.SloganTransition.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide;
+            this.SloganTransition.Cursor = null;
+            animation5.AnimateOnlyDifferences = true;
+            animation5.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.BlindCoeff")));
+            animation5.LeafCoeff = 0F;
+            animation5.MaxTime = 1F;
+            animation5.MinTime = 0F;
+            animation5.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicCoeff")));
+            animation5.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicShift")));
+            animation5.MosaicSize = 0;
+            animation5.Padding = new System.Windows.Forms.Padding(0);
+            animation5.RotateCoeff = 0F;
+            animation5.RotateLimit = 0F;
+            animation5.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.ScaleCoeff")));
+            animation5.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.SlideCoeff")));
+            animation5.TimeCoeff = 0F;
+            animation5.TransparencyCoeff = 0F;
+            this.SloganTransition.DefaultAnimation = animation5;
+            // 
             // DiaChiTransition
             // 
             this.DiaChiTransition.AnimationType = BunifuAnimatorNS.AnimationType.Scale;
             this.DiaChiTransition.Cursor = null;
-            animation14.AnimateOnlyDifferences = true;
-            animation14.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation14.BlindCoeff")));
-            animation14.LeafCoeff = 0F;
-            animation14.MaxTime = 1F;
-            animation14.MinTime = 0F;
-            animation14.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation14.MosaicCoeff")));
-            animation14.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation14.MosaicShift")));
-            animation14.MosaicSize = 0;
-            animation14.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
-            animation14.RotateCoeff = 0F;
-            animation14.RotateLimit = 0F;
-            animation14.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation14.ScaleCoeff")));
-            animation14.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation14.SlideCoeff")));
-            animation14.TimeCoeff = 0F;
-            animation14.TransparencyCoeff = 0F;
-            this.DiaChiTransition.DefaultAnimation = animation14;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.DiaChiTransition.DefaultAnimation = animation2;
             // 
             // LienHeTransition
             // 
             this.LienHeTransition.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlideAndRotate;
             this.LienHeTransition.Cursor = null;
-            animation15.AnimateOnlyDifferences = true;
-            animation15.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation15.BlindCoeff")));
-            animation15.LeafCoeff = 0F;
-            animation15.MaxTime = 1F;
-            animation15.MinTime = 0F;
-            animation15.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation15.MosaicCoeff")));
-            animation15.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation15.MosaicShift")));
-            animation15.MosaicSize = 0;
-            animation15.Padding = new System.Windows.Forms.Padding(50);
-            animation15.RotateCoeff = 0.3F;
-            animation15.RotateLimit = 0.2F;
-            animation15.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation15.ScaleCoeff")));
-            animation15.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation15.SlideCoeff")));
-            animation15.TimeCoeff = 0F;
-            animation15.TransparencyCoeff = 0F;
-            this.LienHeTransition.DefaultAnimation = animation15;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(50);
+            animation1.RotateCoeff = 0.3F;
+            animation1.RotateLimit = 0.2F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.LienHeTransition.DefaultAnimation = animation1;
             // 
             // frmGioiThieu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Silver;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1033, 598);
             this.Controls.Add(this.panelLienHe);
             this.Controls.Add(this.panelDiaChi);
