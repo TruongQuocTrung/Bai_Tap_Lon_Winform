@@ -34,6 +34,5 @@ namespace Bai_Tap_Lon_Winform
                 MessageBox.Show(ex.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
-        
     }
 }
