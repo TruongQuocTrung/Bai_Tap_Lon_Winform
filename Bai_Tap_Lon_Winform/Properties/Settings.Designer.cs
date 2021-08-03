@@ -27,7 +27,7 @@ namespace Bai_Tap_Lon_Winform.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-QKORJ1O;Initial Catalog=QuanLyNhaSach;Persist Security Info=T" +
-            "rue;User ID=sa")]
+            "rue;User ID=sa;Password=123")]
         public string ChuoiKetNoi {
             get {
                 return ((string)(this["ChuoiKetNoi"]));

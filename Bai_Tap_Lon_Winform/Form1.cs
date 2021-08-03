@@ -16,10 +16,13 @@ namespace Bai_Tap_Lon_Winform
         {
             InitializeComponent();
             CusDesign();
-            timer1.Enabled = true;
+           // timer1.Enabled = true;
             timer1.Start();
-            lblTime.Text = DateTime.Now.ToLongTimeString();
-            lblDate.Text = DateTime.Now.ToLongTimeString();
+            DataProcessing data = new DataProcessing();
+            data.AddTenSach(cbbTenSach);
+            // lblTime.Text = DateTime.Now.ToLongTimeString();
+            //lblDate.Text = DateTime.Now.ToLongTimeString();
+            
         }
         private void CusDesign()
         {
@@ -141,6 +144,26 @@ namespace Bai_Tap_Lon_Winform
         {
             frmBienLai bl = new frmBienLai();
             bl.Show();
+        }
+
+        private void textBox1_Click(object sender, EventArgs e)
+        {
+            txtMaKhachHang.Clear();
+            txtMaKhachHang.ForeColor = Color.Black;
+        }
+        DataTable TableDonHang = new DataTable("don_hang");
+
+        private void btnDonHangMoi_Click(object sender, EventArgs e)
+        {
+            numerSoLuong.Text = "0";
+            txtMaKhachHang.Clear();
+            txtKhachDua.Clear();
+            txtTenKH.Clear();
+            txtTongTien.Clear();
+            txtTraLai.Clear();
+            TableDonHang.Clear();
+            GridViewDonHang.DataSource = GridViewDonHang;
+            txtSoHD.Text = DateTime.Now.ToString("ssmmHHddMMyyyy");
         }
     }
 }

@@ -259,7 +259,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>2.36134in</Top>
+        <Top>2.25956in</Top>
         <Left>3.82473in</Left>
         <Height>0.20833in</Height>
         <Width>0.41667in</Width>
@@ -787,7 +787,7 @@
         <Top>3.34884in</Top>
         <Left>0.26013in</Left>
         <Height>0.5in</Height>
-        <Width>5in</Width>
+        <Width>4.99999in</Width>
         <ZIndex>13</ZIndex>
         <Style>
           <Border>
@@ -929,7 +929,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>GioBan</rd:DefaultName>
-        <Top>2.36134in</Top>
+        <Top>2.25956in</Top>
         <Left>4.31084in</Left>
         <Height>0.25in</Height>
         <Width>1in</Width>
