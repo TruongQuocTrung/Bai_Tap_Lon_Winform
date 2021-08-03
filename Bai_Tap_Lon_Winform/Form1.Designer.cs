@@ -370,7 +370,7 @@ namespace Bai_Tap_Lon_Winform
             this.btnThemNhanVien.Name = "btnThemNhanVien";
             this.btnThemNhanVien.Size = new System.Drawing.Size(167, 40);
             this.btnThemNhanVien.TabIndex = 0;
-            this.btnThemNhanVien.Text = "Quản lý nhân viên";
+            this.btnThemNhanVien.Text = "Thêm nhân viên";
             this.btnThemNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThemNhanVien.UseVisualStyleBackColor = false;
             this.btnThemNhanVien.Click += new System.EventHandler(this.btnThemNhanVien_Click);
