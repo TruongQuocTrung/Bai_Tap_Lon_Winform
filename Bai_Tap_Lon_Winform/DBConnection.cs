@@ -12,25 +12,27 @@ namespace Bai_Tap_Lon_Winform
     {
         public SqlConnection getConnect()
         {
-            String connString = @"Data Source=DESKTOP-QKORJ1O;Initial Catalog=QuanLyNhaSach;Persist Security Info=True;User ID=sa;Password=123";
-            return new SqlConnection(connString);
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = @"Data Source=TRUONGQUOCTRUNG\SQLEXPRESS;Initial Catalog=QuanLyNhaSach;Persist Security Info=True;User ID=sa;Password=123";
+            //connection.ConnectionString = @"Data Source=DESKTOP-QKORJ1O;Initial Catalog=QuanLyNhaSach;Persist Security Info=True;User ID=sa;Password=123";
+            return connection;
         }
 
-        public DataTable GetTable(String sql)
+        public DataTable getTable(String sql)
         {
-            DataTable dt = new DataTable();
-            SqlConnection conn = getConnect();
-            SqlDataAdapter da = new SqlDataAdapter(sql, conn);
-            da.Fill(dt);
-            return dt;
+            DataTable table = new DataTable();
+            SqlConnection connect = getConnect();
+            SqlDataAdapter da = new SqlDataAdapter(sql, connect);
+            da.Fill(table);
+            return table;
         }
-        public void ExecuteNonQuery(String sql)
+        public void getExecuteNonQuery(String sql)
         {
-            SqlConnection conn = getConnect();
-            conn.Open();
-            SqlCommand cmd = new SqlCommand(sql, conn);
-            cmd.ExecuteNonQuery();
-            conn.Close();
+            SqlConnection connect = getConnect();
+            connect.Open();
+            SqlCommand command = new SqlCommand(sql, connect);
+            command.ExecuteNonQuery();
+            connect.Close();
         }
     }
 }

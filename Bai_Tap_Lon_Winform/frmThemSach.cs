@@ -67,7 +67,6 @@ namespace Bai_Tap_Lon_Winform
         {
             this.Close();
         }
-        TestConnect t = new TestConnect();
         private void frmThemSach_Load(object sender, EventArgs e)
         {
            
