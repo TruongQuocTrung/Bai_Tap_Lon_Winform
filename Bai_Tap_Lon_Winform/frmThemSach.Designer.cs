@@ -45,28 +45,35 @@ namespace Bai_Tap_Lon_Winform
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.cbbNhaXuatBan = new System.Windows.Forms.ComboBox();
+            this.cbbTheLoai = new System.Windows.Forms.ComboBox();
+            this.txtMaSach = new System.Windows.Forms.TextBox();
+            this.txtTenSach = new System.Windows.Forms.TextBox();
+            this.txtSoLuong = new System.Windows.Forms.TextBox();
+            this.txtDonGia = new System.Windows.Forms.TextBox();
             this.btnThem = new System.Windows.Forms.PictureBox();
-            this.btnSave = new System.Windows.Forms.PictureBox();
-            this.btnDelete = new System.Windows.Forms.PictureBox();
+            this.btnLuu = new System.Windows.Forms.PictureBox();
+            this.btnXoa = new System.Windows.Forms.PictureBox();
             this.lblTitleThem = new System.Windows.Forms.Label();
             this.dgvQLSach = new System.Windows.Forms.DataGridView();
             this.lblTitleSave = new System.Windows.Forms.Label();
             this.lblTitleXoa = new System.Windows.Forms.Label();
-            this.btnClear = new System.Windows.Forms.PictureBox();
+            this.btnXoaTrang = new System.Windows.Forms.PictureBox();
             this.lblTitleClear = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.PictureBox();
+            this.cbbTacGia = new System.Windows.Forms.ComboBox();
+            this.MaSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaTG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNXB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaTL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.btnThem)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSave)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLuu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQLSach)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnClear)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnXoaTrang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.SuspendLayout();
             // 
@@ -206,86 +213,68 @@ namespace Bai_Tap_Lon_Winform
             this.panel7.Size = new System.Drawing.Size(287, 1);
             this.panel7.TabIndex = 3;
             // 
-            // comboBox1
+            // cbbNhaXuatBan
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "a",
-            "b",
-            "c"});
-            this.comboBox1.Location = new System.Drawing.Point(526, 84);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(287, 24);
-            this.comboBox1.TabIndex = 4;
+            this.cbbNhaXuatBan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.cbbNhaXuatBan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbbNhaXuatBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbNhaXuatBan.FormattingEnabled = true;
+            this.cbbNhaXuatBan.Location = new System.Drawing.Point(526, 84);
+            this.cbbNhaXuatBan.Name = "cbbNhaXuatBan";
+            this.cbbNhaXuatBan.Size = new System.Drawing.Size(287, 24);
+            this.cbbNhaXuatBan.TabIndex = 4;
             // 
-            // comboBox2
+            // cbbTheLoai
             // 
-            this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.ItemHeight = 16;
-            this.comboBox2.Items.AddRange(new object[] {
-            "v",
-            "f",
-            "g"});
-            this.comboBox2.Location = new System.Drawing.Point(526, 160);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(287, 24);
-            this.comboBox2.TabIndex = 4;
+            this.cbbTheLoai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.cbbTheLoai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbbTheLoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbTheLoai.FormattingEnabled = true;
+            this.cbbTheLoai.ItemHeight = 16;
+            this.cbbTheLoai.Location = new System.Drawing.Point(526, 160);
+            this.cbbTheLoai.Name = "cbbTheLoai";
+            this.cbbTheLoai.Size = new System.Drawing.Size(287, 24);
+            this.cbbTheLoai.TabIndex = 4;
             // 
-            // textBox1
+            // txtMaSach
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(53, 78);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(287, 15);
-            this.textBox1.TabIndex = 5;
+            this.txtMaSach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtMaSach.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMaSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaSach.Location = new System.Drawing.Point(53, 78);
+            this.txtMaSach.Name = "txtMaSach";
+            this.txtMaSach.Size = new System.Drawing.Size(287, 15);
+            this.txtMaSach.TabIndex = 5;
             // 
-            // textBox2
+            // txtTenSach
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(53, 141);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(287, 15);
-            this.textBox2.TabIndex = 5;
+            this.txtTenSach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtTenSach.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTenSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenSach.Location = new System.Drawing.Point(53, 141);
+            this.txtTenSach.Name = "txtTenSach";
+            this.txtTenSach.Size = new System.Drawing.Size(287, 15);
+            this.txtTenSach.TabIndex = 5;
             // 
-            // textBox3
+            // txtSoLuong
             // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(53, 204);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(287, 15);
-            this.textBox3.TabIndex = 5;
+            this.txtSoLuong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtSoLuong.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSoLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoLuong.Location = new System.Drawing.Point(53, 271);
+            this.txtSoLuong.Name = "txtSoLuong";
+            this.txtSoLuong.Size = new System.Drawing.Size(287, 15);
+            this.txtSoLuong.TabIndex = 5;
             // 
-            // textBox4
+            // txtDonGia
             // 
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(53, 271);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(287, 15);
-            this.textBox4.TabIndex = 5;
-            // 
-            // textBox5
-            // 
-            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(526, 257);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(287, 15);
-            this.textBox5.TabIndex = 5;
+            this.txtDonGia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtDonGia.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDonGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDonGia.Location = new System.Drawing.Point(526, 257);
+            this.txtDonGia.Name = "txtDonGia";
+            this.txtDonGia.Size = new System.Drawing.Size(287, 15);
+            this.txtDonGia.TabIndex = 5;
             // 
             // btnThem
             // 
@@ -301,31 +290,33 @@ namespace Bai_Tap_Lon_Winform
             this.btnThem.MouseLeave += new System.EventHandler(this.btnThem_MouseLeave);
             this.btnThem.MouseHover += new System.EventHandler(this.btnThem_MouseHover);
             // 
-            // btnSave
+            // btnLuu
             // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.Location = new System.Drawing.Point(938, 127);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(50, 37);
-            this.btnSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnSave.TabIndex = 6;
-            this.btnSave.TabStop = false;
-            this.btnSave.MouseLeave += new System.EventHandler(this.btnSave_MouseLeave);
-            this.btnSave.MouseHover += new System.EventHandler(this.btnSave_MouseHover);
+            this.btnLuu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
+            this.btnLuu.Location = new System.Drawing.Point(938, 127);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(50, 37);
+            this.btnLuu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnLuu.TabIndex = 6;
+            this.btnLuu.TabStop = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            this.btnLuu.MouseLeave += new System.EventHandler(this.btnSave_MouseLeave);
+            this.btnLuu.MouseHover += new System.EventHandler(this.btnSave_MouseHover);
             // 
-            // btnDelete
+            // btnXoa
             // 
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(938, 191);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(50, 37);
-            this.btnDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnDelete.TabIndex = 6;
-            this.btnDelete.TabStop = false;
-            this.btnDelete.MouseLeave += new System.EventHandler(this.btnDelete_MouseLeave);
-            this.btnDelete.MouseHover += new System.EventHandler(this.btnDelete_MouseHover);
+            this.btnXoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
+            this.btnXoa.Location = new System.Drawing.Point(938, 191);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(50, 37);
+            this.btnXoa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnXoa.TabIndex = 6;
+            this.btnXoa.TabStop = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            this.btnXoa.MouseLeave += new System.EventHandler(this.btnDelete_MouseLeave);
+            this.btnXoa.MouseHover += new System.EventHandler(this.btnDelete_MouseHover);
             // 
             // lblTitleThem
             // 
@@ -342,10 +333,21 @@ namespace Bai_Tap_Lon_Winform
             // 
             this.dgvQLSach.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgvQLSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvQLSach.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaSach,
+            this.TenSach,
+            this.MaTG,
+            this.MaNXB,
+            this.MaTL,
+            this.SoLuong,
+            this.DonGia});
             this.dgvQLSach.Location = new System.Drawing.Point(43, 319);
             this.dgvQLSach.Name = "dgvQLSach";
-            this.dgvQLSach.Size = new System.Drawing.Size(801, 267);
+            this.dgvQLSach.ReadOnly = true;
+            this.dgvQLSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvQLSach.Size = new System.Drawing.Size(800, 267);
             this.dgvQLSach.TabIndex = 8;
+            this.dgvQLSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvQLSach_CellClick);
             // 
             // lblTitleSave
             // 
@@ -369,18 +371,19 @@ namespace Bai_Tap_Lon_Winform
             this.lblTitleXoa.Text = "Xóa";
             this.lblTitleXoa.Visible = false;
             // 
-            // btnClear
+            // btnXoaTrang
             // 
-            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnClear.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.Image")));
-            this.btnClear.Location = new System.Drawing.Point(938, 247);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(50, 37);
-            this.btnClear.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnClear.TabIndex = 6;
-            this.btnClear.TabStop = false;
-            this.btnClear.MouseLeave += new System.EventHandler(this.btnClear_MouseLeave);
-            this.btnClear.MouseHover += new System.EventHandler(this.btnClear_MouseHover);
+            this.btnXoaTrang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnXoaTrang.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaTrang.Image")));
+            this.btnXoaTrang.Location = new System.Drawing.Point(938, 247);
+            this.btnXoaTrang.Name = "btnXoaTrang";
+            this.btnXoaTrang.Size = new System.Drawing.Size(50, 37);
+            this.btnXoaTrang.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnXoaTrang.TabIndex = 6;
+            this.btnXoaTrang.TabStop = false;
+            this.btnXoaTrang.Click += new System.EventHandler(this.btnXoaTrang_Click);
+            this.btnXoaTrang.MouseLeave += new System.EventHandler(this.btnClear_MouseLeave);
+            this.btnXoaTrang.MouseHover += new System.EventHandler(this.btnClear_MouseHover);
             // 
             // lblTitleClear
             // 
@@ -404,6 +407,60 @@ namespace Bai_Tap_Lon_Winform
             this.btnExit.TabStop = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // cbbTacGia
+            // 
+            this.cbbTacGia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.cbbTacGia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbbTacGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbTacGia.FormattingEnabled = true;
+            this.cbbTacGia.Location = new System.Drawing.Point(53, 193);
+            this.cbbTacGia.Name = "cbbTacGia";
+            this.cbbTacGia.Size = new System.Drawing.Size(287, 24);
+            this.cbbTacGia.TabIndex = 4;
+            // 
+            // MaSach
+            // 
+            this.MaSach.DataPropertyName = "MaSach";
+            this.MaSach.HeaderText = "Mã Sách";
+            this.MaSach.Name = "MaSach";
+            // 
+            // TenSach
+            // 
+            this.TenSach.DataPropertyName = "TenSach";
+            this.TenSach.HeaderText = "Tên Sách";
+            this.TenSach.Name = "TenSach";
+            this.TenSach.Width = 150;
+            // 
+            // MaTG
+            // 
+            this.MaTG.DataPropertyName = "MaTG";
+            this.MaTG.HeaderText = "Mã Tác Giả";
+            this.MaTG.Name = "MaTG";
+            // 
+            // MaNXB
+            // 
+            this.MaNXB.DataPropertyName = "MaNXB";
+            this.MaNXB.HeaderText = "Mã NXB";
+            this.MaNXB.Name = "MaNXB";
+            // 
+            // MaTL
+            // 
+            this.MaTL.DataPropertyName = "MaTL";
+            this.MaTL.HeaderText = "Mã Thể Loại";
+            this.MaTL.Name = "MaTL";
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.DataPropertyName = "SoLuong";
+            this.SoLuong.HeaderText = "Số Lượng";
+            this.SoLuong.Name = "SoLuong";
+            // 
+            // DonGia
+            // 
+            this.DonGia.DataPropertyName = "DonGia";
+            this.DonGia.HeaderText = "Đơn Giá";
+            this.DonGia.Name = "DonGia";
+            // 
             // frmThemSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -416,17 +473,17 @@ namespace Bai_Tap_Lon_Winform
             this.Controls.Add(this.lblTitleXoa);
             this.Controls.Add(this.lblTitleSave);
             this.Controls.Add(this.lblTitleThem);
-            this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnXoaTrang);
+            this.Controls.Add(this.btnXoa);
+            this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnThem);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.txtDonGia);
+            this.Controls.Add(this.txtSoLuong);
+            this.Controls.Add(this.txtTenSach);
+            this.Controls.Add(this.txtMaSach);
+            this.Controls.Add(this.cbbTheLoai);
+            this.Controls.Add(this.cbbTacGia);
+            this.Controls.Add(this.cbbNhaXuatBan);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
@@ -448,11 +505,12 @@ namespace Bai_Tap_Lon_Winform
             this.Name = "frmThemSach";
             this.Text = "frmThemSach";
             this.Load += new System.EventHandler(this.frmThemSach_Load);
+            this.Shown += new System.EventHandler(this.frmThemSach_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.btnThem)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSave)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLuu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnXoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQLSach)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnClear)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnXoaTrang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -476,22 +534,29 @@ namespace Bai_Tap_Lon_Winform
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.ComboBox cbbNhaXuatBan;
+        private System.Windows.Forms.ComboBox cbbTheLoai;
+        private System.Windows.Forms.TextBox txtMaSach;
+        private System.Windows.Forms.TextBox txtTenSach;
+        private System.Windows.Forms.TextBox txtSoLuong;
+        private System.Windows.Forms.TextBox txtDonGia;
         private System.Windows.Forms.PictureBox btnThem;
-        private System.Windows.Forms.PictureBox btnSave;
-        private System.Windows.Forms.PictureBox btnDelete;
+        private System.Windows.Forms.PictureBox btnLuu;
+        private System.Windows.Forms.PictureBox btnXoa;
         private System.Windows.Forms.Label lblTitleThem;
         private System.Windows.Forms.DataGridView dgvQLSach;
         private System.Windows.Forms.Label lblTitleSave;
         private System.Windows.Forms.Label lblTitleXoa;
-        private System.Windows.Forms.PictureBox btnClear;
+        private System.Windows.Forms.PictureBox btnXoaTrang;
         private System.Windows.Forms.Label lblTitleClear;
         private System.Windows.Forms.PictureBox btnExit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaSach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenSach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaTG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaNXB;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaTL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
+        private System.Windows.Forms.ComboBox cbbTacGia;
     }
 }

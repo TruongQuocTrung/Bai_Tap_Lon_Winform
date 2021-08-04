@@ -16,11 +16,8 @@ namespace Bai_Tap_Lon_Winform
         // Lấy dữ liệu từ bảng nhân viên
         public DataTable getDataDGVNhanVien() 
         {
-            SqlConnection connection = db.getConnect();
             String sql = "SELECT * FROM NhanVien";
-            DataTable table = new DataTable();
-            SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
-            adapter.Fill(table);
+            DataTable table = db.getTable(sql);
             return table;
         }
         // thêm dữ liệu vào bảng nhân viên
@@ -52,6 +49,13 @@ namespace Bai_Tap_Lon_Winform
                 MessageBox.Show("Lỗi khi thêm tài khoản", "Có lỗi không xác định", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return false;
+        }
+        // tìm kiếm
+        public DataTable findNhanVien(String MaNV)
+        {
+            String sql = "SELECT * FROM NhanVien WHERE MaNV = '" + MaNV + "'";
+            DataTable table = db.getTable(sql);
+            return table;
         }
     }
 }
