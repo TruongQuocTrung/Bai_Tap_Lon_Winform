@@ -22,7 +22,6 @@ namespace Bai_Tap_Lon_Winform
         {
             
             dgvQLSach.DataSource = dao.getDGVQLSach();
-            dgvQLSach.ClearSelection();
         }
         public void CBBTacGia()
         {
@@ -98,6 +97,11 @@ namespace Bai_Tap_Lon_Winform
             CBBNXB();
             CBBTacGia();
             CBBTheLoai();
+            dgvQLSach.ClearSelection();
+        }
+
+        private void frmThemSach_Shown(object sender, EventArgs e)
+        {
             dgvQLSach.ClearSelection();
         }
     }

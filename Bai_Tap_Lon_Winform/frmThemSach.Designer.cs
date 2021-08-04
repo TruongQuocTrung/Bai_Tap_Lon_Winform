@@ -501,6 +501,7 @@ namespace Bai_Tap_Lon_Winform
             this.Name = "frmThemSach";
             this.Text = "frmThemSach";
             this.Load += new System.EventHandler(this.frmThemSach_Load);
+            this.Shown += new System.EventHandler(this.frmThemSach_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.btnThem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLuu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnXoa)).EndInit();
