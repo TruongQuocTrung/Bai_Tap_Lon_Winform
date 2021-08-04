@@ -50,5 +50,12 @@ namespace Bai_Tap_Lon_Winform
             }
             return false;
         }
+        // tìm kiếm
+        public DataTable findNhanVien(String MaNV)
+        {
+            String sql = "SELECT * FROM NhanVien WHERE MaNV = '" + MaNV + "'";
+            DataTable table = db.getTable(sql);
+            return table;
+        }
     }
 }

@@ -118,6 +118,19 @@ namespace Bai_Tap_Lon_Winform
                 btnXoaTatCa.Enabled = false;
             }
         }
+        public void TimKiem()
+        {
+            String MaNV = txtTimKiem.Text;
+            if (MaNV.Trim().Length >0)
+            {
+                dgvNhanVien.DataSource = dao.findNhanVien(MaNV);
+                dgvNhanVien.ClearSelection();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại mã nhân viên!", "Lỗi dữ liệu đầu vào", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -152,6 +165,11 @@ namespace Bai_Tap_Lon_Winform
         private void frmThemNhanVien_Shown(object sender, EventArgs e)
         {
             dgvNhanVien.ClearSelection();
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            TimKiem();
         }
     }
 }
