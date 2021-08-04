@@ -13,8 +13,8 @@ namespace Bai_Tap_Lon_Winform
         public SqlConnection getConnect()
         {
             SqlConnection connection = new SqlConnection();
-           //connection.ConnectionString = @"Data Source=TRUONGQUOCTRUNG\SQLEXPRESS;Initial Catalog=QuanLyNhaSach;Persist Security Info=True;User ID=sa;Password=123";
-            connection.ConnectionString = @"Data Source=DESKTOP-QKORJ1O;Initial Catalog=QuanLyNhaSach;Persist Security Info=True;User ID=sa;Password=123";
+            connection.ConnectionString = @"Data Source=TRUONGQUOCTRUNG\SQLEXPRESS;Initial Catalog=QuanLyNhaSach;Persist Security Info=True;User ID=sa;Password=123";
+            //connection.ConnectionString = @"Data Source=DESKTOP-QKORJ1O;Initial Catalog=QuanLyNhaSach;Persist Security Info=True;User ID=sa;Password=123";
             return connection;
         }
 
