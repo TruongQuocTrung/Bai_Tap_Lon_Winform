@@ -341,6 +341,8 @@ namespace Bai_Tap_Lon_Winform
             this.DonGia});
             this.dgvQLSach.Location = new System.Drawing.Point(43, 319);
             this.dgvQLSach.Name = "dgvQLSach";
+            this.dgvQLSach.ReadOnly = true;
+            this.dgvQLSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvQLSach.Size = new System.Drawing.Size(800, 267);
             this.dgvQLSach.TabIndex = 8;
             // 

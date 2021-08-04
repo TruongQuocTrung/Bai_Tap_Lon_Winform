@@ -13,11 +13,35 @@ namespace Bai_Tap_Lon_Winform
 {
     public partial class frmThemSach : Form
     {
+        DAOSach dao = new DAOSach();
         public frmThemSach()
         {
             InitializeComponent();
         }
-
+        public void HienThi()
+        {
+            
+            dgvQLSach.DataSource = dao.getDGVQLSach();
+            dgvQLSach.ClearSelection();
+        }
+        public void CBBTacGia()
+        {
+            cbbTacGia.DataSource = dao.getCBBTacGia();
+            cbbTacGia.DisplayMember = "TenTG";
+            cbbTacGia.ValueMember = "MaTG";
+        }
+        public void CBBTheLoai()
+        {
+            cbbTheLoai.DataSource = dao.getCBBTheLoai();
+            cbbTheLoai.DisplayMember = "TenTL";
+            cbbTheLoai.ValueMember = "MaTL";
+        }
+        public void CBBNXB()
+        {
+            cbbNhaXuatBan.DataSource = dao.getCBBNXB();
+            cbbNhaXuatBan.DisplayMember = "TenNXB";
+            cbbNhaXuatBan.ValueMember = "MaNXB";
+        }
         private void btnThem_MouseHover(object sender, EventArgs e)
         {
             lblTitleThem.Visible = true;
@@ -69,7 +93,10 @@ namespace Bai_Tap_Lon_Winform
         }
         private void frmThemSach_Load(object sender, EventArgs e)
         {
-           
+            CBBNXB();
+            CBBTacGia();
+            CBBTheLoai();
+            HienThi();
         }
     }
 }

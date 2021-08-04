@@ -18,9 +18,7 @@ namespace Bai_Tap_Lon_Winform
         {
             SqlConnection connection = db.getConnect();
             String sql = "SELECT * FROM NhanVien";
-            DataTable table = new DataTable();
-            SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
-            adapter.Fill(table);
+            DataTable table = db.getTable(sql);
             return table;
         }
         // thêm dữ liệu vào bảng nhân viên

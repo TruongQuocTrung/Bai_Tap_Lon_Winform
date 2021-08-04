@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAONhanVien.cs" />
+    <Compile Include="DAOSach.cs" />
     <Compile Include="DataProcessing.cs" />
     <Compile Include="DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
