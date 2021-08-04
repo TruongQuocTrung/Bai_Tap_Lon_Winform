@@ -35,8 +35,8 @@ namespace Bai_Tap_Lon_Winform
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnDangNhap = new System.Windows.Forms.Button();
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtTenDN = new System.Windows.Forms.TextBox();
+            this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -98,33 +98,33 @@ namespace Bai_Tap_Lon_Winform
             this.btnDangNhap.UseVisualStyleBackColor = false;
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
-            // txtUsername
+            // txtTenDN
             // 
-            this.txtUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(39)))));
-            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.ForeColor = System.Drawing.Color.White;
-            this.txtUsername.Location = new System.Drawing.Point(67, 169);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(183, 17);
-            this.txtUsername.TabIndex = 6;
-            this.txtUsername.Text = "Username";
-            this.txtUsername.Click += new System.EventHandler(this.txtUsername_Click);
+            this.txtTenDN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(39)))));
+            this.txtTenDN.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTenDN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenDN.ForeColor = System.Drawing.Color.White;
+            this.txtTenDN.Location = new System.Drawing.Point(67, 169);
+            this.txtTenDN.Name = "txtTenDN";
+            this.txtTenDN.Size = new System.Drawing.Size(183, 17);
+            this.txtTenDN.TabIndex = 6;
+            this.txtTenDN.Text = "Username";
+            this.txtTenDN.Click += new System.EventHandler(this.txtUsername_Click);
             // 
-            // txtPassword
+            // txtMatKhau
             // 
-            this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(39)))));
-            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.ForeColor = System.Drawing.Color.White;
-            this.txtPassword.Location = new System.Drawing.Point(67, 242);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(183, 19);
-            this.txtPassword.TabIndex = 6;
-            this.txtPassword.Tag = "";
-            this.txtPassword.Text = "Password";
-            this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
+            this.txtMatKhau.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(39)))));
+            this.txtMatKhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMatKhau.ForeColor = System.Drawing.Color.White;
+            this.txtMatKhau.Location = new System.Drawing.Point(67, 242);
+            this.txtMatKhau.Name = "txtMatKhau";
+            this.txtMatKhau.PasswordChar = '*';
+            this.txtMatKhau.Size = new System.Drawing.Size(183, 19);
+            this.txtMatKhau.TabIndex = 6;
+            this.txtMatKhau.Tag = "";
+            this.txtMatKhau.Text = "Password";
+            this.txtMatKhau.Click += new System.EventHandler(this.txtPassword_Click);
             // 
             // panel3
             // 
@@ -165,8 +165,8 @@ namespace Bai_Tap_Lon_Winform
             this.ClientSize = new System.Drawing.Size(546, 400);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtUsername);
+            this.Controls.Add(this.txtMatKhau);
+            this.Controls.Add(this.txtTenDN);
             this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel2);
@@ -192,8 +192,8 @@ namespace Bai_Tap_Lon_Winform
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnDangNhap;
-        private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtTenDN;
+        private System.Windows.Forms.TextBox txtMatKhau;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;

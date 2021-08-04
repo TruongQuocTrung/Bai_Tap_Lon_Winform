@@ -13,35 +13,46 @@ namespace Bai_Tap_Lon_Winform
 {
     public partial class frmLogin : Form
     {
-        DataProcessing data = new DataProcessing();
+        DAOLogin dao = new DAOLogin();
+        public static int dem =0;
         public frmLogin()
         {
             InitializeComponent();
         }
-
-        private void btnDangNhap_Click(object sender, EventArgs e)
+        public void DangNhap()
         {
-            if (txtUsername.Text.Trim().Equals("Username") || txtPassword.Text.Trim().Equals("Password")
-                || txtUsername.Text.Trim().Equals("") || txtPassword.Text.Trim().Equals(""))
+            String TenDN = txtTenDN.Text;
+            String MatKhau = txtMatKhau.Text;
+            if(TenDN.Trim().Length >0 && MatKhau.Trim().Length > 0)
             {
-                MessageBox.Show("Bạn Chưa Nhập Đủ Thông Tin", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                String MaNV = dao.getLogin(TenDN,MatKhau);
+                if(MaNV != null)
+                {
+                    this.Hide();
+                    new Form1(TenDN,MatKhau,MaNV).Visible = true;
+                }
+                else
+                {
+                    MessageBox.Show("Kiểm tra lại tên đăng nhập hoặc mật khẩu", "Đăng nhập thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-               
-                data.getLogin(txtUsername.Text.ToString(), txtPassword.Text.ToString(),this);
+                MessageBox.Show("Kiểm tra lại tên đăng nhập hoặc mật khẩu", "Lỗi đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-      
+        private void btnDangNhap_Click(object sender, EventArgs e)
+        {
+            DangNhap();
+        }
         private void txtUsername_Click(object sender, EventArgs e)
         {
-            txtUsername.Clear();
+            txtTenDN.Clear();
         }
 
         private void txtPassword_Click(object sender, EventArgs e)
         {
-            txtPassword.Clear();
+            txtMatKhau.Clear();
         }
 
         

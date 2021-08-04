@@ -69,6 +69,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAOLogin.cs" />
     <Compile Include="DAONhanVien.cs" />
     <Compile Include="DAOSach.cs" />
     <Compile Include="DAONXB.cs" />

@@ -26,6 +26,19 @@ namespace Bai_Tap_Lon_Winform
             da.Fill(table);
             return table;
         }
+        public String getSingleData(String sql)
+        {
+              SqlConnection connection = getConnect();
+              connection.Open();
+              SqlCommand command = new SqlCommand(sql, connection);
+              SqlDataReader dataReader = command.ExecuteReader();
+              while (dataReader.Read())
+              {
+                  return dataReader[0].ToString();
+              }
+              return null;
+              connection.Close();
+        }
         public void getExecuteNonQuery(String sql)
         {
             SqlConnection connect = getConnect();

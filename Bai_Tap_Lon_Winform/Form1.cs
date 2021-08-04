@@ -13,33 +13,25 @@ namespace Bai_Tap_Lon_Winform
 {
     public partial class Form1 : Form
     {
-        DataProcessing data = new DataProcessing();
-       public string tenNV;
-        public string chucVu;
-        public Form1()
+        DAOLogin dao = new DAOLogin();
+        public Form1(String TenDN, String MatKhau,String MaNV)
         {
             InitializeComponent();
             CusDesign();
            // timer1.Enabled = true;
             timer1.Start();
-            DataProcessing data = new DataProcessing();
-            data.AddTenSach(cbbTenSach);
             // lblTime.Text = DateTime.Now.ToLongTimeString();
             //lblDate.Text = DateTime.Now.ToLongTimeString();
-        }
-        public void showTenThuNgan()
-        {
-            lblTenThuNgan.Text = tenNV;
-        }
-        public void phanQuyen()
-        {
-            if (chucVu != "Quản Lý")
+            if(dao.getQuyenDN(TenDN,MatKhau).Equals("Quản Lý"))
+            {
+            }
+            else
             {
                 btnQuanLy.Hide();
                 btnThemNhanVien.Hide();
             }
+            lblTenThuNgan.Text = dao.getTenNV(MaNV);
         }
-
         private void CusDesign()
         {
             panelTuyChonSubMenu.Visible = false;
@@ -185,6 +177,15 @@ namespace Bai_Tap_Lon_Winform
         private void btnAddSach_Click(object sender, EventArgs e)
         {
            
+        }
+
+        private void panelChildForm_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
         }
     }
 }
