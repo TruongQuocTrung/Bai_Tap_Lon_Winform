@@ -300,6 +300,7 @@ namespace Bai_Tap_Lon_Winform
             this.btnLuu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnLuu.TabIndex = 6;
             this.btnLuu.TabStop = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             this.btnLuu.MouseLeave += new System.EventHandler(this.btnSave_MouseLeave);
             this.btnLuu.MouseHover += new System.EventHandler(this.btnSave_MouseHover);
             // 
@@ -313,6 +314,7 @@ namespace Bai_Tap_Lon_Winform
             this.btnXoa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnXoa.TabIndex = 6;
             this.btnXoa.TabStop = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             this.btnXoa.MouseLeave += new System.EventHandler(this.btnDelete_MouseLeave);
             this.btnXoa.MouseHover += new System.EventHandler(this.btnDelete_MouseHover);
             // 
@@ -345,6 +347,7 @@ namespace Bai_Tap_Lon_Winform
             this.dgvQLSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvQLSach.Size = new System.Drawing.Size(800, 267);
             this.dgvQLSach.TabIndex = 8;
+            this.dgvQLSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvQLSach_CellClick);
             // 
             // lblTitleSave
             // 

@@ -20,6 +20,7 @@ namespace Bai_Tap_Lon_Winform
         public void HienThi()
         {
             dgvNhanVien.DataSource = dao.getDataDGVNhanVien();
+            dgvNhanVien.ClearSelection();
         }
         public void XoaTrang()
         {

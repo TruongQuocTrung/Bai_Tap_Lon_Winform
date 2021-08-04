@@ -56,5 +56,17 @@ namespace Bai_Tap_Lon_Winform
             }
             return false;
         }
+        // sửa thông tin sách
+        public void editSach(String MaSach, String TenSach, String MaTG, String MaNXB, String MaTL, int SoLuong, int DonGia)
+        {
+            String sql = "UPDATE Sach SET TenSach = N'" + TenSach + "', MaTG ='" + MaTG + "', MaNXB = '" + MaNXB + "', MaTL = '" + MaTL + "', SoLuong = " + SoLuong + ", DonGia = " + DonGia + " WHERE MaSach = '"+MaSach+"' ";
+            db.getExecuteNonQuery(sql);
+        }
+        // xóa thông tin sách
+        public void deleteSach(String MaSach)
+        {
+            String sql = "DELETE FROM Sach WHERE MaSach = '" + MaSach + "'";
+            db.getExecuteNonQuery(sql);
+        }
     }
 }
