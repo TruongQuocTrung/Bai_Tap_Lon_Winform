@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,9 @@ namespace Bai_Tap_Lon_Winform
 {
     public partial class Form1 : Form
     {
+        DataProcessing data = new DataProcessing();
+       public string tenNV;
+        public string chucVu;
         public Form1()
         {
             InitializeComponent();
@@ -22,8 +26,20 @@ namespace Bai_Tap_Lon_Winform
             data.AddTenSach(cbbTenSach);
             // lblTime.Text = DateTime.Now.ToLongTimeString();
             //lblDate.Text = DateTime.Now.ToLongTimeString();
-            
         }
+        public void showTenThuNgan()
+        {
+            lblTenThuNgan.Text = tenNV;
+        }
+        public void phanQuyen()
+        {
+            if (chucVu != "Quản Lý")
+            {
+                btnQuanLy.Hide();
+                btnThemNhanVien.Hide();
+            }
+        }
+
         private void CusDesign()
         {
             panelTuyChonSubMenu.Visible = false;
@@ -151,7 +167,7 @@ namespace Bai_Tap_Lon_Winform
             txtMaKhachHang.Clear();
             txtMaKhachHang.ForeColor = Color.Black;
         }
-        DataTable TableDonHang = new DataTable("don_hang");
+        DataTable TableDonHang = new DataTable();
 
         private void btnDonHangMoi_Click(object sender, EventArgs e)
         {
@@ -162,8 +178,13 @@ namespace Bai_Tap_Lon_Winform
             txtTongTien.Clear();
             txtTraLai.Clear();
             TableDonHang.Clear();
-            GridViewDonHang.DataSource = GridViewDonHang;
+            GridViewDonHang.DataSource = TableDonHang;
             txtSoHD.Text = DateTime.Now.ToString("ssmmHHddMMyyyy");
+        }
+        DBConnection db = new DBConnection();
+        private void btnAddSach_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

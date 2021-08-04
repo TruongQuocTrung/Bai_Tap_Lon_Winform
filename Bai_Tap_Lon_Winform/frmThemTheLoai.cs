@@ -21,5 +21,58 @@ namespace Bai_Tap_Lon_Winform
         {
             this.Close();
         }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            txtMaTheLoai.Clear();
+            txtTenTheLoai.Clear();
+        }
+        TheLoaiProcessing theLoai = new TheLoaiProcessing();
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            theLoai.addTheLoai(txtMaTheLoai.Text, txtTenTheLoai.Text);
+            frmThemTheLoai_Load(sender, e);
+        }
+
+        private void frmThemTheLoai_Load(object sender, EventArgs e)
+        {
+           
+            DataTable table = new DataTable();
+            table = theLoai.loadDL();
+            GridViewTheLoai.DataSource = table;
+        }
+
+        private void btnCapNhat_Click(object sender, EventArgs e)
+        {
+            theLoai.editTheLoai( txtMaTheLoai.Text, txtTenTheLoai.Text);
+            frmThemTheLoai_Load(sender, e);
+        }
+
+        private void GridViewTheLoai_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = GridViewTheLoai.SelectedCells[0].RowIndex;
+            txtMaTheLoai.Text = GridViewTheLoai.Rows[index].Cells[0].Value.ToString();
+            txtTenTheLoai.Text = GridViewTheLoai.Rows[index].Cells[1].Value.ToString();
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            theLoai.xoaTheLoai(txtMaTheLoai.Text);
+            frmThemTheLoai_Load(sender, e);
+        }
+
+        private void txtTim_Click(object sender, EventArgs e)
+        {
+            txtTim.Clear();
+            txtTim.ForeColor = Color.Black;
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            DataTable table = new DataTable();
+            table = theLoai.timTheLoai(txtTim.Text, GridViewTheLoai);
+            GridViewTheLoai.DataSource = table;
+            frmThemTheLoai_Load(sender, e);
+        }
     }
 }

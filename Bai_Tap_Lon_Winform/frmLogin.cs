@@ -8,10 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Bai_Tap_Lon_Winform
 {
     public partial class frmLogin : Form
     {
+        DataProcessing data = new DataProcessing();
         public frmLogin()
         {
             InitializeComponent();
@@ -19,10 +21,16 @@ namespace Bai_Tap_Lon_Winform
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
-            Form1 f1 = new Form1();
-            f1.Show();
-           
+            if (txtUsername.Text.Trim().Equals("Username") || txtPassword.Text.Trim().Equals("Password")
+                || txtUsername.Text.Trim().Equals("") || txtPassword.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Bạn Chưa Nhập Đủ Thông Tin", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+               
+                data.getLogin(txtUsername.Text.ToString(), txtPassword.Text.ToString(),this);
+            }
         }
 
       

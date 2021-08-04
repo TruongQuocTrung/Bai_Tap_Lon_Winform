@@ -34,19 +34,21 @@ namespace Bai_Tap_Lon_Winform
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnHuy = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.GridViewTheLoai = new System.Windows.Forms.DataGridView();
+            this.btnCapNhat = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.PictureBox();
+            this.txtMaTheLoai = new System.Windows.Forms.TextBox();
+            this.txtTenTheLoai = new System.Windows.Forms.TextBox();
             this.MaTheLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenTheLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtTim = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewTheLoai)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,31 +92,33 @@ namespace Bai_Tap_Lon_Winform
             this.label4.TabIndex = 0;
             this.label4.Text = "Tên thể loại";
             // 
-            // button1
+            // btnHuy
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(281, 366);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(146, 39);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Hủy";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnHuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnHuy.FlatAppearance.BorderSize = 0;
+            this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuy.Location = new System.Drawing.Point(281, 366);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(146, 39);
+            this.btnHuy.TabIndex = 1;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseVisualStyleBackColor = false;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
-            // button2
+            // btnThem
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(96, 366);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(135, 39);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Thêm";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.btnThem.FlatAppearance.BorderSize = 0;
+            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.Location = new System.Drawing.Point(96, 366);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(135, 39);
+            this.btnThem.TabIndex = 1;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // panel1
             // 
@@ -132,54 +136,46 @@ namespace Bai_Tap_Lon_Winform
             this.panel2.Size = new System.Drawing.Size(327, 1);
             this.panel2.TabIndex = 2;
             // 
-            // dataGridView1
+            // GridViewTheLoai
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.GridViewTheLoai.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.GridViewTheLoai.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridViewTheLoai.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaTheLoai,
             this.TenTheLoai});
-            this.dataGridView1.Location = new System.Drawing.Point(540, 153);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(443, 252);
-            this.dataGridView1.TabIndex = 4;
+            this.GridViewTheLoai.Location = new System.Drawing.Point(540, 153);
+            this.GridViewTheLoai.Name = "GridViewTheLoai";
+            this.GridViewTheLoai.Size = new System.Drawing.Size(443, 252);
+            this.GridViewTheLoai.TabIndex = 4;
+            this.GridViewTheLoai.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewTheLoai_CellClick);
             // 
-            // MaTheLoai
+            // btnCapNhat
             // 
-            this.MaTheLoai.HeaderText = "Mã Thể Loại";
-            this.MaTheLoai.Name = "MaTheLoai";
+            this.btnCapNhat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.btnCapNhat.FlatAppearance.BorderSize = 0;
+            this.btnCapNhat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCapNhat.Location = new System.Drawing.Point(543, 461);
+            this.btnCapNhat.Name = "btnCapNhat";
+            this.btnCapNhat.Size = new System.Drawing.Size(146, 39);
+            this.btnCapNhat.TabIndex = 1;
+            this.btnCapNhat.Text = "Cập nhật";
+            this.btnCapNhat.UseVisualStyleBackColor = false;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
-            // TenTheLoai
+            // btnXoa
             // 
-            this.TenTheLoai.HeaderText = "Tên Thể Loại";
-            this.TenTheLoai.Name = "TenTheLoai";
-            this.TenTheLoai.Width = 300;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(543, 461);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(146, 39);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Cập nhật";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(735, 461);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(135, 39);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "Xóa";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnXoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnXoa.FlatAppearance.BorderSize = 0;
+            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.Location = new System.Drawing.Point(735, 461);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(135, 39);
+            this.btnXoa.TabIndex = 1;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnExit
             // 
@@ -192,25 +188,62 @@ namespace Bai_Tap_Lon_Winform
             this.btnExit.TabStop = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // textBox1
+            // txtMaTheLoai
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(100, 188);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(327, 15);
-            this.textBox1.TabIndex = 6;
+            this.txtMaTheLoai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtMaTheLoai.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMaTheLoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaTheLoai.Location = new System.Drawing.Point(100, 188);
+            this.txtMaTheLoai.Name = "txtMaTheLoai";
+            this.txtMaTheLoai.Size = new System.Drawing.Size(327, 15);
+            this.txtMaTheLoai.TabIndex = 6;
             // 
-            // textBox2
+            // txtTenTheLoai
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(96, 287);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(327, 15);
-            this.textBox2.TabIndex = 6;
+            this.txtTenTheLoai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtTenTheLoai.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTenTheLoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenTheLoai.Location = new System.Drawing.Point(96, 287);
+            this.txtTenTheLoai.Name = "txtTenTheLoai";
+            this.txtTenTheLoai.Size = new System.Drawing.Size(327, 15);
+            this.txtTenTheLoai.TabIndex = 6;
+            // 
+            // MaTheLoai
+            // 
+            this.MaTheLoai.DataPropertyName = "MaTL";
+            this.MaTheLoai.HeaderText = "Mã Thể Loại";
+            this.MaTheLoai.Name = "MaTheLoai";
+            // 
+            // TenTheLoai
+            // 
+            this.TenTheLoai.DataPropertyName = "TenTL";
+            this.TenTheLoai.HeaderText = "Tên Thể Loại";
+            this.TenTheLoai.Name = "TenTheLoai";
+            this.TenTheLoai.Width = 300;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(540, 124);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(87, 23);
+            this.btnSearch.TabIndex = 7;
+            this.btnSearch.Text = "Tìm Kiếm";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // txtTim
+            // 
+            this.txtTim.ForeColor = System.Drawing.Color.Silver;
+            this.txtTim.Location = new System.Drawing.Point(643, 126);
+            this.txtTim.Name = "txtTim";
+            this.txtTim.Size = new System.Drawing.Size(340, 20);
+            this.txtTim.TabIndex = 8;
+            this.txtTim.Text = "Mã thể loại";
+            this.txtTim.Click += new System.EventHandler(this.txtTim_Click);
             // 
             // frmThemTheLoai
             // 
@@ -218,16 +251,18 @@ namespace Bai_Tap_Lon_Winform
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(1033, 598);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtTim);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.txtTenTheLoai);
+            this.Controls.Add(this.txtMaTheLoai);
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.GridViewTheLoai);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnXoa);
+            this.Controls.Add(this.btnCapNhat);
+            this.Controls.Add(this.btnThem);
+            this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -237,7 +272,8 @@ namespace Bai_Tap_Lon_Winform
             this.MinimumSize = new System.Drawing.Size(1033, 598);
             this.Name = "frmThemTheLoai";
             this.Text = "frmThemTheLoai";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.frmThemTheLoai_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewTheLoai)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -250,17 +286,19 @@ namespace Bai_Tap_Lon_Winform
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnHuy;
+        private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView GridViewTheLoai;
+        private System.Windows.Forms.Button btnCapNhat;
+        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.PictureBox btnExit;
+        private System.Windows.Forms.TextBox txtMaTheLoai;
+        private System.Windows.Forms.TextBox txtTenTheLoai;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaTheLoai;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenTheLoai;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.PictureBox btnExit;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox txtTim;
     }
 }

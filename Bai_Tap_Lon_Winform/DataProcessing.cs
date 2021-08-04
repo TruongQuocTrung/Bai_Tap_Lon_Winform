@@ -11,20 +11,17 @@ namespace Bai_Tap_Lon_Winform
 {
     class DataProcessing
     {
-        DBConnection dataConn = new DBConnection();
-
+        DBConnection db = new DBConnection();
+       
         public void AddTenSach(ComboBox cbb)  // Thêm sữ liệu vào combobox tên sách
         {
             try
             {
-                DBConnection db = new DBConnection();
-                SqlConnection conn = db.getConnect();
+               SqlConnection conn = db.getConnect();
                 conn.Open();
-                string sql1 = "Select * from Sach";
-                SqlCommand cmd = new SqlCommand(sql1, conn);
-                SqlDataReader reader = cmd.ExecuteReader();
-                DataTable table = new DataTable();
-                table.Load(reader);
+                string sql = "Select * from Sach";
+                db.getExecuteNonQuery(sql);
+                DataTable table = db.getTable(sql);
                 cbb.DataSource = table.Copy();
                 cbb.DisplayMember = "TenSach";
                 cbb.ValueMember = "MaSach";
@@ -34,5 +31,55 @@ namespace Bai_Tap_Lon_Winform
                 MessageBox.Show(ex.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
+
+        
+        public string chucVuNV;
+        public void getLogin(String userName,String passWord, Form fr)
+        {
+           // Kiểm tra tài khoản có trong bảng tài khoản hay không, nếu có thì cho đăng nhập
+            String login = "Select * from ThuNgan where TenDN='" + userName + "' and MatKhau='" + passWord + "'";
+            db.getExecuteNonQuery(login);
+            DataTable table= db.getTable(login);
+           
+            if (table.Rows.Count == 1)   // Tài khoản có tồn tại trong bảng ThuNgan
+            {
+               string maNV = table.Rows[0]["MaNV"].ToString().Trim();
+               Form1 frmMain = new Form1();
+                fr.Hide();  // Ẩn form đăng nhập đi
+                frmMain.Show(); // show form chính lên
+
+                // Lấy tên thu ngân dựa vào MaNV lấy được khi đăng nhập
+                String getName = "Select HoTen,ChucVu from NhanVien Where MaNV='" + maNV + "'";
+                db.getExecuteNonQuery(getName);
+                DataTable tableNhanVien = db.getTable(getName);
+
+                if (table.Rows.Count == 1) // Mã nhân viên có tồn tại trong bảng NhanVien
+                {
+
+                    frmMain.tenNV = tableNhanVien.Rows[0]["HoTen"].ToString().Trim();
+                    frmMain.showTenThuNgan();
+                    //Lấy ra chức vụ để phân quyền trong form chính
+                    chucVuNV = tableNhanVien.Rows[0]["ChucVu"].ToString().Trim();
+                    
+                        frmMain.chucVu=chucVuNV;
+                        frmMain.phanQuyen();       
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy tên nhân viên");
+                   
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không Thể Đăng Nhập Vui lòng Liên Hệ Quản Lý Hỗ trợ !", "" +
+                    "Lost Login!");
+               
+            } 
+        }
+        DataTable TableDonHang = new DataTable();
+
+        
+        
     }
 }

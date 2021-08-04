@@ -67,14 +67,7 @@ namespace Bai_Tap_Lon_Winform
             this.btnThanhToan = new System.Windows.Forms.Button();
             this.btnDonHangMoi = new System.Windows.Forms.Button();
             this.GridViewDonHang = new System.Windows.Forms.DataGridView();
-            this.MaHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SLTon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SLBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GiamGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblTenThuNgan = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtMaKhachHang = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -85,6 +78,13 @@ namespace Bai_Tap_Lon_Winform
             this.btnAddSach = new System.Windows.Forms.Button();
             this.cbbTenSach = new System.Windows.Forms.ComboBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.MaSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SLBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiamGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelSideMenu.SuspendLayout();
             this.panelChungTuSubMenu.SuspendLayout();
             this.panelTuyChonSubMenu.SuspendLayout();
@@ -454,7 +454,7 @@ namespace Bai_Tap_Lon_Winform
             this.panelChildForm.Controls.Add(this.btnThanhToan);
             this.panelChildForm.Controls.Add(this.btnDonHangMoi);
             this.panelChildForm.Controls.Add(this.GridViewDonHang);
-            this.panelChildForm.Controls.Add(this.label5);
+            this.panelChildForm.Controls.Add(this.lblTenThuNgan);
             this.panelChildForm.Controls.Add(this.label4);
             this.panelChildForm.Controls.Add(this.txtMaKhachHang);
             this.panelChildForm.Controls.Add(this.label3);
@@ -502,6 +502,7 @@ namespace Bai_Tap_Lon_Winform
             this.txtSLHang.Name = "txtSLHang";
             this.txtSLHang.Size = new System.Drawing.Size(169, 22);
             this.txtSLHang.TabIndex = 12;
+            this.txtSLHang.Text = "0";
             // 
             // txtTenKH
             // 
@@ -611,9 +612,9 @@ namespace Bai_Tap_Lon_Winform
             // 
             this.GridViewDonHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridViewDonHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaHang,
-            this.TenHang,
-            this.SLTon,
+            this.MaSach,
+            this.TenSach,
+            this.SoLuong,
             this.SLBan,
             this.DonGia,
             this.GiamGia,
@@ -623,51 +624,15 @@ namespace Bai_Tap_Lon_Winform
             this.GridViewDonHang.Size = new System.Drawing.Size(842, 353);
             this.GridViewDonHang.TabIndex = 9;
             // 
-            // MaHang
+            // lblTenThuNgan
             // 
-            this.MaHang.HeaderText = "Mã Hàng";
-            this.MaHang.Name = "MaHang";
-            // 
-            // TenHang
-            // 
-            this.TenHang.HeaderText = "Tên Hàng";
-            this.TenHang.Name = "TenHang";
-            this.TenHang.Width = 200;
-            // 
-            // SLTon
-            // 
-            this.SLTon.HeaderText = "SL Tồn";
-            this.SLTon.Name = "SLTon";
-            // 
-            // SLBan
-            // 
-            this.SLBan.HeaderText = "SL Bán";
-            this.SLBan.Name = "SLBan";
-            // 
-            // DonGia
-            // 
-            this.DonGia.HeaderText = "Đơn Giá";
-            this.DonGia.Name = "DonGia";
-            // 
-            // GiamGia
-            // 
-            this.GiamGia.HeaderText = "Giảm Giá (%)";
-            this.GiamGia.Name = "GiamGia";
-            // 
-            // ThanhTien
-            // 
-            this.ThanhTien.HeaderText = "Thành Tiền";
-            this.ThanhTien.Name = "ThanhTien";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(129, 14);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 16);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "label5";
+            this.lblTenThuNgan.AutoSize = true;
+            this.lblTenThuNgan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTenThuNgan.Location = new System.Drawing.Point(129, 14);
+            this.lblTenThuNgan.Name = "lblTenThuNgan";
+            this.lblTenThuNgan.Size = new System.Drawing.Size(45, 16);
+            this.lblTenThuNgan.TabIndex = 8;
+            this.lblTenThuNgan.Text = "label5";
             // 
             // label4
             // 
@@ -750,6 +715,7 @@ namespace Bai_Tap_Lon_Winform
             this.btnAddSach.TabIndex = 1;
             this.btnAddSach.Text = "Thêm";
             this.btnAddSach.UseVisualStyleBackColor = false;
+            this.btnAddSach.Click += new System.EventHandler(this.btnAddSach_Click);
             // 
             // cbbTenSach
             // 
@@ -764,6 +730,49 @@ namespace Bai_Tap_Lon_Winform
             // 
             this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // MaSach
+            // 
+            this.MaSach.DataPropertyName = "MaSach";
+            this.MaSach.HeaderText = "Mã Hàng";
+            this.MaSach.Name = "MaSach";
+            // 
+            // TenSach
+            // 
+            this.TenSach.DataPropertyName = "TenSach";
+            this.TenSach.HeaderText = "Tên Hàng";
+            this.TenSach.Name = "TenSach";
+            this.TenSach.Width = 200;
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.DataPropertyName = "SoLuong";
+            this.SoLuong.HeaderText = "SL Tồn";
+            this.SoLuong.Name = "SoLuong";
+            // 
+            // SLBan
+            // 
+            this.SLBan.DataPropertyName = "SLBan";
+            this.SLBan.HeaderText = "SL Bán";
+            this.SLBan.Name = "SLBan";
+            // 
+            // DonGia
+            // 
+            this.DonGia.DataPropertyName = "DonGia";
+            this.DonGia.HeaderText = "Đơn Giá";
+            this.DonGia.Name = "DonGia";
+            // 
+            // GiamGia
+            // 
+            this.GiamGia.DataPropertyName = "GiamGia";
+            this.GiamGia.HeaderText = "Giảm Giá (%)";
+            this.GiamGia.Name = "GiamGia";
+            // 
+            // ThanhTien
+            // 
+            this.ThanhTien.DataPropertyName = "ThanhTien";
+            this.ThanhTien.HeaderText = "Thành Tiền";
+            this.ThanhTien.Name = "ThanhTien";
             // 
             // Form1
             // 
@@ -832,14 +841,7 @@ namespace Bai_Tap_Lon_Winform
         private System.Windows.Forms.Button btnThanhToan;
         private System.Windows.Forms.Button btnDonHangMoi;
         private System.Windows.Forms.DataGridView GridViewDonHang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaHang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenHang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SLTon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SLBan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GiamGia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTien;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblTenThuNgan;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtMaKhachHang;
         private System.Windows.Forms.Label label3;
@@ -849,6 +851,13 @@ namespace Bai_Tap_Lon_Winform
         private System.Windows.Forms.Button btnMaKH;
         private System.Windows.Forms.Button btnAddSach;
         private System.Windows.Forms.ComboBox cbbTenSach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaSach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenSach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SLBan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GiamGia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTien;
     }
 }
 
