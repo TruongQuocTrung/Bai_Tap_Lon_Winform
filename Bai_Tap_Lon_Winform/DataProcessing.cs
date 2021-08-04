@@ -17,8 +17,6 @@ namespace Bai_Tap_Lon_Winform
         {
             try
             {
-               SqlConnection conn = db.getConnect();
-                conn.Open();
                 string sql = "Select * from Sach";
                 db.getExecuteNonQuery(sql);
                 DataTable table = db.getTable(sql);

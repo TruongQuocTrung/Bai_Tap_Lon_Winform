@@ -67,6 +67,13 @@ namespace Bai_Tap_Lon_Winform
             this.btnThanhToan = new System.Windows.Forms.Button();
             this.btnDonHangMoi = new System.Windows.Forms.Button();
             this.GridViewDonHang = new System.Windows.Forms.DataGridView();
+            this.MaSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SLBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiamGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTenThuNgan = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtMaKhachHang = new System.Windows.Forms.TextBox();
@@ -78,13 +85,6 @@ namespace Bai_Tap_Lon_Winform
             this.btnAddSach = new System.Windows.Forms.Button();
             this.cbbTenSach = new System.Windows.Forms.ComboBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.MaSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SLBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GiamGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelSideMenu.SuspendLayout();
             this.panelChungTuSubMenu.SuspendLayout();
             this.panelTuyChonSubMenu.SuspendLayout();
@@ -624,6 +624,49 @@ namespace Bai_Tap_Lon_Winform
             this.GridViewDonHang.Size = new System.Drawing.Size(842, 353);
             this.GridViewDonHang.TabIndex = 9;
             // 
+            // MaSach
+            // 
+            this.MaSach.DataPropertyName = "MaSach";
+            this.MaSach.HeaderText = "Mã Hàng";
+            this.MaSach.Name = "MaSach";
+            // 
+            // TenSach
+            // 
+            this.TenSach.DataPropertyName = "TenSach";
+            this.TenSach.HeaderText = "Tên Hàng";
+            this.TenSach.Name = "TenSach";
+            this.TenSach.Width = 200;
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.DataPropertyName = "SoLuong";
+            this.SoLuong.HeaderText = "SL Tồn";
+            this.SoLuong.Name = "SoLuong";
+            // 
+            // SLBan
+            // 
+            this.SLBan.DataPropertyName = "SLBan";
+            this.SLBan.HeaderText = "SL Bán";
+            this.SLBan.Name = "SLBan";
+            // 
+            // DonGia
+            // 
+            this.DonGia.DataPropertyName = "DonGia";
+            this.DonGia.HeaderText = "Đơn Giá";
+            this.DonGia.Name = "DonGia";
+            // 
+            // GiamGia
+            // 
+            this.GiamGia.DataPropertyName = "GiamGia";
+            this.GiamGia.HeaderText = "Giảm Giá (%)";
+            this.GiamGia.Name = "GiamGia";
+            // 
+            // ThanhTien
+            // 
+            this.ThanhTien.DataPropertyName = "ThanhTien";
+            this.ThanhTien.HeaderText = "Thành Tiền";
+            this.ThanhTien.Name = "ThanhTien";
+            // 
             // lblTenThuNgan
             // 
             this.lblTenThuNgan.AutoSize = true;
@@ -730,49 +773,6 @@ namespace Bai_Tap_Lon_Winform
             // 
             this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // MaSach
-            // 
-            this.MaSach.DataPropertyName = "MaSach";
-            this.MaSach.HeaderText = "Mã Hàng";
-            this.MaSach.Name = "MaSach";
-            // 
-            // TenSach
-            // 
-            this.TenSach.DataPropertyName = "TenSach";
-            this.TenSach.HeaderText = "Tên Hàng";
-            this.TenSach.Name = "TenSach";
-            this.TenSach.Width = 200;
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.DataPropertyName = "SoLuong";
-            this.SoLuong.HeaderText = "SL Tồn";
-            this.SoLuong.Name = "SoLuong";
-            // 
-            // SLBan
-            // 
-            this.SLBan.DataPropertyName = "SLBan";
-            this.SLBan.HeaderText = "SL Bán";
-            this.SLBan.Name = "SLBan";
-            // 
-            // DonGia
-            // 
-            this.DonGia.DataPropertyName = "DonGia";
-            this.DonGia.HeaderText = "Đơn Giá";
-            this.DonGia.Name = "DonGia";
-            // 
-            // GiamGia
-            // 
-            this.GiamGia.DataPropertyName = "GiamGia";
-            this.GiamGia.HeaderText = "Giảm Giá (%)";
-            this.GiamGia.Name = "GiamGia";
-            // 
-            // ThanhTien
-            // 
-            this.ThanhTien.DataPropertyName = "ThanhTien";
-            this.ThanhTien.HeaderText = "Thành Tiền";
-            this.ThanhTien.Name = "ThanhTien";
             // 
             // Form1
             // 
