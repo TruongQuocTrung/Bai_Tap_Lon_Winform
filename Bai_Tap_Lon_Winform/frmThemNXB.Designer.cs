@@ -45,7 +45,7 @@ namespace Bai_Tap_Lon_Winform
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvNXB = new System.Windows.Forms.DataGridView();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -55,8 +55,8 @@ namespace Bai_Tap_Lon_Winform
             this.MaNXB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenNXB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.DienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNXB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.SuspendLayout();
             // 
@@ -190,6 +190,7 @@ namespace Bai_Tap_Lon_Winform
             this.btnHuy.TabIndex = 4;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = false;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnThem
             // 
@@ -203,20 +204,24 @@ namespace Bai_Tap_Lon_Winform
             this.btnThem.TabIndex = 4;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // dataGridView1
+            // dgvNXB
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvNXB.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvNXB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNXB.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaNXB,
             this.TenNXB,
             this.DiaChi,
-            this.SDT});
-            this.dataGridView1.Location = new System.Drawing.Point(359, 186);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(622, 263);
-            this.dataGridView1.TabIndex = 5;
+            this.DienThoai});
+            this.dgvNXB.Location = new System.Drawing.Point(359, 186);
+            this.dgvNXB.Name = "dgvNXB";
+            this.dgvNXB.ReadOnly = true;
+            this.dgvNXB.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvNXB.Size = new System.Drawing.Size(622, 263);
+            this.dgvNXB.TabIndex = 5;
+            this.dgvNXB.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNXB_CellClick);
             // 
             // txtTimKiem
             // 
@@ -237,6 +242,7 @@ namespace Bai_Tap_Lon_Winform
             this.btnTimKiem.TabIndex = 7;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // label6
             // 
@@ -260,6 +266,7 @@ namespace Bai_Tap_Lon_Winform
             this.btnCapNhat.TabIndex = 4;
             this.btnCapNhat.Text = "Cập nhật";
             this.btnCapNhat.UseVisualStyleBackColor = false;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // btnXoa
             // 
@@ -273,6 +280,7 @@ namespace Bai_Tap_Lon_Winform
             this.btnXoa.TabIndex = 4;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnExit
             // 
@@ -290,6 +298,7 @@ namespace Bai_Tap_Lon_Winform
             this.MaNXB.DataPropertyName = "MaNXB";
             this.MaNXB.HeaderText = "Mã NXB";
             this.MaNXB.Name = "MaNXB";
+            this.MaNXB.ReadOnly = true;
             this.MaNXB.Width = 80;
             // 
             // TenNXB
@@ -297,21 +306,24 @@ namespace Bai_Tap_Lon_Winform
             this.TenNXB.DataPropertyName = "TenNXB";
             this.TenNXB.HeaderText = "Tên NXB";
             this.TenNXB.Name = "TenNXB";
+            this.TenNXB.ReadOnly = true;
             this.TenNXB.Width = 150;
             // 
             // DiaChi
             // 
-            this.DiaChi.DataPropertyName = "DiaChi";
+            this.DiaChi.DataPropertyName = "DiaChiNXB";
             this.DiaChi.HeaderText = "Địa Chỉ";
             this.DiaChi.Name = "DiaChi";
+            this.DiaChi.ReadOnly = true;
             this.DiaChi.Width = 200;
             // 
-            // SDT
+            // DienThoai
             // 
-            this.SDT.DataPropertyName = "SDT";
-            this.SDT.HeaderText = "Số Điện Thoại";
-            this.SDT.Name = "SDT";
-            this.SDT.Width = 150;
+            this.DienThoai.DataPropertyName = "DienThoai";
+            this.DienThoai.HeaderText = "Số Điện Thoại";
+            this.DienThoai.Name = "DienThoai";
+            this.DienThoai.ReadOnly = true;
+            this.DienThoai.Width = 150;
             // 
             // frmThemNXB
             // 
@@ -322,7 +334,7 @@ namespace Bai_Tap_Lon_Winform
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.txtTimKiem);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvNXB);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnCapNhat);
             this.Controls.Add(this.btnThem);
@@ -346,7 +358,9 @@ namespace Bai_Tap_Lon_Winform
             this.MinimumSize = new System.Drawing.Size(1023, 598);
             this.Name = "frmThemNXB";
             this.Text = "frmThemNXB";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.frmThemNXB_Load);
+            this.Shown += new System.EventHandler(this.frmThemNXB_Shown);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNXB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -370,7 +384,7 @@ namespace Bai_Tap_Lon_Winform
         private System.Windows.Forms.TextBox txtSDT;
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvNXB;
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Label label6;
@@ -380,6 +394,6 @@ namespace Bai_Tap_Lon_Winform
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNXB;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenNXB;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DienThoai;
     }
 }
