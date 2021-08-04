@@ -41,6 +41,65 @@ namespace Bai_Tap_Lon_Winform
             cbbNhaXuatBan.DisplayMember = "TenNXB";
             cbbNhaXuatBan.ValueMember = "MaNXB";
         }
+        public void ThemSach()
+        {
+            String MaSach = txtMaSach.Text;
+            String TenSach = txtTenSach.Text;
+            String MaTG = cbbTacGia.SelectedValue.ToString();
+            String MaNXB = cbbNhaXuatBan.SelectedValue.ToString();
+            String MaTL = cbbTheLoai.SelectedValue.ToString();
+            try
+            {
+                int DonGia = int.Parse(txtDonGia.Text);
+                int SoLuong = int.Parse(txtSoLuong.Text);
+                if(MaSach.Trim().Length >0 && TenSach.Trim().Length > 0 && MaTG.Trim().Length > 0 && MaNXB.Trim().Length > 0 && MaTL.Trim().Length > 0)
+                {
+                    if(DonGia > 0 && SoLuong > 0)
+                    {
+                        DialogResult result = MessageBox.Show("Bạn có muốn thêm sách " + TenSach + " vào hệ thống?", "Chú ý", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (result == DialogResult.Yes)
+                        {
+                            if (dao.addSach(MaSach, TenSach, MaTG, MaNXB, MaTL, SoLuong, DonGia))
+                            {
+                                HienThi();
+                                XoaTrang();
+                                MessageBox.Show("Sách " + TenSach + " đã được thêm vào hệ thống", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Có lỗi sảy ra", "Thao tác thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else
+                        {
+                            XoaTrang();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Số lượng và đơn giá phải là số nguyên dương", "Lỗi dữ liệu đầu vào", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Không được để trống các thông tin sách", "Lỗi dữ liệu đầu vào", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Số lượng và đơn giá phải là số nguyên!", "Lỗi dữ liệu đầu vào", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public void XoaTrang()
+        {
+            txtMaSach.Clear();
+            txtTenSach.Clear();
+            txtDonGia.Clear();
+            txtSoLuong.Clear();
+            cbbNhaXuatBan.Text = "";
+            cbbTacGia.Text = "";
+            cbbTheLoai.Text = "";
+        }
         private void btnThem_MouseHover(object sender, EventArgs e)
         {
             lblTitleThem.Visible = true;
@@ -53,7 +112,7 @@ namespace Bai_Tap_Lon_Winform
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Thông báo", "Bạn chắc chắn muốn thêm", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            ThemSach();
         }
 
         private void btnSave_MouseHover(object sender, EventArgs e)
@@ -97,12 +156,16 @@ namespace Bai_Tap_Lon_Winform
             CBBNXB();
             CBBTacGia();
             CBBTheLoai();
-            dgvQLSach.ClearSelection();
         }
 
         private void frmThemSach_Shown(object sender, EventArgs e)
         {
             dgvQLSach.ClearSelection();
+        }
+
+        private void btnXoaTrang_Click(object sender, EventArgs e)
+        {
+            XoaTrang();
         }
     }
 }

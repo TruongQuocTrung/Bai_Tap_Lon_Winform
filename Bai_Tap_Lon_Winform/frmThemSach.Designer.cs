@@ -378,6 +378,7 @@ namespace Bai_Tap_Lon_Winform
             this.btnXoaTrang.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnXoaTrang.TabIndex = 6;
             this.btnXoaTrang.TabStop = false;
+            this.btnXoaTrang.Click += new System.EventHandler(this.btnXoaTrang_Click);
             this.btnXoaTrang.MouseLeave += new System.EventHandler(this.btnClear_MouseLeave);
             this.btnXoaTrang.MouseHover += new System.EventHandler(this.btnClear_MouseHover);
             // 

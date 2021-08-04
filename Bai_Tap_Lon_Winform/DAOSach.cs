@@ -42,6 +42,19 @@ namespace Bai_Tap_Lon_Winform
             return table;
         }
         // thêm dữ liệu vào bảng Sach
-
+        public bool addSach(String MaSach, String TenSach, String MaTG, String MaNXB, String MaTL, int SoLuong, int DonGia)
+        {
+            try
+            {
+                String sql = "INSERT INTO Sach VALUES ('" + MaSach + "',N'" + TenSach + "','" + MaTG + "','" + MaNXB + "','" + MaTL + "'," + SoLuong + "," + DonGia + ")";
+                db.getExecuteNonQuery(sql);
+                return true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Mã sách đã tồn tại! vui lòng kiểm tra lại", "Lỗi dữ liệu đầu vào", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return false;
+        }
     }
 }
