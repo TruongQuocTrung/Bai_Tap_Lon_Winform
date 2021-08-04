@@ -93,10 +93,12 @@ namespace Bai_Tap_Lon_Winform
         }
         private void frmThemSach_Load(object sender, EventArgs e)
         {
+            
+            HienThi();
             CBBNXB();
             CBBTacGia();
             CBBTheLoai();
-            HienThi();
+            dgvQLSach.ClearSelection();
         }
     }
 }

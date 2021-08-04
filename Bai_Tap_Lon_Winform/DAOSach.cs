@@ -41,5 +41,7 @@ namespace Bai_Tap_Lon_Winform
             DataTable table = db.getTable(sql);
             return table;
         }
+        // thêm dữ liệu vào bảng Sach
+
     }
 }
