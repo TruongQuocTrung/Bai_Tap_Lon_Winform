@@ -157,9 +157,11 @@
     <Compile Include="frmThemTheLoai.Designer.cs">
       <DependentUpon>frmThemTheLoai.cs</DependentUpon>
     </Compile>
+    <Compile Include="PhieuNhapProcessing.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="TacGiaProcessing.cs" />
     <Compile Include="TheLoaiProcessing.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

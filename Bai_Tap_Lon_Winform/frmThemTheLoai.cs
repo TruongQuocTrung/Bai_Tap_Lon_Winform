@@ -36,10 +36,7 @@ namespace Bai_Tap_Lon_Winform
 
         private void frmThemTheLoai_Load(object sender, EventArgs e)
         {
-           
-            DataTable table = new DataTable();
-            table = theLoai.loadDL();
-            GridViewTheLoai.DataSource = table;
+            GridViewTheLoai.DataSource = theLoai.loadDL();
         }
 
         private void btnCapNhat_Click(object sender, EventArgs e)
@@ -69,10 +66,16 @@ namespace Bai_Tap_Lon_Winform
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            DataTable table = new DataTable();
-            table = theLoai.timTheLoai(txtTim.Text, GridViewTheLoai);
-            GridViewTheLoai.DataSource = table;
-            frmThemTheLoai_Load(sender, e);
+           
+            if (txtTim.Text.Trim().Length > 0)
+            {
+                GridViewTheLoai.DataSource = theLoai.timTheLoai(txtTim.Text);
+                GridViewTheLoai.ClearSelection();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại mã thể loại!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

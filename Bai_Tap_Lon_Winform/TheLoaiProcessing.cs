@@ -63,30 +63,13 @@ namespace Bai_Tap_Lon_Winform
 
             }
         }
-        public DataTable timTheLoai(String maTL,DataGridView dgr)
+        public DataTable timTheLoai(String maTL)
         {
-            DataTable dt = new DataTable();
-            try
-            {
-               
-                String sql = "Select * from TheLoai Where MaTL='" + maTL + "'";
-                db.getExecuteNonQuery(sql);
-                 dt= db.getTable(sql);
-                if (dt.Rows.Count == 1)
-                {
-                    dgr.DataSource = dt;
-                }
-                else { MessageBox.Show("Không Tìm Thấy Dữ Liệu. Vui Lòng kiểm tra lại !");
-                }
-                return dt;
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                return dt;
-            }
-           
+            
+                String sql = "SELECT * FROM TheLoai WHERE MaTL = '" + maTL + "'";
+                DataTable table = db.getTable(sql);
+                return table;
+            
         }
     }
 }
