@@ -55,6 +55,25 @@ namespace Bai_Tap_Lon_Winform
             txtMatKhau.Clear();
         }
 
-        
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            txtTenDN.Focus();
+        }
+
+        private void txtTenDN_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtMatKhau.Focus();
+            }
+        }
+
+        private void txtMatKhau_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnDangNhap.Focus();
+            }
+        }
     }
 }

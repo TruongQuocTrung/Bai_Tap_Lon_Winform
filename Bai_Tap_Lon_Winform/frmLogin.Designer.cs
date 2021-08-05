@@ -110,6 +110,7 @@ namespace Bai_Tap_Lon_Winform
             this.txtTenDN.TabIndex = 6;
             this.txtTenDN.Text = "Username";
             this.txtTenDN.Click += new System.EventHandler(this.txtUsername_Click);
+            this.txtTenDN.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTenDN_KeyDown);
             // 
             // txtMatKhau
             // 
@@ -125,6 +126,7 @@ namespace Bai_Tap_Lon_Winform
             this.txtMatKhau.Tag = "";
             this.txtMatKhau.Text = "Password";
             this.txtMatKhau.Click += new System.EventHandler(this.txtPassword_Click);
+            this.txtMatKhau.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMatKhau_KeyDown);
             // 
             // panel3
             // 
@@ -176,6 +178,7 @@ namespace Bai_Tap_Lon_Winform
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace Bai_Tap_Lon_Winform
 {
@@ -15,15 +16,16 @@ namespace Bai_Tap_Lon_Winform
     {
         DAOLogin daolg = new DAOLogin();
         DAOBanSach dao = new DAOBanSach();
-        public Form1(String TenDN, String MatKhau,String MaNV)
+        public Form1()
         {
             InitializeComponent();
             CusDesign();
-           // timer1.Enabled = true;
             timer1.Start();
-            // lblTime.Text = DateTime.Now.ToLongTimeString();
-            //lblDate.Text = DateTime.Now.ToLongTimeString();
-            if(daolg.getQuyenDN(TenDN,MatKhau).Equals("Quản Lý"))
+        }
+        public Form1(String TenDN, String MatKhau,String MaNV):this()
+        {
+           
+            if (daolg.getQuyenDN(TenDN,MatKhau).Equals("Quản Lý"))
             {
             }
             else
@@ -113,6 +115,7 @@ namespace Bai_Tap_Lon_Winform
                     SL = SL + soluong;
                     TT = TT + thanhtien;
                     txtSLHang.Text = SL.ToString();
+                   
                     txtTongTien.Text = (TT - TT * giamgia).ToString();
                     i++;
                 }
@@ -120,7 +123,6 @@ namespace Bai_Tap_Lon_Winform
                 {
                     MessageBox.Show("Chọn số lượng sản phẩm trước khi thêm", "Có lỗi xảy ra", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
             }
         }
         private void CusDesign()
@@ -268,7 +270,7 @@ namespace Bai_Tap_Lon_Winform
         DBConnection db = new DBConnection();
         private void btnAddSach_Click(object sender, EventArgs e)
         {
-            addSachBan();
+           addSachBan();
         }
 
         private void panelChildForm_Paint(object sender, PaintEventArgs e)
@@ -288,22 +290,42 @@ namespace Bai_Tap_Lon_Winform
 
         private void txtKhachDua_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                if (float.Parse(txtKhachDua.Text.Trim()) >= float.Parse(txtTongTien.Text))
+                try
                 {
-                    float tienThua = float.Parse(txtKhachDua.Text.Trim()) - float.Parse(txtTongTien.Text);
-                    txtTraLai.Text = tienThua.ToString();
+                float tienKD = float.Parse(txtKhachDua.Text);
+                float tongTien = float.Parse(txtTongTien.Text);
+                    if (tienKD >= tongTien)
+                    {
+                        float tienThua = tienKD - tongTien;
+                        txtTraLai.Text = tienThua.ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Số tiền khách đưa phải lớn hơn tổng tiền hóa đơn", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
-                else
+                catch (Exception)
                 {
-                    MessageBox.Show("Số tiền khách đưa phải lớn hơn tổng tiền hóa đơn", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Số tiền khách đưa phải là số nguyên dương", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-            }
-            catch (Exception)
+        }
+        public void GETMONEY(string values)
+        {
+            txtKhachDua.Text = values;
+        }
+        private void btnTienMat_Click(object sender, EventArgs e)
+        {
+            if (txtTongTien.Text.Length >0)
             {
-                MessageBox.Show("Số tiền khách đưa phải là số nguyên dương", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                frmTienMat tt = new frmTienMat();
+                tt.tinhtien = new frmTienMat.GETDATATINHTIEN(GETMONEY);
+                tt.Show();
             }
+            else
+            {
+                MessageBox.Show("Phải hoàn thiện thông tin đơn hàng trước", "Lỗi thao tác", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
     }
 }
