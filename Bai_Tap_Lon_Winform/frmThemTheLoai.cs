@@ -66,16 +66,8 @@ namespace Bai_Tap_Lon_Winform
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-           
-            if (txtTim.Text.Trim().Length > 0)
-            {
                 GridViewTheLoai.DataSource = theLoai.timTheLoai(txtTim.Text);
                 GridViewTheLoai.ClearSelection();
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng kiểm tra lại mã thể loại!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
         }
     }
 }

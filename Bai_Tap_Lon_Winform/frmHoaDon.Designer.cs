@@ -32,44 +32,44 @@ namespace Bai_Tap_Lon_Winform
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHoaDon));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnThemHD = new System.Windows.Forms.Button();
+            this.bthHuyHD = new System.Windows.Forms.Button();
+            this.dtpNgayBan = new System.Windows.Forms.DateTimePicker();
+            this.txtMaHoaDon = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnThemCTHD = new System.Windows.Forms.Button();
+            this.btnHuyCTHD = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtKhachHang = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtGiaBan = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtMaSach = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtMaHD = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnXemHD = new System.Windows.Forms.Button();
+            this.btnXemCTHD = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button7 = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.GridviewHD = new System.Windows.Forms.DataGridView();
+            this.btnTim = new System.Windows.Forms.Button();
+            this.txtTim = new System.Windows.Forms.TextBox();
+            this.btnCapNhat = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnIn = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridviewHD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,10 +85,10 @@ namespace Bai_Tap_Lon_Winform
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.btnThemHD);
+            this.groupBox1.Controls.Add(this.bthHuyHD);
+            this.groupBox1.Controls.Add(this.dtpNgayBan);
+            this.groupBox1.Controls.Add(this.txtMaHoaDon);
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -100,50 +100,52 @@ namespace Bai_Tap_Lon_Winform
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hóa đơn";
             // 
-            // button2
+            // btnThemHD
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(183, 112);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(101, 31);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Thêm";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnThemHD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.btnThemHD.FlatAppearance.BorderSize = 0;
+            this.btnThemHD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThemHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemHD.Location = new System.Drawing.Point(183, 112);
+            this.btnThemHD.Name = "btnThemHD";
+            this.btnThemHD.Size = new System.Drawing.Size(101, 31);
+            this.btnThemHD.TabIndex = 4;
+            this.btnThemHD.Text = "Thêm";
+            this.btnThemHD.UseVisualStyleBackColor = false;
+            this.btnThemHD.Click += new System.EventHandler(this.btnThemHD_Click);
             // 
-            // button1
+            // bthHuyHD
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(45, 112);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 31);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Hủy";
-            this.button1.UseVisualStyleBackColor = false;
+            this.bthHuyHD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.bthHuyHD.FlatAppearance.BorderSize = 0;
+            this.bthHuyHD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bthHuyHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bthHuyHD.Location = new System.Drawing.Point(45, 112);
+            this.bthHuyHD.Name = "bthHuyHD";
+            this.bthHuyHD.Size = new System.Drawing.Size(111, 31);
+            this.bthHuyHD.TabIndex = 4;
+            this.bthHuyHD.Text = "Hủy";
+            this.bthHuyHD.UseVisualStyleBackColor = false;
+            this.bthHuyHD.Click += new System.EventHandler(this.bthHuyHD_Click);
             // 
-            // dateTimePicker1
+            // dtpNgayBan
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(124, 68);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(160, 22);
-            this.dateTimePicker1.TabIndex = 3;
+            this.dtpNgayBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNgayBan.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayBan.Location = new System.Drawing.Point(124, 68);
+            this.dtpNgayBan.Name = "dtpNgayBan";
+            this.dtpNgayBan.Size = new System.Drawing.Size(160, 22);
+            this.dtpNgayBan.TabIndex = 3;
             // 
-            // textBox1
+            // txtMaHoaDon
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(124, 27);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(160, 15);
-            this.textBox1.TabIndex = 2;
+            this.txtMaHoaDon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtMaHoaDon.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMaHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaHoaDon.Location = new System.Drawing.Point(124, 27);
+            this.txtMaHoaDon.Name = "txtMaHoaDon";
+            this.txtMaHoaDon.Size = new System.Drawing.Size(160, 15);
+            this.txtMaHoaDon.TabIndex = 2;
             // 
             // panel1
             // 
@@ -175,20 +177,20 @@ namespace Bai_Tap_Lon_Winform
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.btnThemCTHD);
+            this.groupBox2.Controls.Add(this.btnHuyCTHD);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.textBox6);
+            this.groupBox2.Controls.Add(this.txtKhachHang);
             this.groupBox2.Controls.Add(this.panel6);
-            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.txtGiaBan);
             this.groupBox2.Controls.Add(this.panel5);
-            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.txtSoLuong);
             this.groupBox2.Controls.Add(this.panel4);
-            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.txtMaSach);
             this.groupBox2.Controls.Add(this.panel3);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.txtMaHD);
             this.groupBox2.Controls.Add(this.panel2);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
@@ -200,31 +202,33 @@ namespace Bai_Tap_Lon_Winform
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chi tiết hóa đơn";
             // 
-            // button4
+            // btnThemCTHD
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(165, 260);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(119, 31);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Thêm";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnThemCTHD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.btnThemCTHD.FlatAppearance.BorderSize = 0;
+            this.btnThemCTHD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThemCTHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemCTHD.Location = new System.Drawing.Point(165, 260);
+            this.btnThemCTHD.Name = "btnThemCTHD";
+            this.btnThemCTHD.Size = new System.Drawing.Size(119, 31);
+            this.btnThemCTHD.TabIndex = 4;
+            this.btnThemCTHD.Text = "Thêm";
+            this.btnThemCTHD.UseVisualStyleBackColor = false;
+            this.btnThemCTHD.Click += new System.EventHandler(this.btnThemCTHD_Click);
             // 
-            // button3
+            // btnHuyCTHD
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(33, 260);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(107, 31);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Hủy";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnHuyCTHD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnHuyCTHD.FlatAppearance.BorderSize = 0;
+            this.btnHuyCTHD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHuyCTHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuyCTHD.Location = new System.Drawing.Point(33, 260);
+            this.btnHuyCTHD.Name = "btnHuyCTHD";
+            this.btnHuyCTHD.Size = new System.Drawing.Size(107, 31);
+            this.btnHuyCTHD.TabIndex = 4;
+            this.btnHuyCTHD.Text = "Hủy";
+            this.btnHuyCTHD.UseVisualStyleBackColor = false;
+            this.btnHuyCTHD.Click += new System.EventHandler(this.btnHuyCTHD_Click);
             // 
             // label8
             // 
@@ -256,15 +260,15 @@ namespace Bai_Tap_Lon_Winform
             this.label6.TabIndex = 0;
             this.label6.Text = "Số lượng ";
             // 
-            // textBox6
+            // txtKhachHang
             // 
-            this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(122, 225);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(160, 15);
-            this.textBox6.TabIndex = 2;
+            this.txtKhachHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtKhachHang.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKhachHang.Location = new System.Drawing.Point(122, 225);
+            this.txtKhachHang.Name = "txtKhachHang";
+            this.txtKhachHang.Size = new System.Drawing.Size(160, 15);
+            this.txtKhachHang.TabIndex = 2;
             // 
             // panel6
             // 
@@ -274,15 +278,15 @@ namespace Bai_Tap_Lon_Winform
             this.panel6.Size = new System.Drawing.Size(160, 1);
             this.panel6.TabIndex = 1;
             // 
-            // textBox5
+            // txtGiaBan
             // 
-            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(122, 178);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(160, 15);
-            this.textBox5.TabIndex = 2;
+            this.txtGiaBan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtGiaBan.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtGiaBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGiaBan.Location = new System.Drawing.Point(122, 178);
+            this.txtGiaBan.Name = "txtGiaBan";
+            this.txtGiaBan.Size = new System.Drawing.Size(160, 15);
+            this.txtGiaBan.TabIndex = 2;
             // 
             // panel5
             // 
@@ -292,15 +296,15 @@ namespace Bai_Tap_Lon_Winform
             this.panel5.Size = new System.Drawing.Size(160, 1);
             this.panel5.TabIndex = 1;
             // 
-            // textBox4
+            // txtSoLuong
             // 
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(122, 127);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(160, 15);
-            this.textBox4.TabIndex = 2;
+            this.txtSoLuong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtSoLuong.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSoLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoLuong.Location = new System.Drawing.Point(122, 127);
+            this.txtSoLuong.Name = "txtSoLuong";
+            this.txtSoLuong.Size = new System.Drawing.Size(160, 15);
+            this.txtSoLuong.TabIndex = 2;
             // 
             // panel4
             // 
@@ -310,15 +314,15 @@ namespace Bai_Tap_Lon_Winform
             this.panel4.Size = new System.Drawing.Size(160, 1);
             this.panel4.TabIndex = 1;
             // 
-            // textBox3
+            // txtMaSach
             // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(122, 77);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(160, 15);
-            this.textBox3.TabIndex = 2;
+            this.txtMaSach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtMaSach.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMaSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaSach.Location = new System.Drawing.Point(122, 77);
+            this.txtMaSach.Name = "txtMaSach";
+            this.txtMaSach.Size = new System.Drawing.Size(160, 15);
+            this.txtMaSach.TabIndex = 2;
             // 
             // panel3
             // 
@@ -328,15 +332,15 @@ namespace Bai_Tap_Lon_Winform
             this.panel3.Size = new System.Drawing.Size(160, 1);
             this.panel3.TabIndex = 1;
             // 
-            // textBox2
+            // txtMaHD
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(122, 33);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(160, 15);
-            this.textBox2.TabIndex = 2;
+            this.txtMaHD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtMaHD.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMaHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaHD.Location = new System.Drawing.Point(122, 33);
+            this.txtMaHD.Name = "txtMaHD";
+            this.txtMaHD.Size = new System.Drawing.Size(160, 15);
+            this.txtMaHD.TabIndex = 2;
             // 
             // panel2
             // 
@@ -366,31 +370,33 @@ namespace Bai_Tap_Lon_Winform
             this.label4.TabIndex = 0;
             this.label4.Text = "Mã hóa đơn";
             // 
-            // button5
+            // btnXemHD
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(25, 550);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(140, 36);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Xem hóa đơn";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnXemHD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.btnXemHD.FlatAppearance.BorderSize = 0;
+            this.btnXemHD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXemHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXemHD.Location = new System.Drawing.Point(25, 550);
+            this.btnXemHD.Name = "btnXemHD";
+            this.btnXemHD.Size = new System.Drawing.Size(140, 36);
+            this.btnXemHD.TabIndex = 4;
+            this.btnXemHD.Text = "Xem hóa đơn";
+            this.btnXemHD.UseVisualStyleBackColor = false;
+            this.btnXemHD.Click += new System.EventHandler(this.btnXemHD_Click);
             // 
-            // button6
+            // btnXemCTHD
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(190, 550);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(134, 36);
-            this.button6.TabIndex = 4;
-            this.button6.Text = "Xem CT hóa đơn";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnXemCTHD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.btnXemCTHD.FlatAppearance.BorderSize = 0;
+            this.btnXemCTHD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXemCTHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXemCTHD.Location = new System.Drawing.Point(190, 550);
+            this.btnXemCTHD.Name = "btnXemCTHD";
+            this.btnXemCTHD.Size = new System.Drawing.Size(134, 36);
+            this.btnXemCTHD.TabIndex = 4;
+            this.btnXemCTHD.Text = "Xem CT hóa đơn";
+            this.btnXemCTHD.UseVisualStyleBackColor = false;
+            this.btnXemCTHD.Click += new System.EventHandler(this.btnXemCTHD_Click);
             // 
             // label9
             // 
@@ -402,73 +408,78 @@ namespace Bai_Tap_Lon_Winform
             this.label9.TabIndex = 0;
             this.label9.Text = "Thông tin hóa đơn";
             // 
-            // dataGridView1
+            // GridviewHD
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(367, 97);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(639, 420);
-            this.dataGridView1.TabIndex = 5;
+            this.GridviewHD.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.GridviewHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridviewHD.Location = new System.Drawing.Point(367, 97);
+            this.GridviewHD.Name = "GridviewHD";
+            this.GridviewHD.Size = new System.Drawing.Size(639, 420);
+            this.GridviewHD.TabIndex = 5;
+            this.GridviewHD.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridviewHD_CellClick);
             // 
-            // button7
+            // btnTim
             // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(367, 65);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(130, 26);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "Tìm Kiếm";
-            this.button7.UseVisualStyleBackColor = false;
+            this.btnTim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.btnTim.FlatAppearance.BorderSize = 0;
+            this.btnTim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTim.Location = new System.Drawing.Point(367, 65);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(130, 26);
+            this.btnTim.TabIndex = 6;
+            this.btnTim.Text = "Tìm Kiếm";
+            this.btnTim.UseVisualStyleBackColor = false;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
-            // textBox7
+            // txtTim
             // 
-            this.textBox7.Location = new System.Drawing.Point(524, 69);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(482, 20);
-            this.textBox7.TabIndex = 7;
+            this.txtTim.Location = new System.Drawing.Point(524, 69);
+            this.txtTim.Name = "txtTim";
+            this.txtTim.Size = new System.Drawing.Size(482, 20);
+            this.txtTim.TabIndex = 7;
             // 
-            // button8
+            // btnCapNhat
             // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(396, 550);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(118, 36);
-            this.button8.TabIndex = 4;
-            this.button8.Text = "Cập nhật";
-            this.button8.UseVisualStyleBackColor = false;
+            this.btnCapNhat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.btnCapNhat.FlatAppearance.BorderSize = 0;
+            this.btnCapNhat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCapNhat.Location = new System.Drawing.Point(396, 550);
+            this.btnCapNhat.Name = "btnCapNhat";
+            this.btnCapNhat.Size = new System.Drawing.Size(118, 36);
+            this.btnCapNhat.TabIndex = 4;
+            this.btnCapNhat.Text = "Cập nhật";
+            this.btnCapNhat.UseVisualStyleBackColor = false;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
-            // button9
+            // btnXoa
             // 
-            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(559, 550);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(112, 36);
-            this.button9.TabIndex = 4;
-            this.button9.Text = "Xóa";
-            this.button9.UseVisualStyleBackColor = false;
+            this.btnXoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnXoa.FlatAppearance.BorderSize = 0;
+            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.Location = new System.Drawing.Point(559, 550);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(112, 36);
+            this.btnXoa.TabIndex = 4;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // button10
+            // btnIn
             // 
-            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(721, 550);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(112, 36);
-            this.button10.TabIndex = 4;
-            this.button10.Text = "In Hóa đơn";
-            this.button10.UseVisualStyleBackColor = false;
+            this.btnIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.btnIn.FlatAppearance.BorderSize = 0;
+            this.btnIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIn.Location = new System.Drawing.Point(721, 550);
+            this.btnIn.Name = "btnIn";
+            this.btnIn.Size = new System.Drawing.Size(112, 36);
+            this.btnIn.TabIndex = 4;
+            this.btnIn.Text = "In Hóa đơn";
+            this.btnIn.UseVisualStyleBackColor = false;
+            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
             // btnExit
             // 
@@ -488,14 +499,14 @@ namespace Bai_Tap_Lon_Winform
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(1033, 598);
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.txtTim);
+            this.Controls.Add(this.btnTim);
+            this.Controls.Add(this.GridviewHD);
+            this.Controls.Add(this.btnIn);
+            this.Controls.Add(this.btnXoa);
+            this.Controls.Add(this.btnCapNhat);
+            this.Controls.Add(this.btnXemCTHD);
+            this.Controls.Add(this.btnXemHD);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label9);
@@ -509,7 +520,7 @@ namespace Bai_Tap_Lon_Winform
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridviewHD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -520,10 +531,10 @@ namespace Bai_Tap_Lon_Winform
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnThemHD;
+        private System.Windows.Forms.Button bthHuyHD;
+        private System.Windows.Forms.DateTimePicker dtpNgayBan;
+        private System.Windows.Forms.TextBox txtMaHoaDon;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -531,29 +542,29 @@ namespace Bai_Tap_Lon_Winform
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtKhachHang;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtGiaBan;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtSoLuong;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtMaSach;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtMaHD;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnThemCTHD;
+        private System.Windows.Forms.Button btnHuyCTHD;
+        private System.Windows.Forms.Button btnXemHD;
+        private System.Windows.Forms.Button btnXemCTHD;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.DataGridView GridviewHD;
+        private System.Windows.Forms.Button btnTim;
+        private System.Windows.Forms.TextBox txtTim;
+        private System.Windows.Forms.Button btnCapNhat;
+        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Button btnIn;
         private System.Windows.Forms.PictureBox btnExit;
     }
 }

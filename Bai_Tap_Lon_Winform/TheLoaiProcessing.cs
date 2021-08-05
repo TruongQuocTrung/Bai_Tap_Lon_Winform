@@ -68,7 +68,15 @@ namespace Bai_Tap_Lon_Winform
             
                 String sql = "SELECT * FROM TheLoai WHERE MaTL = '" + maTL + "'";
                 DataTable table = db.getTable(sql);
-                return table;
+            if (table.Rows.Count > 0)
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy thể loại này", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return table;
             
         }
     }

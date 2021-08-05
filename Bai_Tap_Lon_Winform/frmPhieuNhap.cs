@@ -78,12 +78,39 @@ namespace Bai_Tap_Lon_Winform
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-
+            if(check==0)
+            {
+                pn.xoaPhieuNhap(txtMaPhieuNhap.Text);
+                txtMaNXB.Clear();
+                txtMaPhieuNhap.Clear();
+                btnXemDSPN_Click(sender, e);
+            }
+            else
+            {
+                pn.xoaCTPN(txtMaPN.Text);
+                txtMaPN.Clear();
+                txtMaSach.Clear();
+                txtSoLuongNhap.Clear();
+                txtGiaNhap.Clear();
+                btnXemDSCTPN_Click(sender, e);
+            }
         }
 
         private void btnTim_Click(object sender, EventArgs e)
         {
-
+            if(check==0)
+            {
+               
+                GridViewPhieuNhap.DataSource = pn.timPhieuNhap(txtTim.Text);
+                GridViewPhieuNhap.ClearSelection();
+                GridViewPhieuNhap.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; 
+            }
+            else
+            {
+                GridViewPhieuNhap.DataSource = pn.timCTPN(txtTim.Text);
+                GridViewPhieuNhap.ClearSelection();
+                GridViewPhieuNhap.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            }
         }
 
         private void GridViewPhieuNhap_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -106,6 +133,11 @@ namespace Bai_Tap_Lon_Winform
                 txtGiaNhap.Text = GridViewPhieuNhap.Rows[index].Cells[3].Value.ToString();
 
             }
+        }
+
+        private void txtMaPhieuNhap_TextChanged(object sender, EventArgs e)
+        {
+            txtMaPN.Text = txtMaPhieuNhap.Text;
         }
     }
 }

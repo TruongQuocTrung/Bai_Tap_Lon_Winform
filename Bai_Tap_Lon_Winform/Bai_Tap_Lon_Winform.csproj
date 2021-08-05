@@ -157,6 +157,8 @@
     <Compile Include="frmThemTheLoai.Designer.cs">
       <DependentUpon>frmThemTheLoai.cs</DependentUpon>
     </Compile>
+    <Compile Include="HoaDonProcessing.cs" />
+    <Compile Include="KhachHangProcessing.cs" />
     <Compile Include="PhieuNhapProcessing.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

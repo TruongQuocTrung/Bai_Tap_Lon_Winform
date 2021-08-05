@@ -15,7 +15,7 @@ namespace Bai_Tap_Lon_Winform
         DBConnection db = new DBConnection();
         public DataTable showPhieuNhap()
         {   
-                string sql= "Select MaPN, NgayNhap,MaNXB  from PhieuNhap";
+                string sql= "Select *  from PhieuNhap";
                 DataTable dt = db.getTable(sql);
                 dt.Columns["MaPN"].ColumnName = "Mã Phiếu Nhập";
                 dt.Columns["NgayNhap"].ColumnName = "Ngày Nhập";
@@ -41,7 +41,7 @@ namespace Bai_Tap_Lon_Winform
         {
             try
             {
-                string sql = "Insert into PhieuNhap Values('" + maPN + "','" + ngayNhap + "','" + maNXB + "')";
+                String sql = "Insert Into PhieuNhap Values('" + maPN + "','" + ngayNhap + "','" + maNXB + "')";
                 db.getExecuteNonQuery(sql);
             }
             catch(Exception ex)
@@ -96,6 +96,74 @@ namespace Bai_Tap_Lon_Winform
                 }
             
         }
-    
+        public void xoaPhieuNhap(string maPN)
+        {
+            try
+            {
+                
+                string sql = "Delete from PhieuNhap Where MaPN='" + maPN + "'";
+                db.getExecuteNonQuery(sql);
+                MessageBox.Show("Xóa Thành Công Phiếu Nhập " + maPN);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi Khi Xóa Phiếu Nhập " + maPN);
+
+            }
+        }
+        public void xoaCTPN(string MaPN)
+        {
+            try
+            {
+               
+                string sql = "Delete from ChiTietPhieuNhap Where MaPN='" +MaPN + "'";
+                db.getExecuteNonQuery(sql);
+                MessageBox.Show("Xóa Thành Công Chi Tiết  Phiếu Nhập " + MaPN);
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi Khi Xóa  Chi Tiết Phiếu Nhập Phiếu Nhập " + MaPN);
+
+            }
+        }
+
+        public DataTable timPhieuNhap(string maPN)
+        {
+            String sql = "Select MaPN,NgayNhap,MaNXB from PhieuNhap Where  MaPN='" + maPN+ "'";
+            DataTable dt = db.getTable(sql);
+            if(dt.Rows.Count==1)
+            {
+                dt.Columns["MaPN"].ColumnName = "Mã Phiếu Nhập";
+                dt.Columns["NgayNhap"].ColumnName = "Ngày Nhập";
+                dt.Columns["MaNXB"].ColumnName = "Mã Nhà Xuất Bản";
+            } 
+            else
+            {
+                MessageBox.Show("Không tìm thấy phiếu nhập","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+            
+            return dt;
+        }
+        public DataTable timCTPN(string MaPN)
+        {
+            String sql = "Select *,(SoLuongNhap * GiaNhap) as Tong from ChiTietPhieuNhap where MaPN = '" + MaPN + "'";
+            DataTable dt = db.getTable(sql);
+            if (dt.Rows.Count == 1)
+            {
+                dt.Columns["MaPN"].ColumnName = "Mã Phiếu Nhập";
+                dt.Columns["MaSach"].ColumnName = "Mã Sách";
+                dt.Columns["SoLuongNhap"].ColumnName = "Số Lượng Nhập";
+                dt.Columns["GiaNhap"].ColumnName = "Giá Nhập";
+                dt.Columns["Tong"].ColumnName = "Tổng Tiền ";
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy chi tiết phiếu nhập", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return dt;
+        }
+
     }
 }

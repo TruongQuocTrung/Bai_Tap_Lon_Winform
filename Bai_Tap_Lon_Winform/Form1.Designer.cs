@@ -79,8 +79,6 @@ namespace Bai_Tap_Lon_Winform
             this.txtMaKhachHang = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.numerSoLuong = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnMaKH = new System.Windows.Forms.Button();
             this.btnAddSach = new System.Windows.Forms.Button();
             this.cbbTenSach = new System.Windows.Forms.ComboBox();
@@ -309,9 +307,10 @@ namespace Bai_Tap_Lon_Winform
             this.btnThemKH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThemKH.Location = new System.Drawing.Point(0, 120);
             this.btnThemKH.Name = "btnThemKH";
+            this.btnThemKH.Padding = new System.Windows.Forms.Padding(0, 0, 25, 0);
             this.btnThemKH.Size = new System.Drawing.Size(167, 40);
             this.btnThemKH.TabIndex = 3;
-            this.btnThemKH.Text = "Quản lý hội viên";
+            this.btnThemKH.Text = "Quản lý KH";
             this.btnThemKH.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThemKH.UseVisualStyleBackColor = false;
             this.btnThemKH.Click += new System.EventHandler(this.btnThemKH_Click);
@@ -459,8 +458,6 @@ namespace Bai_Tap_Lon_Winform
             this.panelChildForm.Controls.Add(this.txtMaKhachHang);
             this.panelChildForm.Controls.Add(this.label3);
             this.panelChildForm.Controls.Add(this.numerSoLuong);
-            this.panelChildForm.Controls.Add(this.label1);
-            this.panelChildForm.Controls.Add(this.dateTimePicker1);
             this.panelChildForm.Controls.Add(this.btnMaKH);
             this.panelChildForm.Controls.Add(this.btnAddSach);
             this.panelChildForm.Controls.Add(this.cbbTenSach);
@@ -716,24 +713,6 @@ namespace Bai_Tap_Lon_Winform
             this.numerSoLuong.Size = new System.Drawing.Size(46, 20);
             this.numerSoLuong.TabIndex = 4;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(687, 49);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 16);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Ngày";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(783, 42);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(203, 22);
-            this.dateTimePicker1.TabIndex = 2;
-            // 
             // btnMaKH
             // 
             this.btnMaKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
@@ -848,8 +827,6 @@ namespace Bai_Tap_Lon_Winform
         private System.Windows.Forms.TextBox txtMaKhachHang;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown numerSoLuong;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button btnMaKH;
         private System.Windows.Forms.Button btnAddSach;
         private System.Windows.Forms.ComboBox cbbTenSach;

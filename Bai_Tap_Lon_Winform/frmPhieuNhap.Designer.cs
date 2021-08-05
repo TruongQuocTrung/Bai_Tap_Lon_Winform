@@ -36,7 +36,6 @@ namespace Bai_Tap_Lon_Winform
             this.btnHuyPhieuNhap = new System.Windows.Forms.Button();
             this.dtpNgayNhap = new System.Windows.Forms.DateTimePicker();
             this.txtMaNXB = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.txtMaPhieuNhap = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -65,6 +64,7 @@ namespace Bai_Tap_Lon_Winform
             this.btnCapNhat = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.PictureBox();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewPhieuNhap)).BeginInit();
@@ -86,9 +86,9 @@ namespace Bai_Tap_Lon_Winform
             this.groupBox1.Controls.Add(this.btnThemPhieuNhap);
             this.groupBox1.Controls.Add(this.btnHuyPhieuNhap);
             this.groupBox1.Controls.Add(this.dtpNgayNhap);
-            this.groupBox1.Controls.Add(this.txtMaNXB);
-            this.groupBox1.Controls.Add(this.panel3);
+            this.groupBox1.Controls.Add(this.panel7);
             this.groupBox1.Controls.Add(this.txtMaPhieuNhap);
+            this.groupBox1.Controls.Add(this.txtMaNXB);
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -131,7 +131,7 @@ namespace Bai_Tap_Lon_Winform
             // 
             // dtpNgayNhap
             // 
-            this.dtpNgayNhap.CustomFormat = "yyyy/MM/dd";
+            this.dtpNgayNhap.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayNhap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgayNhap.Location = new System.Drawing.Point(130, 66);
@@ -144,18 +144,10 @@ namespace Bai_Tap_Lon_Winform
             this.txtMaNXB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtMaNXB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMaNXB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaNXB.Location = new System.Drawing.Point(130, 118);
+            this.txtMaNXB.Location = new System.Drawing.Point(131, 106);
             this.txtMaNXB.Name = "txtMaNXB";
             this.txtMaNXB.Size = new System.Drawing.Size(167, 15);
             this.txtMaNXB.TabIndex = 2;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Red;
-            this.panel3.Location = new System.Drawing.Point(130, 118);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(167, 1);
-            this.panel3.TabIndex = 1;
             // 
             // txtMaPhieuNhap
             // 
@@ -166,6 +158,7 @@ namespace Bai_Tap_Lon_Winform
             this.txtMaPhieuNhap.Name = "txtMaPhieuNhap";
             this.txtMaPhieuNhap.Size = new System.Drawing.Size(167, 15);
             this.txtMaPhieuNhap.TabIndex = 2;
+            this.txtMaPhieuNhap.TextChanged += new System.EventHandler(this.txtMaPhieuNhap_TextChanged);
             // 
             // panel1
             // 
@@ -467,6 +460,14 @@ namespace Bai_Tap_Lon_Winform
             this.btnExit.TabStop = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.Red;
+            this.panel7.Location = new System.Drawing.Point(129, 123);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(167, 1);
+            this.panel7.TabIndex = 1;
+            // 
             // frmPhieuNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -506,7 +507,6 @@ namespace Bai_Tap_Lon_Winform
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DateTimePicker dtpNgayNhap;
         private System.Windows.Forms.TextBox txtMaNXB;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox txtMaPhieuNhap;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
@@ -537,5 +537,6 @@ namespace Bai_Tap_Lon_Winform
         private System.Windows.Forms.Button btnCapNhat;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.PictureBox btnExit;
+        private System.Windows.Forms.Panel panel7;
     }
 }
