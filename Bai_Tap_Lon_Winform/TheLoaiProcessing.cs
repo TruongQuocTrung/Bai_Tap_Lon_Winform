@@ -10,6 +10,7 @@ using System.Data.SqlClient;
 namespace Bai_Tap_Lon_Winform
     
 {
+
     class TheLoaiProcessing
     {
         DBConnection db = new DBConnection();
@@ -57,7 +58,7 @@ namespace Bai_Tap_Lon_Winform
                String sql = "Delete from TheLoai where MaTL='" + maTL + "'";
                 db.getExecuteNonQuery(sql);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Lỗi Khi Xóa Thể Loại" + maTL);
 

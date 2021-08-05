@@ -71,7 +71,7 @@ namespace Bai_Tap_Lon_Winform
                     string sqlPN = "Update  PhieuNhap set NgayNhap='" + ngayNhap + "', MaNXB='" + maNXB+ "' where MaPN='" + maPN + "'";
                     db.getExecuteNonQuery(sqlPN);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     MessageBox.Show("Lỗi Khi Cập Nhật Phiếu Nhập " + maPN);
 
@@ -90,7 +90,7 @@ namespace Bai_Tap_Lon_Winform
                          + " Where MaPN='" + MaPN + "'";
                     db.getExecuteNonQuery(sqlCTPN);
                 }
-                catch (Exception ec)
+                catch (Exception)
                 {
                     MessageBox.Show("Lỗi Khi Cập Nhật Chi Tiết Phiếu Nhập " + MaPN);
                 }
