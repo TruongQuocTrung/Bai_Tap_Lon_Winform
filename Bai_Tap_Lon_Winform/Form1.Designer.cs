@@ -674,9 +674,9 @@ namespace Bai_Tap_Lon_Winform
             this.lblTenThuNgan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTenThuNgan.Location = new System.Drawing.Point(129, 14);
             this.lblTenThuNgan.Name = "lblTenThuNgan";
-            this.lblTenThuNgan.Size = new System.Drawing.Size(45, 16);
+            this.lblTenThuNgan.Size = new System.Drawing.Size(85, 16);
             this.lblTenThuNgan.TabIndex = 8;
-            this.lblTenThuNgan.Text = "label5";
+            this.lblTenThuNgan.Text = "Tên thu ngân";
             // 
             // label4
             // 
