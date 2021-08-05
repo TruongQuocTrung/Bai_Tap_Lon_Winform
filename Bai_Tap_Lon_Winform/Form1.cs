@@ -13,7 +13,8 @@ namespace Bai_Tap_Lon_Winform
 {
     public partial class Form1 : Form
     {
-        DAOLogin dao = new DAOLogin();
+        DAOLogin daolg = new DAOLogin();
+        DAOBanSach dao = new DAOBanSach();
         public Form1(String TenDN, String MatKhau,String MaNV)
         {
             InitializeComponent();
@@ -22,7 +23,7 @@ namespace Bai_Tap_Lon_Winform
             timer1.Start();
             // lblTime.Text = DateTime.Now.ToLongTimeString();
             //lblDate.Text = DateTime.Now.ToLongTimeString();
-            if(dao.getQuyenDN(TenDN,MatKhau).Equals("Quản Lý"))
+            if(daolg.getQuyenDN(TenDN,MatKhau).Equals("Quản Lý"))
             {
             }
             else
@@ -30,7 +31,97 @@ namespace Bai_Tap_Lon_Winform
                 btnQuanLy.Hide();
                 btnThemNhanVien.Hide();
             }
-            lblTenThuNgan.Text = dao.getTenNV(MaNV);
+            lblTenThuNgan.Text = daolg.getTenNV(MaNV);
+        }
+        static int i = 0;
+        static int SL = 0;
+        static float TT = 0;
+        static String LoaiKH = null;
+        public void addItemCBBTenSach()
+        {
+            cbbTenSach.DataSource = dao.getItemCBBTenSach();
+            cbbTenSach.DisplayMember = "TenSach";
+            cbbTenSach.ValueMember = "MaSach";
+        }
+        public void getTenKH()
+        {
+            if (txtSoHD.Text.Trim().Length >0)
+            {
+                String MaKH = txtMaKhachHang.Text;
+                if (MaKH.Trim().Length > 0)
+                {
+                    String TenNV = dao.getTenKHbyMaKH(MaKH);
+                    if (TenNV != null)
+                    {
+                        txtTenKH.Text = TenNV;
+                        LoaiKH = dao.getLoaiKHbyMaKH(MaKH);
+                        if (LoaiKH.Equals("Hội Viên"))
+                        {
+                            lblGiamGia.Text = "10%";
+                        }
+                        else
+                        {
+                            lblGiamGia.Text = "0%";
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy khách hàng", "Có lỗi xảy ra", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Không được để trống mã khách hàng", "Có lỗi xảy ra", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Đơn hàng chưa được tạo, cần tạo đơn hàng mới", "Có lỗi xảy ra", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public void addSachBan()
+        {
+            DataTable table = dao.getTTSachBan(cbbTenSach.SelectedValue.ToString());
+            int dongia = int.Parse(table.Rows[0]["DonGia"].ToString());
+            int soluong = int.Parse(numerSoLuong.Value.ToString());
+            float giamgia;
+            if(LoaiKH == null)
+            {
+                MessageBox.Show("Vui lòng nhập mã khách mua hàng trước!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+            else
+            {
+                if (LoaiKH.Equals("Hội Viên"))
+                {
+                    giamgia = (float)10 / 100;
+                }
+                else
+                {
+                    giamgia = 0;
+                }
+                float thanhtien = (soluong * dongia);
+                if (numerSoLuong.Value >0)
+                {
+                    dgvDonHang.Rows.Add();
+                    dgvDonHang.Rows[i].Cells[0].Value = cbbTenSach.SelectedValue.ToString();
+                    dgvDonHang.Rows[i].Cells[1].Value = table.Rows[0]["TenSach"].ToString();
+                    dgvDonHang.Rows[i].Cells[2].Value = table.Rows[0]["SoLuong"].ToString();
+                    dgvDonHang.Rows[i].Cells[3].Value = numerSoLuong.Value.ToString();
+                    dgvDonHang.Rows[i].Cells[4].Value = table.Rows[0]["DonGia"].ToString();
+                    dgvDonHang.Rows[i].Cells[5].Value = thanhtien;
+                    SL = SL + soluong;
+                    TT = TT + thanhtien;
+                    txtSLHang.Text = SL.ToString();
+                    txtTongTien.Text = (TT - TT * giamgia).ToString();
+                    i++;
+                }
+                else
+                {
+                    MessageBox.Show("Chọn số lượng sản phẩm trước khi thêm", "Có lỗi xảy ra", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
         }
         private void CusDesign()
         {
@@ -169,14 +260,15 @@ namespace Bai_Tap_Lon_Winform
             txtTenKH.Clear();
             txtTongTien.Clear();
             txtTraLai.Clear();
+            txtSLHang.Clear();
             TableDonHang.Clear();
-            GridViewDonHang.DataSource = TableDonHang;
+            dgvDonHang.Rows.Clear();
             txtSoHD.Text = DateTime.Now.ToString("ssmmHHddMMyyyy");
         }
         DBConnection db = new DBConnection();
         private void btnAddSach_Click(object sender, EventArgs e)
         {
-           
+            addSachBan();
         }
 
         private void panelChildForm_Paint(object sender, PaintEventArgs e)
@@ -186,6 +278,32 @@ namespace Bai_Tap_Lon_Winform
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            addItemCBBTenSach();
+        }
+
+        private void btnMaKH_Click(object sender, EventArgs e)
+        {
+            getTenKH();
+        }
+
+        private void txtKhachDua_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (float.Parse(txtKhachDua.Text.Trim()) >= float.Parse(txtTongTien.Text))
+                {
+                    float tienThua = float.Parse(txtKhachDua.Text.Trim()) - float.Parse(txtTongTien.Text);
+                    txtTraLai.Text = tienThua.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Số tiền khách đưa phải lớn hơn tổng tiền hóa đơn", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Số tiền khách đưa phải là số nguyên dương", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

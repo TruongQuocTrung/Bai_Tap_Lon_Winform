@@ -55,7 +55,7 @@ namespace Bai_Tap_Lon_Winform
                 String sql = "Delete from TacGia where MaTG='" + maTG + "'";
                 db.getExecuteNonQuery(sql);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Lỗi Khi Xóa Thể Loại" + maTG);
 

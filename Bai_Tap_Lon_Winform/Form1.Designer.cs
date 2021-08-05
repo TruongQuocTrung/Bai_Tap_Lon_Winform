@@ -66,14 +66,7 @@ namespace Bai_Tap_Lon_Winform
             this.label6 = new System.Windows.Forms.Label();
             this.btnThanhToan = new System.Windows.Forms.Button();
             this.btnDonHangMoi = new System.Windows.Forms.Button();
-            this.GridViewDonHang = new System.Windows.Forms.DataGridView();
-            this.MaSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SLBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GiamGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvDonHang = new System.Windows.Forms.DataGridView();
             this.lblTenThuNgan = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtMaKhachHang = new System.Windows.Forms.TextBox();
@@ -83,12 +76,20 @@ namespace Bai_Tap_Lon_Winform
             this.btnAddSach = new System.Windows.Forms.Button();
             this.cbbTenSach = new System.Windows.Forms.ComboBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblGiamGia = new System.Windows.Forms.Label();
+            this.MaSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SLBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelSideMenu.SuspendLayout();
             this.panelChungTuSubMenu.SuspendLayout();
             this.panelTuyChonSubMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelChildForm.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridViewDonHang)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDonHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numerSoLuong)).BeginInit();
             this.SuspendLayout();
             // 
@@ -438,6 +439,8 @@ namespace Bai_Tap_Lon_Winform
             // panelChildForm
             // 
             this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panelChildForm.Controls.Add(this.lblGiamGia);
+            this.panelChildForm.Controls.Add(this.label1);
             this.panelChildForm.Controls.Add(this.txtTraLai);
             this.panelChildForm.Controls.Add(this.txtTongTien);
             this.panelChildForm.Controls.Add(this.txtKhachDua);
@@ -452,7 +455,7 @@ namespace Bai_Tap_Lon_Winform
             this.panelChildForm.Controls.Add(this.label6);
             this.panelChildForm.Controls.Add(this.btnThanhToan);
             this.panelChildForm.Controls.Add(this.btnDonHangMoi);
-            this.panelChildForm.Controls.Add(this.GridViewDonHang);
+            this.panelChildForm.Controls.Add(this.dgvDonHang);
             this.panelChildForm.Controls.Add(this.lblTenThuNgan);
             this.panelChildForm.Controls.Add(this.label4);
             this.panelChildForm.Controls.Add(this.txtMaKhachHang);
@@ -474,6 +477,7 @@ namespace Bai_Tap_Lon_Winform
             this.txtTraLai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTraLai.Location = new System.Drawing.Point(709, 547);
             this.txtTraLai.Name = "txtTraLai";
+            this.txtTraLai.ReadOnly = true;
             this.txtTraLai.Size = new System.Drawing.Size(169, 22);
             this.txtTraLai.TabIndex = 12;
             // 
@@ -482,6 +486,7 @@ namespace Bai_Tap_Lon_Winform
             this.txtTongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTongTien.Location = new System.Drawing.Point(406, 547);
             this.txtTongTien.Name = "txtTongTien";
+            this.txtTongTien.ReadOnly = true;
             this.txtTongTien.Size = new System.Drawing.Size(169, 22);
             this.txtTongTien.TabIndex = 12;
             // 
@@ -492,21 +497,23 @@ namespace Bai_Tap_Lon_Winform
             this.txtKhachDua.Name = "txtKhachDua";
             this.txtKhachDua.Size = new System.Drawing.Size(169, 22);
             this.txtKhachDua.TabIndex = 12;
+            this.txtKhachDua.TextChanged += new System.EventHandler(this.txtKhachDua_TextChanged);
             // 
             // txtSLHang
             // 
             this.txtSLHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSLHang.Location = new System.Drawing.Point(406, 491);
             this.txtSLHang.Name = "txtSLHang";
+            this.txtSLHang.ReadOnly = true;
             this.txtSLHang.Size = new System.Drawing.Size(169, 22);
             this.txtSLHang.TabIndex = 12;
-            this.txtSLHang.Text = "0";
             // 
             // txtTenKH
             // 
             this.txtTenKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenKH.Location = new System.Drawing.Point(114, 547);
             this.txtTenKH.Name = "txtTenKH";
+            this.txtTenKH.ReadOnly = true;
             this.txtTenKH.Size = new System.Drawing.Size(169, 22);
             this.txtTenKH.TabIndex = 12;
             // 
@@ -515,6 +522,7 @@ namespace Bai_Tap_Lon_Winform
             this.txtSoHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoHD.Location = new System.Drawing.Point(114, 491);
             this.txtSoHD.Name = "txtSoHD";
+            this.txtSoHD.ReadOnly = true;
             this.txtSoHD.Size = new System.Drawing.Size(169, 22);
             this.txtSoHD.TabIndex = 12;
             // 
@@ -584,7 +592,7 @@ namespace Bai_Tap_Lon_Winform
             this.btnThanhToan.FlatAppearance.BorderSize = 0;
             this.btnThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThanhToan.Location = new System.Drawing.Point(899, 163);
+            this.btnThanhToan.Location = new System.Drawing.Point(886, 173);
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.Size = new System.Drawing.Size(122, 39);
             this.btnThanhToan.TabIndex = 10;
@@ -598,7 +606,7 @@ namespace Bai_Tap_Lon_Winform
             this.btnDonHangMoi.FlatAppearance.BorderSize = 0;
             this.btnDonHangMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDonHangMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDonHangMoi.Location = new System.Drawing.Point(899, 114);
+            this.btnDonHangMoi.Location = new System.Drawing.Point(886, 114);
             this.btnDonHangMoi.Name = "btnDonHangMoi";
             this.btnDonHangMoi.Size = new System.Drawing.Size(122, 39);
             this.btnDonHangMoi.TabIndex = 10;
@@ -606,70 +614,26 @@ namespace Bai_Tap_Lon_Winform
             this.btnDonHangMoi.UseVisualStyleBackColor = false;
             this.btnDonHangMoi.Click += new System.EventHandler(this.btnDonHangMoi_Click);
             // 
-            // GridViewDonHang
+            // dgvDonHang
             // 
-            this.GridViewDonHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridViewDonHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvDonHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDonHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaSach,
             this.TenSach,
             this.SoLuong,
             this.SLBan,
             this.DonGia,
-            this.GiamGia,
             this.ThanhTien});
-            this.GridViewDonHang.Location = new System.Drawing.Point(36, 114);
-            this.GridViewDonHang.Name = "GridViewDonHang";
-            this.GridViewDonHang.Size = new System.Drawing.Size(842, 353);
-            this.GridViewDonHang.TabIndex = 9;
-            // 
-            // MaSach
-            // 
-            this.MaSach.DataPropertyName = "MaSach";
-            this.MaSach.HeaderText = "Mã Hàng";
-            this.MaSach.Name = "MaSach";
-            // 
-            // TenSach
-            // 
-            this.TenSach.DataPropertyName = "TenSach";
-            this.TenSach.HeaderText = "Tên Hàng";
-            this.TenSach.Name = "TenSach";
-            this.TenSach.Width = 200;
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.DataPropertyName = "SoLuong";
-            this.SoLuong.HeaderText = "SL Tồn";
-            this.SoLuong.Name = "SoLuong";
-            // 
-            // SLBan
-            // 
-            this.SLBan.DataPropertyName = "SLBan";
-            this.SLBan.HeaderText = "SL Bán";
-            this.SLBan.Name = "SLBan";
-            // 
-            // DonGia
-            // 
-            this.DonGia.DataPropertyName = "DonGia";
-            this.DonGia.HeaderText = "Đơn Giá";
-            this.DonGia.Name = "DonGia";
-            // 
-            // GiamGia
-            // 
-            this.GiamGia.DataPropertyName = "GiamGia";
-            this.GiamGia.HeaderText = "Giảm Giá (%)";
-            this.GiamGia.Name = "GiamGia";
-            // 
-            // ThanhTien
-            // 
-            this.ThanhTien.DataPropertyName = "ThanhTien";
-            this.ThanhTien.HeaderText = "Thành Tiền";
-            this.ThanhTien.Name = "ThanhTien";
+            this.dgvDonHang.Location = new System.Drawing.Point(36, 114);
+            this.dgvDonHang.Name = "dgvDonHang";
+            this.dgvDonHang.Size = new System.Drawing.Size(822, 353);
+            this.dgvDonHang.TabIndex = 9;
             // 
             // lblTenThuNgan
             // 
             this.lblTenThuNgan.AutoSize = true;
             this.lblTenThuNgan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTenThuNgan.Location = new System.Drawing.Point(129, 14);
+            this.lblTenThuNgan.Location = new System.Drawing.Point(111, 14);
             this.lblTenThuNgan.Name = "lblTenThuNgan";
             this.lblTenThuNgan.Size = new System.Drawing.Size(85, 16);
             this.lblTenThuNgan.TabIndex = 8;
@@ -689,9 +653,9 @@ namespace Bai_Tap_Lon_Winform
             // 
             this.txtMaKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaKhachHang.ForeColor = System.Drawing.Color.Silver;
-            this.txtMaKhachHang.Location = new System.Drawing.Point(783, 14);
+            this.txtMaKhachHang.Location = new System.Drawing.Point(761, 11);
             this.txtMaKhachHang.Name = "txtMaKhachHang";
-            this.txtMaKhachHang.Size = new System.Drawing.Size(203, 22);
+            this.txtMaKhachHang.Size = new System.Drawing.Size(225, 22);
             this.txtMaKhachHang.TabIndex = 6;
             this.txtMaKhachHang.Text = "Mã khách hàng";
             this.txtMaKhachHang.Click += new System.EventHandler(this.textBox1_Click);
@@ -719,12 +683,13 @@ namespace Bai_Tap_Lon_Winform
             this.btnMaKH.FlatAppearance.BorderSize = 0;
             this.btnMaKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMaKH.Location = new System.Drawing.Point(677, 12);
+            this.btnMaKH.Location = new System.Drawing.Point(651, 11);
             this.btnMaKH.Name = "btnMaKH";
             this.btnMaKH.Size = new System.Drawing.Size(88, 23);
             this.btnMaKH.TabIndex = 1;
             this.btnMaKH.Text = "OK";
             this.btnMaKH.UseVisualStyleBackColor = false;
+            this.btnMaKH.Click += new System.EventHandler(this.btnMaKH_Click);
             // 
             // btnAddSach
             // 
@@ -732,7 +697,7 @@ namespace Bai_Tap_Lon_Winform
             this.btnAddSach.FlatAppearance.BorderSize = 0;
             this.btnAddSach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddSach.Location = new System.Drawing.Point(310, 12);
+            this.btnAddSach.Location = new System.Drawing.Point(306, 11);
             this.btnAddSach.Name = "btnAddSach";
             this.btnAddSach.Size = new System.Drawing.Size(88, 23);
             this.btnAddSach.TabIndex = 1;
@@ -753,6 +718,64 @@ namespace Bai_Tap_Lon_Winform
             // 
             this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(648, 51);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 17);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Giảm Giá: ";
+            // 
+            // lblGiamGia
+            // 
+            this.lblGiamGia.AutoSize = true;
+            this.lblGiamGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGiamGia.Location = new System.Drawing.Point(758, 52);
+            this.lblGiamGia.Name = "lblGiamGia";
+            this.lblGiamGia.Size = new System.Drawing.Size(0, 17);
+            this.lblGiamGia.TabIndex = 14;
+            // 
+            // MaSach
+            // 
+            this.MaSach.DataPropertyName = "MaSach";
+            this.MaSach.HeaderText = "Mã Hàng";
+            this.MaSach.Name = "MaSach";
+            this.MaSach.Width = 120;
+            // 
+            // TenSach
+            // 
+            this.TenSach.DataPropertyName = "TenSach";
+            this.TenSach.HeaderText = "Tên Hàng";
+            this.TenSach.Name = "TenSach";
+            this.TenSach.Width = 200;
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.DataPropertyName = "SoLuong";
+            this.SoLuong.HeaderText = "SL Tồn";
+            this.SoLuong.Name = "SoLuong";
+            // 
+            // SLBan
+            // 
+            this.SLBan.DataPropertyName = "SLBan";
+            this.SLBan.HeaderText = "SL Bán";
+            this.SLBan.Name = "SLBan";
+            // 
+            // DonGia
+            // 
+            this.DonGia.DataPropertyName = "DonGia";
+            this.DonGia.HeaderText = "Đơn Giá";
+            this.DonGia.Name = "DonGia";
+            // 
+            // ThanhTien
+            // 
+            this.ThanhTien.DataPropertyName = "ThanhTien";
+            this.ThanhTien.HeaderText = "Thành Tiền";
+            this.ThanhTien.Name = "ThanhTien";
+            this.ThanhTien.Width = 150;
             // 
             // Form1
             // 
@@ -778,7 +801,7 @@ namespace Bai_Tap_Lon_Winform
             this.panelLogo.PerformLayout();
             this.panelChildForm.ResumeLayout(false);
             this.panelChildForm.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridViewDonHang)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDonHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numerSoLuong)).EndInit();
             this.ResumeLayout(false);
 
@@ -821,7 +844,7 @@ namespace Bai_Tap_Lon_Winform
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnThanhToan;
         private System.Windows.Forms.Button btnDonHangMoi;
-        private System.Windows.Forms.DataGridView GridViewDonHang;
+        private System.Windows.Forms.DataGridView dgvDonHang;
         private System.Windows.Forms.Label lblTenThuNgan;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtMaKhachHang;
@@ -830,12 +853,13 @@ namespace Bai_Tap_Lon_Winform
         private System.Windows.Forms.Button btnMaKH;
         private System.Windows.Forms.Button btnAddSach;
         private System.Windows.Forms.ComboBox cbbTenSach;
+        private System.Windows.Forms.Label lblGiamGia;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSach;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenSach;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn SLBan;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GiamGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTien;
     }
 }
