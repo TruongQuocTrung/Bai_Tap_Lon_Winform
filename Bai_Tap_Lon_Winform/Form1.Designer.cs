@@ -66,6 +66,7 @@ namespace Bai_Tap_Lon_Winform
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnTienMat = new System.Windows.Forms.Button();
             this.btnThanhToan = new System.Windows.Forms.Button();
             this.btnDonHangMoi = new System.Windows.Forms.Button();
             this.dgvDonHang = new System.Windows.Forms.DataGridView();
@@ -84,7 +85,9 @@ namespace Bai_Tap_Lon_Winform
             this.btnAddSach = new System.Windows.Forms.Button();
             this.cbbTenSach = new System.Windows.Forms.ComboBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnTienMat = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblMaNV = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panelSideMenu.SuspendLayout();
             this.panelChungTuSubMenu.SuspendLayout();
             this.panelTuyChonSubMenu.SuspendLayout();
@@ -440,7 +443,10 @@ namespace Bai_Tap_Lon_Winform
             // panelChildForm
             // 
             this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panelChildForm.Controls.Add(this.lblMaNV);
+            this.panelChildForm.Controls.Add(this.label2);
             this.panelChildForm.Controls.Add(this.lblGiamGia);
+            this.panelChildForm.Controls.Add(this.label5);
             this.panelChildForm.Controls.Add(this.label1);
             this.panelChildForm.Controls.Add(this.txtTraLai);
             this.panelChildForm.Controls.Add(this.txtTongTien);
@@ -607,6 +613,23 @@ namespace Bai_Tap_Lon_Winform
             this.label6.Size = new System.Drawing.Size(77, 16);
             this.label6.TabIndex = 11;
             this.label6.Text = "Số hóa đơn";
+            // 
+            // btnTienMat
+            // 
+            this.btnTienMat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.btnTienMat.FlatAppearance.BorderSize = 0;
+            this.btnTienMat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTienMat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTienMat.Image = ((System.Drawing.Image)(resources.GetObject("btnTienMat.Image")));
+            this.btnTienMat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTienMat.Location = new System.Drawing.Point(877, 174);
+            this.btnTienMat.Name = "btnTienMat";
+            this.btnTienMat.Size = new System.Drawing.Size(144, 39);
+            this.btnTienMat.TabIndex = 10;
+            this.btnTienMat.Text = "Tiền mặt      ";
+            this.btnTienMat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTienMat.UseVisualStyleBackColor = false;
+            this.btnTienMat.Click += new System.EventHandler(this.btnTienMat_Click);
             // 
             // btnThanhToan
             // 
@@ -793,22 +816,35 @@ namespace Bai_Tap_Lon_Winform
             this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // btnTienMat
+            // label2
             // 
-            this.btnTienMat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.btnTienMat.FlatAppearance.BorderSize = 0;
-            this.btnTienMat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTienMat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTienMat.Image = ((System.Drawing.Image)(resources.GetObject("btnTienMat.Image")));
-            this.btnTienMat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTienMat.Location = new System.Drawing.Point(877, 174);
-            this.btnTienMat.Name = "btnTienMat";
-            this.btnTienMat.Size = new System.Drawing.Size(144, 39);
-            this.btnTienMat.TabIndex = 10;
-            this.btnTienMat.Text = "Tiền mặt      ";
-            this.btnTienMat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTienMat.UseVisualStyleBackColor = false;
-            this.btnTienMat.Click += new System.EventHandler(this.btnTienMat_Click);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(33, 55);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 16);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Mã nhân viên";
+            // 
+            // lblMaNV
+            // 
+            this.lblMaNV.AutoSize = true;
+            this.lblMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaNV.Location = new System.Drawing.Point(128, 54);
+            this.lblMaNV.Name = "lblMaNV";
+            this.lblMaNV.Size = new System.Drawing.Size(44, 16);
+            this.lblMaNV.TabIndex = 16;
+            this.lblMaNV.Text = "mã nv";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(783, 53);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(121, 17);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "% / Tổng hóa đơn";
             // 
             // Form1
             // 
@@ -895,6 +931,9 @@ namespace Bai_Tap_Lon_Winform
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTien;
         private System.Windows.Forms.Button btnTienMat;
+        private System.Windows.Forms.Label lblMaNV;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label5;
     }
 }
 

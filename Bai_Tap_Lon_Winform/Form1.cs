@@ -34,10 +34,11 @@ namespace Bai_Tap_Lon_Winform
                 btnThemNhanVien.Hide();
             }
             lblTenThuNgan.Text = daolg.getTenNV(MaNV);
+            lblMaNV.Text = MaNV;
         }
         static int i = 0;
         static int SL = 0;
-        static float TT = 0;
+        static int TT = 0;
         static String LoaiKH = null;
         public void addItemCBBTenSach()
         {
@@ -59,11 +60,11 @@ namespace Bai_Tap_Lon_Winform
                         LoaiKH = dao.getLoaiKHbyMaKH(MaKH);
                         if (LoaiKH.Equals("Hội Viên"))
                         {
-                            lblGiamGia.Text = "10%";
+                            lblGiamGia.Text = "10";
                         }
                         else
                         {
-                            lblGiamGia.Text = "0%";
+                            lblGiamGia.Text = "0";
                         }
                     }
                     else
@@ -102,7 +103,7 @@ namespace Bai_Tap_Lon_Winform
                 {
                     giamgia = 0;
                 }
-                float thanhtien = (soluong * dongia);
+                int thanhtien = (soluong * dongia);
                 if (numerSoLuong.Value >0)
                 {
                     dgvDonHang.Rows.Add();
@@ -243,8 +244,59 @@ namespace Bai_Tap_Lon_Winform
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            frmBienLai bl = new frmBienLai();
-            bl.Show();
+            if (txtTraLai.Text.Trim().Length >0)
+            {
+                String SoHD = txtSoHD.Text.Trim();
+                DateTime NgayBan = DateTime.Parse(DateTime.Now.ToShortDateString());
+                String ThuNgan = lblTenThuNgan.Text;
+                String GioBan = DateTime.Now.ToShortTimeString();
+                int TongTien = int.Parse(txtTongTien.Text);
+                int KhachDua = int.Parse(txtKhachDua.Text);
+                int SoLuongHang = int.Parse(txtSLHang.Text);
+                String MaNV = lblMaNV.Text;
+                String MaKH = txtMaKhachHang.Text;
+                int GiamGia = int.Parse(lblGiamGia.Text);
+                try
+                {
+                    dao.addHoaDon(SoHD, NgayBan, ThuNgan, GioBan, TongTien, KhachDua, SoLuongHang, GiamGia);
+                    for (int i = 0; i < dgvDonHang.Rows.Count - 1; i++)
+                    {
+                        String MaSach = dgvDonHang.Rows[i].Cells[0].Value.ToString();
+                        // số lượng sách bán.
+                        int SoLuongBan = int.Parse(dgvDonHang.Rows[i].Cells[3].Value.ToString());
+                        int GiaBan = int.Parse(dgvDonHang.Rows[i].Cells[4].Value.ToString());
+                        try
+                        {
+                            dao.addChiTietHoaDon(SoHD, MaSach, SoLuongBan, GiaBan, MaKH);
+                            int SoLuongTonKho = int.Parse(dgvDonHang.Rows[i].Cells[2].Value.ToString());
+                            int TTBanSach = int.Parse(dgvDonHang.Rows[i].Cells[5].Value.ToString());
+                            try
+                            {
+                                dao.addSachBan(MaSach, MaNV, MaKH, SoHD, SoLuongTonKho, SoLuongBan, GiaBan, TTBanSach);
+                                dao.updateSlTonSach(SoLuongTonKho - SoLuongBan, MaSach);
+                            }
+                            catch (Exception ex3)
+                            {
+                                MessageBox.Show(ex3.Message);
+                            }
+                        }
+                        catch (Exception ex2)
+                        {
+                            MessageBox.Show(ex2.Message);
+                        }
+                    }
+                }
+                catch (Exception ex1)
+                {
+                    MessageBox.Show(ex1.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Cần hoàn thiện thông tin hóa đơn trước khi thanh toán", "Lỗi thanh toán", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            //frmBienLai bl = new frmBienLai();
+            //bl.Show();
         }
 
         private void textBox1_Click(object sender, EventArgs e)
@@ -292,11 +344,11 @@ namespace Bai_Tap_Lon_Winform
         {
                 try
                 {
-                float tienKD = float.Parse(txtKhachDua.Text);
-                float tongTien = float.Parse(txtTongTien.Text);
+                int tienKD = int.Parse(txtKhachDua.Text);
+                int tongTien = int.Parse(txtTongTien.Text);
                     if (tienKD >= tongTien)
                     {
-                        float tienThua = tienKD - tongTien;
+                        int tienThua = tienKD - tongTien;
                         txtTraLai.Text = tienThua.ToString();
                     }
                     else

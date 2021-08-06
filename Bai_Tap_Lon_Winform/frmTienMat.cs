@@ -16,7 +16,7 @@ namespace Bai_Tap_Lon_Winform
         {
             InitializeComponent();
         }
-        static float tongTien =0;
+        static int tongTien =0;
         public delegate void GETDATATINHTIEN(string data);
         public GETDATATINHTIEN tinhtien;
         private void frmTienMat_Load(object sender, EventArgs e)
