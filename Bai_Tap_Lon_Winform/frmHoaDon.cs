@@ -22,7 +22,7 @@ namespace Bai_Tap_Lon_Winform
         {
             this.Close();
         }
-        int check = 0;
+        static int check = 0;
         private void bthHuyHD_Click(object sender, EventArgs e)
         {
             txtMaHoaDon.Clear();

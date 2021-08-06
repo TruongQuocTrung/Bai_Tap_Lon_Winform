@@ -126,7 +126,7 @@ namespace Bai_Tap_Lon_Winform
                     MessageBox.Show("Xóa Thành Công Phiếu Nhập " + maPN);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Lỗi Khi Xóa Phiếu Nhập " + maPN);
 
@@ -144,7 +144,7 @@ namespace Bai_Tap_Lon_Winform
                     MessageBox.Show("Loại sách này đã được xóa khỏi phiếu nhập " + MaPN);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Lỗi Khi Xóa  Chi Tiết Phiếu Nhập Phiếu Nhập " + MaPN);
 

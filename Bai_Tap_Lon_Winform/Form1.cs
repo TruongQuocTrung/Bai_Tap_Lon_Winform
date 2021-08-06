@@ -37,6 +37,7 @@ namespace Bai_Tap_Lon_Winform
             lblMaNV.Text = MaNV;
         }
         static int i = 0;
+        static int check = 0;
         static int SL = 0;
         static int TT = 0;
         static String LoaiKH = null;
@@ -104,25 +105,45 @@ namespace Bai_Tap_Lon_Winform
                     giamgia = 0;
                 }
                 int thanhtien = (soluong * dongia);
-                if (numerSoLuong.Value >0)
+                int dem = 0;
+                for(int i = 0; i< dgvDonHang.RowCount - 1; i++)
                 {
-                    dgvDonHang.Rows.Add();
-                    dgvDonHang.Rows[i].Cells[0].Value = cbbTenSach.SelectedValue.ToString();
-                    dgvDonHang.Rows[i].Cells[1].Value = table.Rows[0]["TenSach"].ToString();
-                    dgvDonHang.Rows[i].Cells[2].Value = table.Rows[0]["SoLuong"].ToString();
-                    dgvDonHang.Rows[i].Cells[3].Value = numerSoLuong.Value.ToString();
-                    dgvDonHang.Rows[i].Cells[4].Value = table.Rows[0]["DonGia"].ToString();
-                    dgvDonHang.Rows[i].Cells[5].Value = thanhtien;
-                    SL = SL + soluong;
-                    TT = TT + thanhtien;
-                    txtSLHang.Text = SL.ToString();
-                   
-                    txtTongTien.Text = (TT - TT * giamgia).ToString();
-                    i++;
+                    if (cbbTenSach.SelectedValue.ToString().Equals(dgvDonHang.Rows[i].Cells[0].Value.ToString()))
+                    {
+                        TT = TT - int.Parse(dgvDonHang.Rows[i].Cells[5].Value.ToString());
+                        int trunggian = int.Parse(dgvDonHang.Rows[i].Cells[3].Value.ToString());
+                        trunggian += int.Parse(numerSoLuong.Value.ToString());
+                        dgvDonHang.Rows[i].Cells[3].Value = trunggian.ToString();
+                        dgvDonHang.Rows[i].Cells[5].Value = trunggian * dongia;
+                        SL = SL + soluong;
+                        TT = TT + int.Parse(dgvDonHang.Rows[i].Cells[5].Value.ToString());
+                        txtSLHang.Text = SL.ToString();
+                        txtTongTien.Text = (TT - TT * giamgia).ToString();
+                        dem = 1;
+                    }
                 }
-                else
+                if (dem == 0)
                 {
-                    MessageBox.Show("Chọn số lượng sản phẩm trước khi thêm", "Có lỗi xảy ra", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (numerSoLuong.Value > 0)
+                    {
+                        dgvDonHang.Rows.Add();
+                        dgvDonHang.Rows[i].Cells[0].Value = cbbTenSach.SelectedValue.ToString();
+                        dgvDonHang.Rows[i].Cells[1].Value = table.Rows[0]["TenSach"].ToString();
+                        dgvDonHang.Rows[i].Cells[2].Value = table.Rows[0]["SoLuong"].ToString();
+                        dgvDonHang.Rows[i].Cells[3].Value = numerSoLuong.Value.ToString();
+                        dgvDonHang.Rows[i].Cells[4].Value = table.Rows[0]["DonGia"].ToString();
+                        dgvDonHang.Rows[i].Cells[5].Value = thanhtien;
+                        SL = SL + soluong;
+                        TT = TT + thanhtien;
+                        txtSLHang.Text = SL.ToString();
+
+                        txtTongTien.Text = (TT - TT * giamgia).ToString();
+                        i++;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Chọn số lượng sản phẩm trước khi thêm", "Có lỗi xảy ra", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
@@ -244,6 +265,7 @@ namespace Bai_Tap_Lon_Winform
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
+            int dem = 0;
             if (txtTraLai.Text.Trim().Length >0)
             {
                 String SoHD = txtSoHD.Text.Trim();
@@ -277,18 +299,27 @@ namespace Bai_Tap_Lon_Winform
                             }
                             catch (Exception ex3)
                             {
+                                dem = 1;
                                 MessageBox.Show(ex3.Message);
                             }
                         }
                         catch (Exception ex2)
                         {
+                            dem = 1;
                             MessageBox.Show(ex2.Message);
                         }
                     }
                 }
                 catch (Exception ex1)
                 {
+                    dem = 1;
                     MessageBox.Show(ex1.Message);
+                }
+                if (dem == 0)
+                {
+                    MessageBox.Show("Thanh toán thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    frmBienLai blform = new frmBienLai();
+                    blform.Show();
                 }
             }
             else
@@ -378,6 +409,48 @@ namespace Bai_Tap_Lon_Winform
                 MessageBox.Show("Phải hoàn thiện thông tin đơn hàng trước", "Lỗi thao tác", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
+        }
+
+        private void dgvDonHang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = dgvDonHang.SelectedCells[0].RowIndex;
+            cbbTenSach.Text = dgvDonHang.Rows[index].Cells[1].Value.ToString();
+            check = 1;
+            TT = 0;
+            numerSoLuong.Value = int.Parse(dgvDonHang.Rows[index].Cells[3].Value.ToString());
+        }
+
+        private void numerSoLuong_ValueChanged(object sender, EventArgs e)
+        {
+            if(check == 1)
+            {
+                int tongtien = 0;
+                int soluong = 0;
+                int index = dgvDonHang.SelectedCells[0].RowIndex;
+                dgvDonHang.Rows[index].Cells[3].Value = numerSoLuong.Value;
+                int tttg = int.Parse(numerSoLuong.Value.ToString()) * int.Parse(dgvDonHang.Rows[index].Cells[4].Value.ToString());
+                dgvDonHang.Rows[index].Cells[5].Value = tttg.ToString();
+                for(int i=0; i < dgvDonHang.RowCount -1; i++)
+                {
+                    tongtien = tongtien + int.Parse(dgvDonHang.Rows[i].Cells[5].Value.ToString());
+                    soluong = soluong + int.Parse(dgvDonHang.Rows[i].Cells[3].Value.ToString());
+                }
+
+                float giamgia = 0;
+                if (int.Parse(lblGiamGia.Text) == 10)
+                {
+                    giamgia = (float)10 / 100;
+                }
+                TT = int.Parse((tongtien - tongtien * giamgia).ToString());
+                SL = soluong;
+                txtTongTien.Text = (tongtien- tongtien*giamgia).ToString();
+                txtSLHang.Text = soluong.ToString();
+            }
+        }
+
+        private void cbbTenSach_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            check = 0;
         }
     }
 }

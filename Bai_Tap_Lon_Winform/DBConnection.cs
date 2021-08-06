@@ -37,7 +37,6 @@ namespace Bai_Tap_Lon_Winform
                   return dataReader[0].ToString();
               }
               return null;
-              connection.Close();
         }
         public void getExecuteNonQuery(String sql)
         {

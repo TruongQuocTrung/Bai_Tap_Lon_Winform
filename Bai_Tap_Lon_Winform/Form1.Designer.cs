@@ -52,7 +52,10 @@ namespace Bai_Tap_Lon_Winform
             this.lblDate = new System.Windows.Forms.Label();
             this.panelFooter = new System.Windows.Forms.Panel();
             this.panelChildForm = new System.Windows.Forms.Panel();
+            this.lblMaNV = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.lblGiamGia = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTraLai = new System.Windows.Forms.TextBox();
             this.txtTongTien = new System.Windows.Forms.TextBox();
@@ -85,9 +88,6 @@ namespace Bai_Tap_Lon_Winform
             this.btnAddSach = new System.Windows.Forms.Button();
             this.cbbTenSach = new System.Windows.Forms.ComboBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblMaNV = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.panelSideMenu.SuspendLayout();
             this.panelChungTuSubMenu.SuspendLayout();
             this.panelTuyChonSubMenu.SuspendLayout();
@@ -480,6 +480,26 @@ namespace Bai_Tap_Lon_Winform
             this.panelChildForm.TabIndex = 5;
             this.panelChildForm.Paint += new System.Windows.Forms.PaintEventHandler(this.panelChildForm_Paint);
             // 
+            // lblMaNV
+            // 
+            this.lblMaNV.AutoSize = true;
+            this.lblMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaNV.Location = new System.Drawing.Point(128, 54);
+            this.lblMaNV.Name = "lblMaNV";
+            this.lblMaNV.Size = new System.Drawing.Size(44, 16);
+            this.lblMaNV.TabIndex = 16;
+            this.lblMaNV.Text = "mã nv";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(33, 55);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 16);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Mã nhân viên";
+            // 
             // lblGiamGia
             // 
             this.lblGiamGia.AutoSize = true;
@@ -488,6 +508,16 @@ namespace Bai_Tap_Lon_Winform
             this.lblGiamGia.Name = "lblGiamGia";
             this.lblGiamGia.Size = new System.Drawing.Size(0, 17);
             this.lblGiamGia.TabIndex = 14;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(783, 53);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(121, 17);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "% / Tổng hóa đơn";
             // 
             // label1
             // 
@@ -677,8 +707,11 @@ namespace Bai_Tap_Lon_Winform
             this.ThanhTien});
             this.dgvDonHang.Location = new System.Drawing.Point(36, 114);
             this.dgvDonHang.Name = "dgvDonHang";
+            this.dgvDonHang.ReadOnly = true;
+            this.dgvDonHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDonHang.Size = new System.Drawing.Size(813, 353);
             this.dgvDonHang.TabIndex = 9;
+            this.dgvDonHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDonHang_CellClick);
             // 
             // MaSach
             // 
@@ -768,6 +801,7 @@ namespace Bai_Tap_Lon_Winform
             this.numerSoLuong.Name = "numerSoLuong";
             this.numerSoLuong.Size = new System.Drawing.Size(54, 20);
             this.numerSoLuong.TabIndex = 4;
+            this.numerSoLuong.ValueChanged += new System.EventHandler(this.numerSoLuong_ValueChanged);
             // 
             // btnMaKH
             // 
@@ -804,47 +838,20 @@ namespace Bai_Tap_Lon_Winform
             // 
             // cbbTenSach
             // 
+            this.cbbTenSach.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbbTenSach.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbbTenSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbTenSach.FormattingEnabled = true;
             this.cbbTenSach.Location = new System.Drawing.Point(406, 11);
             this.cbbTenSach.Name = "cbbTenSach";
             this.cbbTenSach.Size = new System.Drawing.Size(203, 24);
             this.cbbTenSach.TabIndex = 0;
+            this.cbbTenSach.SelectedIndexChanged += new System.EventHandler(this.cbbTenSach_SelectedIndexChanged);
             // 
             // timer1
             // 
             this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(33, 55);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 16);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Mã nhân viên";
-            // 
-            // lblMaNV
-            // 
-            this.lblMaNV.AutoSize = true;
-            this.lblMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaNV.Location = new System.Drawing.Point(128, 54);
-            this.lblMaNV.Name = "lblMaNV";
-            this.lblMaNV.Size = new System.Drawing.Size(44, 16);
-            this.lblMaNV.TabIndex = 16;
-            this.lblMaNV.Text = "mã nv";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(783, 53);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(121, 17);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "% / Tổng hóa đơn";
             // 
             // Form1
             // 
