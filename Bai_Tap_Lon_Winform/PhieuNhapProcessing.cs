@@ -41,8 +41,13 @@ namespace Bai_Tap_Lon_Winform
         {
             try
             {
-                String sql = "Insert Into PhieuNhap Values('" + maPN + "','" + ngayNhap + "','" + maNXB + "')";
-                db.getExecuteNonQuery(sql);
+                DialogResult dlr = MessageBox.Show("Bạn chắc chắn muốn thêm phiếu nhập " + maPN, "Xác Nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (dlr == DialogResult.OK)
+                {
+                    String sql = "Insert Into PhieuNhap Values('" + maPN + "','" + ngayNhap + "','" + maNXB + "')";
+                    db.getExecuteNonQuery(sql);
+                    MessageBox.Show("Phiếu nhập "+maPN+" đã được thêm vào hệ thống");
+                }
             }
             catch(Exception ex)
             {
@@ -54,9 +59,14 @@ namespace Bai_Tap_Lon_Winform
         {
             try
             {
-                string sql = "Insert Into ChiTietPhieuNhap(MaPN, MaSach,SoLuongNhap, GiaNhap)" +
-                " values('" +maPN + "','" + maSach+ "'," + SLN + "," + giaNhap + ")";
-                db.getExecuteNonQuery(sql);
+                DialogResult dlr = MessageBox.Show("Bạn chắc chắn muốn thêm phiếu nhập " + maPN, "Xác Nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (dlr == DialogResult.OK)
+                {
+                    string sql = "Insert Into ChiTietPhieuNhap(MaPN, MaSach,SoLuongNhap, GiaNhap)" +
+                " values('" + maPN + "','" + maSach + "'," + SLN + "," + giaNhap + ")";
+                    db.getExecuteNonQuery(sql);
+                    MessageBox.Show("Mã sách " + maSach + " đã được thêm vào phiếu nhập "+maPN);
+                }
             }
             catch (Exception ex)
             {
@@ -67,9 +77,13 @@ namespace Bai_Tap_Lon_Winform
         {
               try
                 {
-                    
-                    string sqlPN = "Update  PhieuNhap set NgayNhap='" + ngayNhap + "', MaNXB='" + maNXB+ "' where MaPN='" + maPN + "'";
+                DialogResult dlr = MessageBox.Show("Bạn chắc chắn muốn lưu nhữn thay đổi", "Xác Nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (dlr == DialogResult.OK)
+                {
+                    string sqlPN = "Update  PhieuNhap set NgayNhap='" + ngayNhap + "', MaNXB='" + maNXB + "' where MaPN='" + maPN + "'";
                     db.getExecuteNonQuery(sqlPN);
+                    MessageBox.Show("Thông tin của phiếu nhập đã được cập nhật");
+                }
                 }
                 catch (Exception)
                 {
@@ -85,10 +99,14 @@ namespace Bai_Tap_Lon_Winform
             
                 try
                 {
-
+                DialogResult dlr = MessageBox.Show("Bạn chắc chắn muốn lưu những thay đỏi ", "Xác Nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (dlr == DialogResult.OK)
+                {
                     string sqlCTPN = "Update  ChiTietPhieuNhap Set MaSach ='" + maSach + "', SoLuongNhap=" + slNhap + ",GiaNhap=" + giaNhap
                          + " Where MaPN='" + MaPN + "'";
                     db.getExecuteNonQuery(sqlCTPN);
+                    MessageBox.Show("Thông tin của sách đã được cập nhật vào phiếu nhập");
+                }
                 }
                 catch (Exception)
                 {
@@ -100,10 +118,13 @@ namespace Bai_Tap_Lon_Winform
         {
             try
             {
-                
-                string sql = "Delete from PhieuNhap Where MaPN='" + maPN + "'";
-                db.getExecuteNonQuery(sql);
-                MessageBox.Show("Xóa Thành Công Phiếu Nhập " + maPN);
+                DialogResult dlr = MessageBox.Show("Bạn chắc chắn muốn xóa phiếu nhập "+maPN, "Xác Nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (dlr == DialogResult.OK)
+                {
+                    string sql = "Delete from PhieuNhap Where MaPN='" + maPN + "'";
+                    db.getExecuteNonQuery(sql);
+                    MessageBox.Show("Xóa Thành Công Phiếu Nhập " + maPN);
+                }
             }
             catch (Exception ex)
             {
@@ -115,11 +136,13 @@ namespace Bai_Tap_Lon_Winform
         {
             try
             {
-               
-                string sql = "Delete from ChiTietPhieuNhap Where MaPN='" +MaPN + "'";
-                db.getExecuteNonQuery(sql);
-                MessageBox.Show("Xóa Thành Công Chi Tiết  Phiếu Nhập " + MaPN);
-                
+                DialogResult dlr = MessageBox.Show("Bạn chắc chắn muốn xóa loại sách này trong phiếu nhập "+MaPN, "Xác Nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (dlr == DialogResult.OK)
+                {
+                    string sql = "Delete from ChiTietPhieuNhap Where MaPN='" + MaPN + "'";
+                    db.getExecuteNonQuery(sql);
+                    MessageBox.Show("Loại sách này đã được xóa khỏi phiếu nhập " + MaPN);
+                }
             }
             catch (Exception ex)
             {

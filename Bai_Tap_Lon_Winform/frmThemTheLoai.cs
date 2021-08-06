@@ -30,8 +30,16 @@ namespace Bai_Tap_Lon_Winform
         TheLoaiProcessing theLoai = new TheLoaiProcessing();
         private void btnThem_Click(object sender, EventArgs e)
         {
-            theLoai.addTheLoai(txtMaTheLoai.Text, txtTenTheLoai.Text);
-            frmThemTheLoai_Load(sender, e);
+            if (txtMaTheLoai.Text.Trim() == "" || txtTenTheLoai.Text.Trim() == "")
+            {
+                MessageBox.Show("Vui Lòng Điền Đầy đủ Thông Tin !", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+            else
+            {
+                theLoai.addTheLoai(txtMaTheLoai.Text, txtTenTheLoai.Text);
+                frmThemTheLoai_Load(sender, e);
+            }
         }
 
         private void frmThemTheLoai_Load(object sender, EventArgs e)
@@ -41,8 +49,16 @@ namespace Bai_Tap_Lon_Winform
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            theLoai.editTheLoai( txtMaTheLoai.Text, txtTenTheLoai.Text);
-            frmThemTheLoai_Load(sender, e);
+            if (txtMaTheLoai.Text.Trim() == "" || txtTenTheLoai.Text.Trim() == "")
+            {
+                MessageBox.Show("Vui Lòng Điền Đầy đủ Thông Tin !", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+            else
+            {
+                theLoai.editTheLoai(txtMaTheLoai.Text, txtTenTheLoai.Text);
+                frmThemTheLoai_Load(sender, e);
+            }
         }
 
         private void GridViewTheLoai_CellClick(object sender, DataGridViewCellEventArgs e)

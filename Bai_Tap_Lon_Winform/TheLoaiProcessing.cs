@@ -26,10 +26,13 @@ namespace Bai_Tap_Lon_Winform
         {
             try
             {
-
-                string sql = "Insert Into TheLoai Values('" + maTL + "',N'" + tenTL+ "')";
-                db.getExecuteNonQuery(sql);
-                MessageBox.Show("Mã Thể Loại " + maTL + " Được thêm Vào Hệ Thống", "Thêm TL Thành Công");
+                DialogResult dlr = MessageBox.Show("Bạn chắc chắn muốn thêm thể loại "+tenTL, "Xác Nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (dlr == DialogResult.OK)
+                {
+                    string sql = "Insert Into TheLoai Values('" + maTL + "',N'" + tenTL + "')";
+                    db.getExecuteNonQuery(sql);
+                    MessageBox.Show("Thể loại " + tenTL + " đã được thêm vào hệ thống");
+                }
             }
             catch (Exception ex)
             {
@@ -40,10 +43,13 @@ namespace Bai_Tap_Lon_Winform
         {
             try
             {
-
-                String sql = "Update  TheLoai Set TenTL=N'" + tenTL + "' where MaTL='" + maTL + "'";
-                db.getExecuteNonQuery(sql);
-                MessageBox.Show("Cập Nhật Thành Công Thể Loại  ");
+                DialogResult dlr = MessageBox.Show("Bạn chắc chắn muốn lưu những thay đổi", "Xác Nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (dlr == DialogResult.OK)
+                {
+                    String sql = "Update  TheLoai Set TenTL=N'" + tenTL + "' where MaTL='" + maTL + "'";
+                    db.getExecuteNonQuery(sql);
+                   MessageBox.Show("Thông tin của thể loại "+maTL+" đã được cập nhật");
+                }
             }
             catch (Exception ex)
             {
@@ -54,31 +60,34 @@ namespace Bai_Tap_Lon_Winform
         {
             try
             {
-                
-               String sql = "Delete from TheLoai where MaTL='" + maTL + "'";
-                db.getExecuteNonQuery(sql);
+                DialogResult dlr = MessageBox.Show("Bạn chắc chắn muốn xóa thể loại "+maTL, "Xác Nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (dlr == DialogResult.OK)
+                {
+                    String sql = "Delete from TheLoai where MaTL='" + maTL + "'";
+                    db.getExecuteNonQuery(sql);
+                    MessageBox.Show("Thể loại "+maTL+" đã được xóa");
+                }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Lỗi Khi Xóa Thể Loại" + maTL);
+                MessageBox.Show(ex.Message, "Error ", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }
         public DataTable timTheLoai(String maTL)
         {
-            
                 String sql = "SELECT * FROM TheLoai WHERE MaTL = '" + maTL + "'";
                 DataTable table = db.getTable(sql);
-            if (table.Rows.Count > 0)
-            {
+                if (table.Rows.Count > 0)
+                {
 
-            }
-            else
-            {
-                MessageBox.Show("Không tìm thấy thể loại này", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return table;
-            
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy thể loại này", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                return table;
+           
         }
     }
 }

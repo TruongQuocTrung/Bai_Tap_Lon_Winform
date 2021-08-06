@@ -43,8 +43,16 @@ namespace Bai_Tap_Lon_Winform
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            tacGia.addTacGia(txtMaTG.Text, txtTenTG.Text,txtLienHe.Text);
-            frmThemTacGia_Load(sender, e);
+            if (txtMaTG.Text.Trim() == "" || txtTenTG.Text.Trim() == "" || txtLienHe.Text.Trim() == "")
+            {
+                MessageBox.Show("Vui Lòng Điền Đầy đủ Thông Tin !", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+            else
+            {
+                tacGia.addTacGia(txtMaTG.Text, txtTenTG.Text, txtLienHe.Text);
+                frmThemTacGia_Load(sender, e);
+            }
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -56,8 +64,16 @@ namespace Bai_Tap_Lon_Winform
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            tacGia.editTacGia(txtMaTG.Text, txtTenTG.Text, txtLienHe.Text);
-            frmThemTacGia_Load(sender, e);
+            if (txtMaTG.Text.Trim() == "" || txtTenTG.Text.Trim() == "" || txtLienHe.Text.Trim() == "")
+            {
+                MessageBox.Show("Vui Lòng Điền Đầy đủ Thông Tin !", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+            else
+            {
+                tacGia.editTacGia(txtMaTG.Text, txtTenTG.Text, txtLienHe.Text);
+                frmThemTacGia_Load(sender, e);
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)

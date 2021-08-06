@@ -49,17 +49,37 @@ namespace Bai_Tap_Lon_Winform
             GridViewPhieuNhap.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             check = 1;
         }
-
+        int kiemtra = 0;
         private void btnThemPhieuNhap_Click(object sender, EventArgs e)
         {
-            pn.addPhieuNhap(txtMaPhieuNhap.Text, dtpNgayNhap.Text, txtMaNXB.Text);
-            btnXemDSPN_Click(sender, e);
+            if (txtMaPhieuNhap.Text.Trim() == "" || txtMaNXB.Text.Trim() == "")
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                pn.addPhieuNhap(txtMaPhieuNhap.Text, dtpNgayNhap.Text, txtMaNXB.Text);
+                btnXemDSPN_Click(sender, e);
+                kiemtra = 1;
+            }
         }
 
         private void btnThemCTPN_Click(object sender, EventArgs e)
         {
-            pn.addCTPhieuNhap(txtMaPN.Text, txtMaSach.Text,double.Parse( txtSoLuongNhap.Text),double.Parse(txtGiaNhap.Text));
-            btnXemDSCTPN_Click(sender, e);
+            if (txtMaPN.Text.Trim() == "" || txtMaSach.Text.Trim() == "" || txtSoLuongNhap.Text.Trim() == "" || txtGiaNhap.Text.Trim() == "")
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (kiemtra == 0)
+                    MessageBox.Show("Bạn chưa thêm phiếu nhập nào", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else
+                {
+                    pn.addCTPhieuNhap(txtMaPN.Text, txtMaSach.Text, double.Parse(txtSoLuongNhap.Text), double.Parse(txtGiaNhap.Text));
+                    btnXemDSCTPN_Click(sender, e);
+                }
+            }
         }
 
         private void btnCapNhat_Click(object sender, EventArgs e)

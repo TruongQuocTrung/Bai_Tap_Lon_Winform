@@ -23,10 +23,13 @@ namespace Bai_Tap_Lon_Winform
         {
             try
             {
-
-                string sql = "Insert Into TacGia Values('" + maTG + "',N'" + tenTG +"','"+lienHe+"')";
-                db.getExecuteNonQuery(sql);
-                MessageBox.Show("Mã tác giả " + maTG + " Được thêm Vào Hệ Thống", "Thêm tác giả Thành Công");
+                DialogResult dlr = MessageBox.Show("Bạn chắc chắn muốn thêm tác giả "+tenTG, "Xác Nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (dlr == DialogResult.OK)
+                {
+                    string sql = "Insert Into TacGia Values('" + maTG + "',N'" + tenTG + "','" + lienHe + "')";
+                    db.getExecuteNonQuery(sql);
+                    MessageBox.Show("Tác giả " + tenTG + " đã được thêm vào hệ thống");
+                }
             }
             catch (Exception ex)
             {
@@ -37,10 +40,14 @@ namespace Bai_Tap_Lon_Winform
         {
             try
             {
+                DialogResult dlr = MessageBox.Show("Bạn chắc chắn muốn lưu những thay đổi ", "Xác Nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (dlr == DialogResult.OK)
+                {
 
-                String sql = "Update  TacGia Set TenTG=N'" + tenTG + "',LienHe='"+lienHe+"' where MaTG='" + maTG + "'";
-                db.getExecuteNonQuery(sql);
-                MessageBox.Show("Cập Nhật Thành Công Tác Giả  ");
+                    String sql = "Update  TacGia Set TenTG=N'" + tenTG + "',LienHe='" + lienHe + "' where MaTG='" + maTG + "'";
+                    db.getExecuteNonQuery(sql);
+                    MessageBox.Show("Thông tin của tác giả "+maTG+" đã được cập nhật");
+                }
             }
             catch (Exception ex)
             {
@@ -51,9 +58,13 @@ namespace Bai_Tap_Lon_Winform
         {
             try
             {
-
-                String sql = "Delete from TacGia where MaTG='" + maTG + "'";
-                db.getExecuteNonQuery(sql);
+                DialogResult dlr = MessageBox.Show("Bạn chắc chắn muốn xóa tác giả " + maTG, "Xác Nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (dlr == DialogResult.OK)
+                {
+                    String sql = "Delete from TacGia where MaTG='" + maTG + "'";
+                    db.getExecuteNonQuery(sql);
+                    MessageBox.Show("Tác giả "+maTG+" đã bị xóa");
+                }
             }
             catch (Exception)
             {
