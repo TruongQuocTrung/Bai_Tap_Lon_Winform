@@ -31,6 +31,7 @@ namespace Bai_Tap_Lon_Winform
         private void frmThemTacGia_Load(object sender, EventArgs e)
         {
             GridViewTacGia.DataSource = tacGia.showTG();
+          
         }
 
         private void GridViewTacGia_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -94,6 +95,11 @@ namespace Bai_Tap_Lon_Winform
             {
                 MessageBox.Show("Vui lòng kiểm tra lại mã tác giả", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void frmThemTacGia_Shown(object sender, EventArgs e)
+        {
+            GridViewTacGia.ClearSelection();
         }
     }
 }

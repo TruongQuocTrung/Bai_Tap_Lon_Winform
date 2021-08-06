@@ -22,32 +22,7 @@ namespace Bai_Tap_Lon_Winform
         {
             this.Close();
         }
-        int check = 0;
-        private void bthHuyHD_Click(object sender, EventArgs e)
-        {
-            txtMaHoaDon.Clear();
-            dtpNgayBan.Value = DateTime.Now;
-        }
-
-        private void btnThemHD_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnHuyCTHD_Click(object sender, EventArgs e)
-        {
-            txtMaHD.Clear();
-            txtMaSach.Clear();
-            txtGiaBan.Clear();
-            txtSoLuong.Clear();
-            txtKhachHang.Clear();
-        }
-
-        private void btnThemCTHD_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        int check = 0;       
         private void btnXemHD_Click(object sender, EventArgs e)
         {
             GridviewHD.DataSource = hoaDon.loadHD();
@@ -61,17 +36,6 @@ namespace Bai_Tap_Lon_Winform
             GridviewHD.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             check = 1;
         }
-
-        private void btnCapNhat_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnIn_Click(object sender, EventArgs e)
         {
 
@@ -79,12 +43,29 @@ namespace Bai_Tap_Lon_Winform
 
         private void btnTim_Click(object sender, EventArgs e)
         {
-
+            if(check==0)
+            {
+                GridviewHD.DataSource= hoaDon.timHD(txtTim.Text);
+                GridviewHD.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                GridviewHD.ClearSelection();
+            }
+            else
+            {
+                GridviewHD.DataSource = hoaDon.timCTHD(txtTim.Text);
+                GridviewHD.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                GridviewHD.ClearSelection();
+            }
         }
 
-        private void GridviewHD_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void frmHoaDon_Load(object sender, EventArgs e)
         {
+            GridviewHD.ClearSelection();
+        }
 
+        private void txtTim_Click(object sender, EventArgs e)
+        {
+            txtTim.ForeColor = Color.Black;
+            txtTim.Clear();
         }
     }
 }

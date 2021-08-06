@@ -45,6 +45,7 @@ namespace Bai_Tap_Lon_Winform
         private void frmThemTheLoai_Load(object sender, EventArgs e)
         {
             GridViewTheLoai.DataSource = theLoai.loadDL();
+            GridViewTheLoai.ClearSelection();
         }
 
         private void btnCapNhat_Click(object sender, EventArgs e)
@@ -83,7 +84,12 @@ namespace Bai_Tap_Lon_Winform
         private void btnSearch_Click(object sender, EventArgs e)
         {
                 GridViewTheLoai.DataSource = theLoai.timTheLoai(txtTim.Text);
-                GridViewTheLoai.ClearSelection();
+                
+        }
+
+        private void frmThemTheLoai_Shown(object sender, EventArgs e)
+        {
+            GridViewTheLoai.ClearSelection();
         }
     }
 }

@@ -42,6 +42,9 @@ namespace Bai_Tap_Lon_Winform
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtLienHe = new System.Windows.Forms.TextBox();
             this.GridViewTacGia = new System.Windows.Forms.DataGridView();
+            this.MaTacGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTenTacGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LienHe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnCapNhat = new System.Windows.Forms.Button();
@@ -49,9 +52,6 @@ namespace Bai_Tap_Lon_Winform
             this.btnExit = new System.Windows.Forms.PictureBox();
             this.txtTim = new System.Windows.Forms.TextBox();
             this.btnTim = new System.Windows.Forms.Button();
-            this.MaTacGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoTenTacGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LienHe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewTacGia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.SuspendLayout();
@@ -171,6 +171,26 @@ namespace Bai_Tap_Lon_Winform
             this.GridViewTacGia.TabIndex = 3;
             this.GridViewTacGia.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewTacGia_CellClick);
             // 
+            // MaTacGia
+            // 
+            this.MaTacGia.DataPropertyName = "MaTG";
+            this.MaTacGia.HeaderText = "Mã Tác Giả";
+            this.MaTacGia.Name = "MaTacGia";
+            // 
+            // HoTenTacGia
+            // 
+            this.HoTenTacGia.DataPropertyName = "TenTG";
+            this.HoTenTacGia.HeaderText = "Họ Tên Tác Giá";
+            this.HoTenTacGia.Name = "HoTenTacGia";
+            this.HoTenTacGia.Width = 200;
+            // 
+            // LienHe
+            // 
+            this.LienHe.DataPropertyName = "LienHe";
+            this.LienHe.HeaderText = "Liên Hệ";
+            this.LienHe.Name = "LienHe";
+            this.LienHe.Width = 250;
+            // 
             // btnHuy
             // 
             this.btnHuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
@@ -262,26 +282,6 @@ namespace Bai_Tap_Lon_Winform
             this.btnTim.UseVisualStyleBackColor = false;
             this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
-            // MaTacGia
-            // 
-            this.MaTacGia.DataPropertyName = "MaTG";
-            this.MaTacGia.HeaderText = "Mã Tác Giả";
-            this.MaTacGia.Name = "MaTacGia";
-            // 
-            // HoTenTacGia
-            // 
-            this.HoTenTacGia.DataPropertyName = "TenTG";
-            this.HoTenTacGia.HeaderText = "Họ Tên Tác Giá";
-            this.HoTenTacGia.Name = "HoTenTacGia";
-            this.HoTenTacGia.Width = 200;
-            // 
-            // LienHe
-            // 
-            this.LienHe.DataPropertyName = "LienHe";
-            this.LienHe.HeaderText = "Liên Hệ";
-            this.LienHe.Name = "LienHe";
-            this.LienHe.Width = 250;
-            // 
             // frmThemTacGia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -313,6 +313,7 @@ namespace Bai_Tap_Lon_Winform
             this.Name = "frmThemTacGia";
             this.Text = "frmThemTacGia";
             this.Load += new System.EventHandler(this.frmThemTacGia_Load);
+            this.Shown += new System.EventHandler(this.frmThemTacGia_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.GridViewTacGia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             this.ResumeLayout(false);
