@@ -55,12 +55,6 @@ namespace Bai_Tap_Lon_Winform
             }
         }
 
-        private void frmThemKhachHang_Load(object sender, EventArgs e)
-        {
-            
-            GridViewKH.DataSource = khachHang.showKH();
-        }
-
         private void btnHuy_Click(object sender, EventArgs e)
         {
             txtMaKH.Clear();
@@ -138,6 +132,16 @@ namespace Bai_Tap_Lon_Winform
         {
             txtTim.Clear();
             txtTim.ForeColor = Color.Black;
+        }
+
+        private void frmThemKhachHang_Shown(object sender, EventArgs e)
+        {
+            GridViewKH.ClearSelection();
+        }
+
+        private void frmThemKhachHang_Load(object sender, EventArgs e)
+        {
+            GridViewKH.DataSource = khachHang.showKH();
         }
     }
 }

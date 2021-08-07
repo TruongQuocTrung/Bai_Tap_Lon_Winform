@@ -39,13 +39,13 @@ namespace Bai_Tap_Lon_Winform
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.GridViewTheLoai = new System.Windows.Forms.DataGridView();
+            this.MaTheLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenTheLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCapNhat = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.PictureBox();
             this.txtMaTheLoai = new System.Windows.Forms.TextBox();
             this.txtTenTheLoai = new System.Windows.Forms.TextBox();
-            this.MaTheLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenTheLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtTim = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewTheLoai)).BeginInit();
@@ -149,6 +149,19 @@ namespace Bai_Tap_Lon_Winform
             this.GridViewTheLoai.TabIndex = 4;
             this.GridViewTheLoai.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewTheLoai_CellClick);
             // 
+            // MaTheLoai
+            // 
+            this.MaTheLoai.DataPropertyName = "MaTL";
+            this.MaTheLoai.HeaderText = "Mã Thể Loại";
+            this.MaTheLoai.Name = "MaTheLoai";
+            // 
+            // TenTheLoai
+            // 
+            this.TenTheLoai.DataPropertyName = "TenTL";
+            this.TenTheLoai.HeaderText = "Tên Thể Loại";
+            this.TenTheLoai.Name = "TenTheLoai";
+            this.TenTheLoai.Width = 300;
+            // 
             // btnCapNhat
             // 
             this.btnCapNhat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
@@ -208,19 +221,6 @@ namespace Bai_Tap_Lon_Winform
             this.txtTenTheLoai.Size = new System.Drawing.Size(327, 15);
             this.txtTenTheLoai.TabIndex = 6;
             // 
-            // MaTheLoai
-            // 
-            this.MaTheLoai.DataPropertyName = "MaTL";
-            this.MaTheLoai.HeaderText = "Mã Thể Loại";
-            this.MaTheLoai.Name = "MaTheLoai";
-            // 
-            // TenTheLoai
-            // 
-            this.TenTheLoai.DataPropertyName = "TenTL";
-            this.TenTheLoai.HeaderText = "Tên Thể Loại";
-            this.TenTheLoai.Name = "TenTheLoai";
-            this.TenTheLoai.Width = 300;
-            // 
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
@@ -273,6 +273,7 @@ namespace Bai_Tap_Lon_Winform
             this.Name = "frmThemTheLoai";
             this.Text = "frmThemTheLoai";
             this.Load += new System.EventHandler(this.frmThemTheLoai_Load);
+            this.Shown += new System.EventHandler(this.frmThemTheLoai_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.GridViewTheLoai)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             this.ResumeLayout(false);

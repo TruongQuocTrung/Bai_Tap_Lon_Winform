@@ -22,6 +22,7 @@ namespace Bai_Tap_Lon_Winform
         {
             this.Close();
         }
+<<<<<<< HEAD
         static int check = 0;
         private void bthHuyHD_Click(object sender, EventArgs e)
         {
@@ -48,6 +49,9 @@ namespace Bai_Tap_Lon_Winform
 
         }
 
+=======
+        int check = 0;       
+>>>>>>> 8f56ede29293a3caf600d5820b8550d234684e05
         private void btnXemHD_Click(object sender, EventArgs e)
         {
             GridviewHD.DataSource = hoaDon.loadHD();
@@ -61,17 +65,6 @@ namespace Bai_Tap_Lon_Winform
             GridviewHD.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             check = 1;
         }
-
-        private void btnCapNhat_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnIn_Click(object sender, EventArgs e)
         {
 
@@ -79,12 +72,29 @@ namespace Bai_Tap_Lon_Winform
 
         private void btnTim_Click(object sender, EventArgs e)
         {
-
+            if(check==0)
+            {
+                GridviewHD.DataSource= hoaDon.timHD(txtTim.Text);
+                GridviewHD.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                GridviewHD.ClearSelection();
+            }
+            else
+            {
+                GridviewHD.DataSource = hoaDon.timCTHD(txtTim.Text);
+                GridviewHD.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                GridviewHD.ClearSelection();
+            }
         }
 
-        private void GridviewHD_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void frmHoaDon_Load(object sender, EventArgs e)
         {
+            GridviewHD.ClearSelection();
+        }
 
+        private void txtTim_Click(object sender, EventArgs e)
+        {
+            txtTim.ForeColor = Color.Black;
+            txtTim.Clear();
         }
     }
 }

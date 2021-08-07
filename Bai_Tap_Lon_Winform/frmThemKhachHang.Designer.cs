@@ -500,6 +500,7 @@ namespace Bai_Tap_Lon_Winform
             this.Name = "frmThemKhachHang";
             this.Text = "frmThemKhachHang";
             this.Load += new System.EventHandler(this.frmThemKhachHang_Load);
+            this.Shown += new System.EventHandler(this.frmThemKhachHang_Shown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewKH)).EndInit();
