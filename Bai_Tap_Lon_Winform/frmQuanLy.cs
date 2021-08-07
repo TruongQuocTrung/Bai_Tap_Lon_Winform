@@ -21,6 +21,7 @@ namespace Bai_Tap_Lon_Winform
         {
             this.Close();
             //fix loi
+            //fix loi CDSL
         }
 
     }
