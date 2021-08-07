@@ -49,11 +49,11 @@ namespace Bai_Tap_Lon_Winform
             this.btnXoa = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.PictureBox();
-            this.btnQLNhanVien = new System.Windows.Forms.Button();
             this.btnQLDangNhap = new System.Windows.Forms.Button();
             this.btnThongKeNhap = new System.Windows.Forms.Button();
             this.lblTongTien = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewQuanLy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.SuspendLayout();
@@ -64,9 +64,9 @@ namespace Bai_Tap_Lon_Winform
             this.btnQLNhanVien.FlatAppearance.BorderSize = 0;
             this.btnQLNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQLNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQLNhanVien.Location = new System.Drawing.Point(43, 83);
+            this.btnQLNhanVien.Location = new System.Drawing.Point(43, 81);
             this.btnQLNhanVien.Name = "btnQLNhanVien";
-            this.btnQLNhanVien.Size = new System.Drawing.Size(156, 33);
+            this.btnQLNhanVien.Size = new System.Drawing.Size(156, 52);
             this.btnQLNhanVien.TabIndex = 0;
             this.btnQLNhanVien.Text = "Quản lý nhân viên";
             this.btnQLNhanVien.UseVisualStyleBackColor = false;
@@ -118,6 +118,7 @@ namespace Bai_Tap_Lon_Winform
             this.GridViewQuanLy.Name = "GridViewQuanLy";
             this.GridViewQuanLy.Size = new System.Drawing.Size(733, 427);
             this.GridViewQuanLy.TabIndex = 1;
+            // 
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
@@ -270,19 +271,6 @@ namespace Bai_Tap_Lon_Winform
             this.btnExit.TabStop = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // btnQLNhanVien
-            // 
-            this.btnQLNhanVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.btnQLNhanVien.FlatAppearance.BorderSize = 0;
-            this.btnQLNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQLNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQLNhanVien.Location = new System.Drawing.Point(43, 81);
-            this.btnQLNhanVien.Name = "btnQLNhanVien";
-            this.btnQLNhanVien.Size = new System.Drawing.Size(156, 52);
-            this.btnQLNhanVien.TabIndex = 0;
-            this.btnQLNhanVien.Text = "Quản lý nhân viên";
-            this.btnQLNhanVien.UseVisualStyleBackColor = false;
-            // 
             // btnQLDangNhap
             // 
             this.btnQLDangNhap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
@@ -315,9 +303,9 @@ namespace Bai_Tap_Lon_Winform
             this.lblTongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTongTien.Location = new System.Drawing.Point(792, 554);
             this.lblTongTien.Name = "lblTongTien";
-            this.lblTongTien.Size = new System.Drawing.Size(51, 16);
+            this.lblTongTien.Size = new System.Drawing.Size(16, 16);
             this.lblTongTien.TabIndex = 8;
-            this.lblTongTien.Text = "label4";
+            this.lblTongTien.Text = "0";
             // 
             // frmQuanLy
             // 
@@ -342,13 +330,13 @@ namespace Bai_Tap_Lon_Winform
             this.Controls.Add(this.btnQLDangNhap);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnQLNhanVien);
-           // this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximumSize = new System.Drawing.Size(1033, 598);
             this.MinimumSize = new System.Drawing.Size(909, 590);
             this.Name = "frmQuanLy";
             this.Text = "frmQuanLy";
             ((System.ComponentModel.ISupportInitialize)(this.GridViewQuanLy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
