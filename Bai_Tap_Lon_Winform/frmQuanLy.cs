@@ -20,6 +20,8 @@ namespace Bai_Tap_Lon_Winform
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+            //fix loi
         }
+
     }
 }
