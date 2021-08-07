@@ -70,6 +70,7 @@ namespace Bai_Tap_Lon_Winform
             this.btnQLNhanVien.TabIndex = 0;
             this.btnQLNhanVien.Text = "Quản lý nhân viên";
             this.btnQLNhanVien.UseVisualStyleBackColor = false;
+            this.btnQLNhanVien.Click += new System.EventHandler(this.btnQLNhanVien_Click);
             // 
             // button2
             // 

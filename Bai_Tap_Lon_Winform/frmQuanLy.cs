@@ -24,5 +24,11 @@ namespace Bai_Tap_Lon_Winform
             //fix loi CDSL
         }
 
+        private void btnQLNhanVien_Click(object sender, EventArgs e)
+        {
+            // mua may moi di thang tung
+            // ken
+            MessageBox.Show("ặguid");
+        }
     }
 }
