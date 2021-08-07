@@ -30,11 +30,16 @@ namespace Bai_Tap_Lon_Winform
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQuanLy));
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnQLNhanVien = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+<<<<<<< HEAD
             this.btnThongKeXuat = new System.Windows.Forms.Button();
             this.GridViewQuanLy = new System.Windows.Forms.DataGridView();
+=======
+            this.button5 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+>>>>>>> d27eb41ce9548d71fdf592292b22b919b493e1be
             this.btnTim = new System.Windows.Forms.Button();
             this.txtTim = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -56,18 +61,18 @@ namespace Bai_Tap_Lon_Winform
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // btnQLNhanVien
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(43, 83);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(156, 33);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Quản lý nhân viên";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnQLNhanVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.btnQLNhanVien.FlatAppearance.BorderSize = 0;
+            this.btnQLNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQLNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQLNhanVien.Location = new System.Drawing.Point(43, 83);
+            this.btnQLNhanVien.Name = "btnQLNhanVien";
+            this.btnQLNhanVien.Size = new System.Drawing.Size(156, 33);
+            this.btnQLNhanVien.TabIndex = 0;
+            this.btnQLNhanVien.Text = "Quản lý nhân viên";
+            this.btnQLNhanVien.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
@@ -95,6 +100,7 @@ namespace Bai_Tap_Lon_Winform
             this.button4.Text = "Thống kê nhập";
             this.button4.UseVisualStyleBackColor = false;
             // 
+<<<<<<< HEAD
             // btnThongKeXuat
             // 
             this.btnThongKeXuat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
@@ -116,6 +122,29 @@ namespace Bai_Tap_Lon_Winform
             this.GridViewQuanLy.Name = "GridViewQuanLy";
             this.GridViewQuanLy.Size = new System.Drawing.Size(733, 427);
             this.GridViewQuanLy.TabIndex = 1;
+=======
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(184)))), ((int)(((byte)(206)))));
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(43, 278);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(156, 33);
+            this.button5.TabIndex = 0;
+            this.button5.Text = "Thống kê xuất";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(243, 81);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(733, 427);
+            this.dataGridView1.TabIndex = 1;
+>>>>>>> d27eb41ce9548d71fdf592292b22b919b493e1be
             // 
             // btnTim
             // 
@@ -310,14 +339,22 @@ namespace Bai_Tap_Lon_Winform
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtTim);
             this.Controls.Add(this.btnTim);
+<<<<<<< HEAD
             this.Controls.Add(this.GridViewQuanLy);
             this.Controls.Add(this.btnThongKeXuat);
             this.Controls.Add(this.btnThongKeNhap);
+=======
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.button5);
+>>>>>>> d27eb41ce9548d71fdf592292b22b919b493e1be
             this.Controls.Add(this.button4);
             this.Controls.Add(this.btnQLDangNhap);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnQLNhanVien);
+<<<<<<< HEAD
             this.Controls.Add(this.button1);
+=======
+>>>>>>> d27eb41ce9548d71fdf592292b22b919b493e1be
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximumSize = new System.Drawing.Size(1033, 598);
             this.MinimumSize = new System.Drawing.Size(909, 590);
@@ -334,11 +371,16 @@ namespace Bai_Tap_Lon_Winform
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnQLNhanVien;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
+<<<<<<< HEAD
         private System.Windows.Forms.Button btnThongKeXuat;
         private System.Windows.Forms.DataGridView GridViewQuanLy;
+=======
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.DataGridView dataGridView1;
+>>>>>>> d27eb41ce9548d71fdf592292b22b919b493e1be
         private System.Windows.Forms.Button btnTim;
         private System.Windows.Forms.TextBox txtTim;
         private System.Windows.Forms.Panel panel1;
