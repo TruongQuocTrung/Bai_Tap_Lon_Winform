@@ -29,6 +29,7 @@ namespace Bai_Tap_Lon_Winform
             // mua may moi di thang tung
             // ken
             MessageBox.Show("ặguid");
+            //bạn đầ utuw mua máy mới đê
         }
     }
 }
