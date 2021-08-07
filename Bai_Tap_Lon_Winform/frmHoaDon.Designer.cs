@@ -110,7 +110,7 @@ namespace Bai_Tap_Lon_Winform
             this.txtTim.Name = "txtTim";
             this.txtTim.Size = new System.Drawing.Size(653, 20);
             this.txtTim.TabIndex = 7;
-            this.txtTim.Text = "Mã hóa đơn";
+            this.txtTim.Text = "Mã hóa đơn hoặc mã khách hàng";
             this.txtTim.Click += new System.EventHandler(this.txtTim_Click);
             // 
             // btnIn

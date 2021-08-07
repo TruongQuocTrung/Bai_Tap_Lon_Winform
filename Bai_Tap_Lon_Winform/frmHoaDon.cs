@@ -21,37 +21,8 @@ namespace Bai_Tap_Lon_Winform
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-<<<<<<< HEAD
-        static int check = 0;
-        private void bthHuyHD_Click(object sender, EventArgs e)
-        {
-            txtMaHoaDon.Clear();
-            dtpNgayBan.Value = DateTime.Now;
-        }
-
-        private void btnThemHD_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnHuyCTHD_Click(object sender, EventArgs e)
-        {
-            txtMaHD.Clear();
-            txtMaSach.Clear();
-            txtGiaBan.Clear();
-            txtSoLuong.Clear();
-            txtKhachHang.Clear();
-        }
-
-        private void btnThemCTHD_Click(object sender, EventArgs e)
-        {
-
-        }
-
-=======
+        }               
         int check = 0;       
->>>>>>> 8f56ede29293a3caf600d5820b8550d234684e05
         private void btnXemHD_Click(object sender, EventArgs e)
         {
             GridviewHD.DataSource = hoaDon.loadHD();
